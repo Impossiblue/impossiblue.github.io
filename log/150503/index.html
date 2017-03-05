@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: CSS throbbers - Part 2</title><meta name="description" content="Discussing pros and cons of the pure CSS throbber (aka spinner, aka loader)"><meta name="author" content="https://impossiblue.github.io"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Impossiblue"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" sizes="152x152" href="../../touch-icon-ipad.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="../../start-up-1536x2008.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="../../start-up-1496x2048.png"><link rel="stylesheet" href="../../css/i.css"><!--[if lt IE 10]><link rel="stylesheet" href="../../css/ie.css"><![endif]--><style>.box,.throbberBox{max-width:962px;margin-top:1.5em;background-color:#eef5df;}.bomo{height:128px;padding:6px 0;background:#eef5df url("artist.gif") center no-repeat;}.oskar{padding:12px 0;text-align:center;}.throbberBox{position:relative;height:109px;}
+/*	START Original Newton's balls code from external stylesheet (with comments; not minified)  */
+.spinner.newton .ball {
+	position: relative;
+	display: inline-block;
+	width: 1em; /* Impossiblue says: Daring! Inheritance may play havoc */
+	height: 6em;
+	-webkit-transform-origin: 50% 0%;
+	transform-origin: 50% 0%;
+	}
+.spinner.newton .ball::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 1em;
+	height: 1em;
+	border-radius: 100%; /* Impossiblue says: 50% should suffice */
+	background: radial-gradient(circle at 40% 40%, rgb(79, 77, 77) 39%, rgb(55, 55, 55) 42%);
+	}
+.spinner.newton .ball::before {
+	content: '';
+	position: absolute;
+	width: 0.08em;
+	margin-left: -0.04em;
+	top: 0;
+	left: 50%;
+	bottom: 1em;
+	background: linear-gradient(transparent, gray);
+	}
+.spinner.newton .ball {
+	-webkit-animation: newtonBallMiddle 1s infinite alternate;
+	animation: newtonBallMiddle 1s infinite alternate;
+	}
+.spinner.newton .ball:first-child {
+	-webkit-animation: newtonBallFirst 1s ease-in infinite alternate;
+	animation: newtonBallFirst 1s ease-in infinite alternate;
+	}
+.spinner.newton .ball:first-child::after {
+	-webkit-animation: newtonBallLast 1s ease-out infinite alternate-reverse;
+	animation: newtonBallLast 1s ease-out infinite alternate-reverse;
+	}
+.spinner.newton .ball:last-child {
+	-webkit-animation: newtonBallLast 1s ease-out infinite alternate;
+	animation: newtonBallLast 1s ease-out infinite alternate;
+	}
+.spinner.newton .ball:last-child::after {
+	-webkit-animation: newtonBallFirst 1s ease-in infinite alternate-reverse;
+	animation: newtonBallFirst 1s ease-in infinite alternate-reverse;
+	}
+@-webkit-keyframes newtonBallFirst {
+	0% { -webkit-transform: rotate(70deg); }
+	50% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(0deg); }
+	}
+@-webkit-keyframes newtonBallMiddle {
+	0% { -webkit-transform: rotate(0deg); }
+	50% { -webkit-transform: rotate(0deg); }
+	51% { -webkit-transform: rotate(-0.5deg); }
+	52% { -webkit-transform: rotate(0.5deg); }
+	53% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(0deg); }
+	}
+@-webkit-keyframes newtonBallLast {
+	0% { -webkit-transform: rotate(0deg); }
+	50% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(-70deg); }
+	}
+@keyframes newtonBallFirst {
+	0% { transform: rotate(70deg); }
+	50% { transform: rotate(0deg); }
+	100% { transform: rotate(0deg); }
+	}
+@keyframes newtonBallMiddle {
+	0% { transform: rotate(0deg); }
+	50% { transform: rotate(0deg); }
+	51% { transform: rotate(-0.5deg); }
+	52% { transform: rotate(0.5deg); }
+	53% { transform: rotate(0deg); }
+	100% { transform: rotate(0deg); }
+	}
+@keyframes newtonBallLast {
+	0% { transform: rotate(0deg); }
+	50% { transform: rotate(0deg); }
+	100% { transform: rotate(-70deg); }
+	}
+/*	END Original Newton's balls code from external stylesheet  */
+/*	START Martin Grubinger throbber (modified; with comments)  */
+.throbber {
+	position: absolute; /* Impossiblue: Contributes to the centering of the throbber in its parent */
+	top: 0; /* Contributes... */
+	right: 0; /* Contributes... */
+	bottom: 0; /* Contributes... */
+	left: 0; /* Contributes... */
+	width: 43px;
+	height: 43px;
+	margin: auto; /* Contributes... */
+	border: 3px dashed #475f14;
+	border-radius: 50%;
+	-webkit-animation: spin 2s linear infinite;
+	animation: spin 2s linear infinite;
+	}
+@-ms-keyframes spin { from { -ms-transform: rotate(0deg); } to { -ms-transform: rotate(360deg); } }
+@-webkit-keyframes spin { from { -webkit-transform: rotate(0deg); } to { -webkit-transform: rotate(360deg); } }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } } /* css3files.com */
+/*	END Martin Grubinger throbber  */
+.px9{border-width:9px;}.px21{border-width:21px;}</style></head><body><div id="ie">With geriatric Internet Explorer versions this site looks shite. This because Impossiblue is built with modern tools and would require hacks and workarounds to function in legacy browsers. I no longer have the patience nor the inclination to satisfy everybody. Impossiblue is an experiment and a playground &#8211;&#160;and my sustenance does not depend on it. As a concequence &#8211;&#160;to embarrass nobody &#8211;&#160;I have decided to lock you out. So, there.</div><div id="wrapper"><aside>25</aside><header id="masthead"><h1><a href="../../index.html">Impossiblue</a></h1></header><nav><button class="goEast" title="Menu">Open menu</button><ul>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Lorem ipsums</strong></li>
+<li><a href="../150504/index.html">How to add and centre a custom iPad wallpaper</a></li>
+<li><a href="../150421-2/index.html">How to make a screen dump on an iPad</a></li>
+<li><a href="../150421/index.html">How to permanently delete pictures from an iPad</a></li>
+<li><a href="../140502/index.html">PHP &#8211; Random image</a></li>
+<li><a href="../140426/index.html">PHP &#8211; How to get the width and height of an image</a></li>
+<li><a href="../140423/index.html">PHP &#8211; Random quote</a></li>
+<li><a href="../140420/index.html">PHP &#8211; How to find pathnames matching a pattern</a></li>
+<li><a href="../141026/index.html">How to design a close-button with CSS</a></li>
+<li><a href="../140625/index.html">Film grain &#8211; Sort of</a></li>
+<li><a href="../140528/index.html">Noisy canvas &#8211; Dynamic</a></li>
+<li><a href="../140328/index.html">How to create a composite layer in Photoshop</a></li>
+<li><a href="../140312/index.html">Noisy background &#8211; Static</a></li>
+<li><a href="../100828/index.html">How to crop a movie with QuickTime Pro</a></li>
+<li><a href="../060216/index.html">Gradient mosaic</a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Rants and raves</strong></li>
+<li><a href="../150907/index.html">Jan Kjærstad &#8211;&#160;Storyteller</a></li>
+<li><a href="../150504-2/index.html">Rain on a window pane &#8211;&#160;JavaScript simulation</a></li>
+<li id="crrnt"><b>&#9656;&#8194;</b>CSS throbbers &#8211;&#160;Part 2</li>
+<li><a href="../150407/index.html">CSS throbbers &#8211;&#160;Part 1</a></li>
+<li><a href="../150406/index.html">ResEdit and the recreation of the Mac OS wristwatch cursor animation</a></li>
+<li><a href="../141108/index.html">Kaja Norum</a></li>
+<li><a href="../141010/index.html">Kurt &#38; Kara <span class="sbi">c</span> 1984</a></li>
+<li><a href="../140627/index.html">Canvas and the Close Pixelate script</a></li>
+<li><a href="../140405/index.html">Web Audio API &#8211; 1st Approach</a></li>
+<li><a href="../140329/index.html">Audio visualizer &#8211; Atomic</a></li>
+<li><a href="../140329/starfield.html">Audio visualizer &#8211; Star field</a></li>
+<li><a href="../140323/index.html">Flash <span class="sbi">in memoriam</span></a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Notes to self</strong></li>
+<li><a href="../150504-3/index.html">Ordnance Survey map of Great Britain</a></li>
+<li><a href="../150511/index.html">xStand for iPad &#8211;&#160;The missing user manual</a></li>
+<li><a href="../140628/index.html">CSS blur animation</a></li>
+<li><a href="../150501/index.html">The CSS rule</a></li>
+<li><a href="../140319/index.html">On animated cursors</a></li>
+<li><a href="../150618/index.html">The concerts</a></li>
+</ul></nav><article><h2>CSS throbbers &#8211;&#160;Part 2</h2><p>5 March, 2017<span> &#8211; Art.&#160;25</span> &#8211; First published on Ka of Isis 150503</p><p class="drpcp">My original intention for this series of articles on CSS throbbers (yes, there is a <a href="../150407/index.html">Part 1</a>) was to go all the way to a part 4. To dive in and dissect the CSS that people have come up with to replace the trusted GIF animation with pure CSS. Then <a href="http://www.bomoart.com/">Bomo Art</a>, for instance, could do away with the funny 11&#160;KB loading animation that blends so well into the theme of their entire web site, conjuring up images of the work of <a href="http://en.wikipedia.org/wiki/Eadweard_Muybridge">Eadweard Muybridge</a> and Victorian wall paper motifs&#8230;</p><div class="box bomo"></div><p class="pt15">&#8230;and replace it with a sharp fit-for-the-21st-Century throbber like the one below by <a href="http://oskargustafsson.github.io/CSS-spinners/#newton">Oskar Gustafsson</a>. It is unavoidable, though, to see the irony in the resemblance of <i>vectorian</i> to <i>Victorian</i>.</p><div class="box oskar">
+<!-- START Original HTML code for the throbber (with comment; not minimized). Important: Avoid white-space between the 'ball' containers. But where is '#newton' defined? -->
+<div id="newton" class="spinner newton">
+	<div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div>
+</div>
+<!-- END Original HTML code for the throbber -->
+</div><p class="fig">Fig. At times, when the user changes the width of the browser window, the five strings attached to the Newton&#8217;s balls dissappear. I have not attempted to figure out why.</p><p>Gustafsson&#8217;s throbber is exuberant and imaginative and up front it does exactly what should be expected from a proper throbber: It tells us to &#8220;Please wait!&#8221;. Then I took a look at the code that goes into the making of the CSS animation. It is amazing what can be done with CSS code, but in the context of throbbers it becomes ridiculously cumbersome and long-winded, and serves more as a showcase for web developers. I will not repeat the code here but ask you to take a look at the web page source. To incorporate the Newton&#8217;s balls shown above, straight off the web page of the creator, the necessary HTML and CSS code runs to roughly 3&#160;KB, not minified. It <em>is</em> possible to shave off bytes to minify download time and to do away with additional server requests for images etc etc etc, but life is too short for that.</p><h3>Keep it simple</h3><p>I did not have to boil my brain to come up with less daunting code and something equally fit for a graphical user interface. <a href="http://codepen.io/mgrubinger/pen/MYWQRx">Martin Grubinger</a> had already done that&#8230;</p>
+<!-- START Martin Grubinger throbber (modified) -->
+<div class="throbberBox">
+	<div class="throbber"></div>
+</div>
+<!-- END Martin Grubinger throbber... -->
+<div class="throbberBox"><div class="throbber px9"></div></div><div class="throbberBox"><div class="throbber px21"></div></div><p class="fig">Fig. The only thing that differentiates the three throbbers above, is the width of the dashed border used. The thicker the border, the less perfect their distribution on the circumference of the circle becomes, but heck, it&#8217;s only a throbber! Different browsers will render the dashes differently, anyway. I only wish we could do away with <a href="http://www.sitepoint.com/web-foundations/vendor-specific-properties/">vendor specific properties</a>. Oh, well.</p><h3>Demonstration</h3><p>It is only appropriate to round off this discussion with a demo using another work by Eadweard Muybridge. He visited the Yosemite valley in 1872 and photographed what has become known as Pi-Wi-Ack or Vernal Fall. Helen Hunt Jackson, <a href="http://www.yosemite.ca.us/library/bits_of_travel_at_home/piwyack_and_yowihe.html">in <i>Bits of Travel at Home</i></a> (1878), wrote:</p><p>&#8216;In the language of the Ah-wah-ne-chee, who always spoke truth, &#8220;Pi-wy-ack&#8221; means &#8220;white water&#8221; or &#8220;shower of shining crystals&#8221;, and &#8220;Yo-wi-he&#8221; means &#8220;the twisting&#8221; or &#8220;the meandering&#8221;. These were the names of the two great falls by which the Merced (River of Mercy) leaps into Ah-wah-ne. Then came the white men, liars; they called the upper fall &#8220;Nevada&#8221;, and the lower one &#8220;Vernal&#8221;; and the lies prevailed; being, as lies are apt to be, easier said than the truth.&#8217;</p><p>An <a href="http://www.yosemite.ca.us/library/bits_of_travel_at_home/piwyack_and_yowihe.html">editor&#8217;s note</a> has been added to the statement above: &#8216;The correct Ahwahneechee name for Vernal Fall is Yan-o-pah. Pi-wy-ack refers to Tenaya Lake and was mistakenly transfered (sic) as the name for Vernal Fall.&#8217;</p><p>Be that as it may, but if you follow the demo link below, you will be taken to a separate web page displaying Muybridge&#8217;s picture as taken from the Google Art Project. The image is some 8&#160;MB in size and should take a while to download &#8211;&#160;depending on your Internet connection and device, of course. Hopefully this will serve as a live example of the CSS throbber spinning while the image is loading into a placeholder. When the picture has been fully downloaded, the throbber should go away.</p><p><a href="yan-o-pah.html"><strong>Shut up and let me see the demo!</strong></a></p></article><footer class="cL cntr">Impossiblue &#169; Bjørn Sortland</footer><noscript class="cntr">This site is shite without JavaScript</noscript></div><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script>window.jQuery || document.write('<script src="../../js/jquery.min.js"><\/script>')</script><script>$("nav button").click(function(){$("nav ul").toggle("fast");});</script></body></html>

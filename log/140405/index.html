@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: Web Audio API - 1st Approach</title><meta name="description" content="How to play sounds with the Web Audio API. This experiment works with WebKit-based browsers only."><meta name="author" content="https://impossiblue.github.io"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Impossiblue"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" sizes="152x152" href="../../touch-icon-ipad.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="../../start-up-1536x2008.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="../../start-up-1496x2048.png"><link rel="stylesheet" href="../../css/i.css"><!--[if lt IE 10]><link rel="stylesheet" href="../../css/ie.css"><![endif]--><style>input{width:262px;display:block;}#play{width:auto;margin-top:1.5em;border:1px solid #eef5df;padding:.7em 1em .5em;font:1.6em "Chunk Five Regular",sans-serif;font-weight:normal;color:#eef5df;-webkit-font-smoothing:antialiased;font-smoothing:antialiased;background-color:#475f14;}#play:hover,#play:focus{border-color:#fff;color:#fff;cursor:pointer;-webkit-box-shadow:0 0 12px 3px rgba(0,0,0,.3);box-shadow:0 0 12px 3px rgba(0,0,0,.3);outline-width:0;}canvas{margin-top: 1.5em;border:1px solid #eef5df;color:#475f14;background-color:rgba(0,0,0,.24);}</style></head><body onload="init()"><div id="ie">With geriatric Internet Explorer versions this site looks shite. This because Impossiblue is built with modern tools and would require hacks and workarounds to function in legacy browsers. I no longer have the patience nor the inclination to satisfy everybody. Impossiblue is an experiment and a playground &#8211;&#160;and my sustenance does not depend on it. As a concequence &#8211;&#160;to embarrass nobody &#8211;&#160;I have decided to lock you out. So, there.</div><div id="wrapper"><aside>9</aside><header id="masthead"><h1><a href="../../index.html">Impossiblue</a></h1></header><nav><button class="goEast" title="Menu">Open menu</button><ul>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Lorem ipsums</strong></li>
+<li><a href="../150504/index.html">How to add and centre a custom iPad wallpaper</a></li>
+<li><a href="../150421-2/index.html">How to make a screen dump on an iPad</a></li>
+<li><a href="../150421/index.html">How to permanently delete pictures from an iPad</a></li>
+<li><a href="../140502/index.html">PHP &#8211; Random image</a></li>
+<li><a href="../140426/index.html">PHP &#8211; How to get the width and height of an image</a></li>
+<li><a href="../140423/index.html">PHP &#8211; Random quote</a></li>
+<li><a href="../140420/index.html">PHP &#8211; How to find pathnames matching a pattern</a></li>
+<li><a href="../141026/index.html">How to design a close-button with CSS</a></li>
+<li><a href="../140625/index.html">Film grain &#8211; Sort of</a></li>
+<li><a href="../140528/index.html">Noisy canvas &#8211; Dynamic</a></li>
+<li><a href="../140328/index.html">How to create a composite layer in Photoshop</a></li>
+<li><a href="../140312/index.html">Noisy background &#8211; Static</a></li>
+<li><a href="../100828/index.html">How to crop a movie with QuickTime Pro</a></li>
+<li><a href="../060216/index.html">Gradient mosaic</a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Rants and raves</strong></li>
+<li><a href="../150907/index.html">Jan Kjærstad &#8211;&#160;Storyteller</a></li>
+<li><a href="../150504-2/index.html">Rain on a window pane &#8211;&#160;JavaScript simulation</a></li>
+<li><a href="../150503/index.html">CSS throbbers &#8211;&#160;Part 2</a></li>
+<li><a href="../150407/index.html">CSS throbbers &#8211;&#160;Part 1</a></li>
+<li><a href="../150406/index.html">ResEdit and the recreation of the Mac OS wristwatch cursor animation</a></li>
+<li><a href="../141108/index.html">Kaja Norum</a></li>
+<li><a href="../141010/index.html">Kurt &#38; Kara <span class="sbi">c</span> 1984</a></li>
+<li><a href="../140627/index.html">Canvas and the Close Pixelate script</a></li>
+<li id="crrnt"><b>&#9656;&#8194;</b>Web Audio API &#8211; 1st Approach</li>
+<li><a href="../140329/index.html">Audio visualizer &#8211; Atomic</a></li>
+<li><a href="../140329/starfield.html">Audio visualizer &#8211; Star field</a></li>
+<li><a href="../140323/index.html">Flash <span class="sbi">in memoriam</span></a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Notes to self</strong></li>
+<li><a href="../150504-3/index.html">Ordnance Survey map of Great Britain</a></li>
+<li><a href="../150511/index.html">xStand for iPad &#8211;&#160;The missing user manual</a></li>
+<li><a href="../140628/index.html">CSS blur animation</a></li>
+<li><a href="../150501/index.html">The CSS rule</a></li>
+<li><a href="../140319/index.html">On animated cursors</a></li>
+<li><a href="../150618/index.html">The concerts</a></li>
+</ul></nav><article><h2>Web Audio API &#8211; 1st Approach</h2><p>5 March, 2017<span> &#8211; Art.&#160;9</span> &#8211; First published on Ka of Isis 140405</p><p><span class="nb">Important: </span>This test will only work with WebKit-based browsers like Safari.</p><p class="pt15">Highpass filter</p><input id="highpass" type="range" min="0" max="1024" step="1" value="512" onchange="sliderChange(this)"><p>Pan</p><input id="pan" type="range" min="-3" max="3" step=".01" value="0" onchange="sliderChange(this)"><canvas width="260" height="200"><p class="nb">Your browser is too old for this.</p></canvas><p>Volume</p><input id="volume" type="range" min="0" max="1" step=".01" value="1" onchange="sliderChange(this)"><input id="play" type="button" value="Loop sound" onclick="toggleSound(this)"><p class="pt15 drpcp">Based on the Apple Developer article <a href="https://developer.apple.com/library/safari/documentation/audiovideo/conceptual/using_html5_audio_video/PlayingandSynthesizingSounds/PlayingandSynthesizingSounds.html"><i>Playing Sounds with the Web Audio API</i></a>, sound is read from a file on disk, passed through an audio filter, and looped while the audio spectrum is drawn on an HTML <code>canvas</code>. In WebKit-browsers like Safari, the audio context uses a <code>webkit</code> prefix for backward-compatibility reasons. Since the Web Audio API is a work in progress, specification details may change. Please note that the volume slider adjusts the output volume relative to the current system setting.</p></article><footer class="cL cntr">Impossiblue &#169; Bjørn Sortland</footer><noscript class="cntr">This site is shite without JavaScript</noscript></div><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script>window.jQuery || document.write('<script src="../../js/jquery.min.js"><\/script>')</script><script>$("nav button").click(function(){$("nav ul").toggle("fast");});
+//	START Playing Sounds with the Web Audio API (WebKit specific)
+//	Note 'onload' in body tag
+//	https://developer.apple.com/library/safari/documentation/audiovideo/conceptual/using_html5_audio_video/PlayingandSynthesizingSounds/PlayingandSynthesizingSounds.html
+//	Impossiblue: Slight visual modifications
+
+const PATH = "",
+	// SOUNDS = ['Basso', 'Blow', 'Bottle', 'Frog', 'Funk', 'Glass', 'Hero', 'Morse', 'Ping', 'Pop', 'Purr', 'Sosumi', 'Submarine', 'Tink'];
+	SOUNDS = ["Submarine"]; // Impossiblue: Testing w one sound, only (no randomness)
+var myAudioContext, myAudioAnalyser,
+	myBuffers = {}, mySource,
+	myNodes = {}, mySpectrum,
+	isPlaying = false;
+
+function init() {
+	if("webkitAudioContext" in window) {
+		myAudioContext = new webkitAudioContext();
+		// An analyser is used for the spectrum
+		myAudioAnalyser = myAudioContext.createAnalyser();
+		myAudioAnalyser.smoothingTimeConstant = .85;
+		myAudioAnalyser.connect(myAudioContext.destination);
+
+		fetchSounds();
+	}
+}
+
+function fetchSounds() {
+	var request = new XMLHttpRequest();
+	for (var i = 0, len = SOUNDS.length; i < len; i++) {
+		request = new XMLHttpRequest();
+		// The underscore prefix is a common naming convention
+		// To remind us that the variable is developer-supplied
+		request._soundName = SOUNDS[i];
+		request.open("GET", PATH + request._soundName + ".aiff", true);
+		request.responseType = "arraybuffer";
+		request.addEventListener("load", bufferSound, false);
+		request.send();
+	}
+}
+
+function bufferSound(event) {
+	var request = event.target;
+	var buffer = myAudioContext.createBuffer(request.response, false);
+	myBuffers[request._soundName] = buffer;
+}
+
+function selectRandomBuffer() {
+	var rand = Math.floor(Math.random() * SOUNDS.length);
+	var soundName = SOUNDS[rand];
+	return myBuffers[soundName];
+}
+
+function routeSound(source) {
+	myNodes.filter = myAudioContext.createBiquadFilter();
+	myNodes.panner = myAudioContext.createPanner();
+	myNodes.volume = myAudioContext.createGainNode();
+//	var compressor = myAudioContext.createDynamicsCompressor();
+
+	// Set node values to current slider values
+	var highpass = document.querySelector("#highpass").value;
+	var panX = document.querySelector("#pan").value;
+	var volume = document.querySelector("#volume").value;
+
+	myNodes.filter.type = 1; // Highpass
+	myNodes.filter.frequency.value = highpass;
+	myNodes.panner.setPosition(panX, 0, 0);
+	myNodes.volume.gain.value = volume;
+
+	// Pass source through series of nodes
+	source.connect(myNodes.filter);
+	myNodes.filter.connect(myNodes.panner);
+	myNodes.panner.connect(myNodes.volume);
+	myNodes.volume.connect(myAudioAnalyser);
+
+	return source;
+}
+
+function playSound() {
+	// Create a new AudioBufferSourceNode
+	var source = myAudioContext.createBufferSource();
+	source.buffer = selectRandomBuffer();
+	source.loop = true;
+	source = routeSound(source);
+	// Play right now (0 seconds from now)
+	// Can also pass myAudioContext.currentTime
+	source.noteOn(0);
+	mySpectrum = setInterval(drawSpectrum, 30); // Bjorn: Every 30 ms
+	mySource = source;
+}
+
+function pauseSound() {
+	var source = mySource;
+	source.noteOff(0);
+	clearInterval(mySpectrum);
+}
+
+function toggleSound(button) {
+	if(!isPlaying) {
+		playSound();
+		button.value = "Pause sound";
+		isPlaying = true;
+	}
+	else {
+		pauseSound();
+		button.value = "Loop sound"; // Originally: "Play random sound"
+		isPlaying = false;
+	}
+}
+
+function drawSpectrum() {
+	var canvas = document.querySelector("canvas");
+	var ctx = canvas.getContext("2d");
+	var width = canvas.width;
+	var height = canvas.height;
+	var bar_width = 7; // Originally: 10
+
+	ctx.clearRect(0, 0, width, height);
+
+	var freqByteData = new Uint8Array(myAudioAnalyser.frequencyBinCount);
+	myAudioAnalyser.getByteFrequencyData(freqByteData);
+
+	var barCount = Math.round(width / bar_width);
+	for (var i = 0; i < barCount; i++) {
+		var magnitude = freqByteData[i];
+		// Some values need adjusting to fit on the canvas
+		ctx.fillRect(bar_width * i, height, bar_width - 2, -magnitude + 60);
+		ctx.fillStyle = "#475f14"; // Impossiblue: Without this, the bars would be black. Based on: chimera.labs.oreilly.com/books/1234000001654/ch03.html#displaying_basic_text
+	}
+}
+
+function sliderChange(slider) {
+	if(myAudioContext.activeSourceCount > 0) {
+		if(slider.id == "highpass") {
+			var highpass = slider.value;
+			myNodes.filter.frequency.value = highpass;
+		}
+		else if(slider.id == "pan") {
+			var panX = slider.value;
+			myNodes.panner.setPosition(panX, 0, 0);
+		}
+		else if(slider.id == "volume") {
+			var volume = slider.value;
+			myNodes.volume.gain.value = volume;
+		}
+	}
+}
+
+//	END Playing Sounds with the Web Audio API...</script></body></html>

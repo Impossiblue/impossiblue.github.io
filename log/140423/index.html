@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: PHP - Random quote</title><meta name="description" content="How to generate a random quote for web pages using PHP."><meta name="author" content="https://impossiblue.github.io"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Impossiblue"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" sizes="152x152" href="../../touch-icon-ipad.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="../../start-up-1536x2008.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="../../start-up-1496x2048.png"><link rel="stylesheet" href="../../css/i.css"><!--[if lt IE 10]><link rel="stylesheet" href="../../css/ie.css"><![endif]--><style>.quote{margin-top:1em;border:1px solid #eef5df;padding:.75em 1em;color:#eef5df;background-color:rgba(0,0,0,.24);}</style></head><body><div id="ie">With geriatric Internet Explorer versions this site looks shite. This because Impossiblue is built with modern tools and would require hacks and workarounds to function in legacy browsers. I no longer have the patience nor the inclination to satisfy everybody. Impossiblue is an experiment and a playground &#8211;&#160;and my sustenance does not depend on it. As a concequence &#8211;&#160;to embarrass nobody &#8211;&#160;I have decided to lock you out. So, there.</div><div id="wrapper"><aside>17</aside><header id="masthead"><h1><a href="../../index.html">Impossiblue</a></h1></header><nav><button class="goEast" title="Menu">Open menu</button><ul>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Lorem ipsums</strong></li>
+<li><a href="../150504/index.html">How to add and centre a custom iPad wallpaper</a></li>
+<li><a href="../150421-2/index.html">How to make a screen dump on an iPad</a></li>
+<li><a href="../150421/index.html">How to permanently delete pictures from an iPad</a></li>
+<li><a href="../140502/index.html">PHP &#8211; Random image</a></li>
+<li><a href="../140426/index.html">PHP &#8211; How to get the width and height of an image</a></li>
+<li id="crrnt"><b>&#9656;&#8194;</b>PHP &#8211; Random quote</li>
+<li><a href="../140420/index.html">PHP &#8211; How to find pathnames matching a pattern</a></li>
+<li><a href="../141026/index.html">How to design a close-button with CSS</a></li>
+<li><a href="../140625/index.html">Film grain &#8211; Sort of</a></li>
+<li><a href="../140528/index.html">Noisy canvas &#8211; Dynamic</a></li>
+<li><a href="../140328/index.html">How to create a composite layer in Photoshop</a></li>
+<li><a href="../140312/index.html">Noisy background &#8211; Static</a></li>
+<li><a href="../100828/index.html">How to crop a movie with QuickTime Pro</a></li>
+<li><a href="../060216/index.html">Gradient mosaic</a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Rants and raves</strong></li>
+<li><a href="../150907/index.html">Jan Kjærstad &#8211;&#160;Storyteller</a></li>
+<li><a href="../150504-2/index.html">Rain on a window pane &#8211;&#160;JavaScript simulation</a></li>
+<li><a href="../150503/index.html">CSS throbbers &#8211;&#160;Part 2</a></li>
+<li><a href="../150407/index.html">CSS throbbers &#8211;&#160;Part 1</a></li>
+<li><a href="../150406/index.html">ResEdit and the recreation of the Mac OS wristwatch cursor animation</a></li>
+<li><a href="../141108/index.html">Kaja Norum</a></li>
+<li><a href="../141010/index.html">Kurt &#38; Kara <span class="sbi">c</span> 1984</a></li>
+<li><a href="../140627/index.html">Canvas and the Close Pixelate script</a></li>
+<li><a href="../140405/index.html">Web Audio API &#8211; 1st Approach</a></li>
+<li><a href="../140329/index.html">Audio visualizer &#8211; Atomic</a></li>
+<li><a href="../140329/starfield.html">Audio visualizer &#8211; Star field</a></li>
+<li><a href="../140323/index.html">Flash <span class="sbi">in memoriam</span></a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Notes to self</strong></li>
+<li><a href="../150504-3/index.html">Ordnance Survey map of Great Britain</a></li>
+<li><a href="../150511/index.html">xStand for iPad &#8211;&#160;The missing user manual</a></li>
+<li><a href="../140628/index.html">CSS blur animation</a></li>
+<li><a href="../150501/index.html">The CSS rule</a></li>
+<li><a href="../140319/index.html">On animated cursors</a></li>
+<li><a href="../150618/index.html">The concerts</a></li>
+</ul></nav><article><h2>PHP &#8211; Random quote</h2><p>5 March, 2017<span> &#8211; Art.&#160;17</span> &#8211; First published on Ka of Isis 140423</p><p><strong>Note: </strong>As <code>github.io</code> (where this website lives) does not support PHP, the result shown in this article, is a simulation.</p><h3>The PHP</h3><pre><code class="php">$quotes = array("1st quote","2nd quote","3rd quote","4th quote","5th quote");
+$rndm = rand(0,count($quotes)-1);
+echo $quotes[$rndm];</code></pre><p>Below, the PHP script is implemented in a regular HTML paragraph complete with italicized text and line breaks between quote and quotee, and enriched with CSS to fit the overall page layout.</p><pre><code class="html">&lt;p class="quote"&gt;&lt;?php
+$quotes = array("&#8216;Of the thirty-six ways out of difficulty, the best way of all is to run away.&#8217;&lt;br&gt;&#8211; Chinese proverb","&#8216;Strange about learning; the further I go the more I see that I never knew even existed. A short while ago I foolishly thought I could learn everything &#8211;&#160;all the knowledge in the world. Now I hope only to be able to know of its existence, and to understand one grain of it.&#8217;&lt;br&gt;&#8211; Charlie in Daniel Keyes&#8217; &lt;i&gt;Flowers for Algernon&lt;/i&gt;","&#8216;Men. It is a shame to us women that we make them.&#8217;&lt;br&gt;&#8211; Elderly Spanish woman in Ernest Hemingway&#8217;s &lt;i&gt;For whom the bell tolls&lt;/i&gt;","&#8216;There are three kinds of lies: Lies, damned lies, and statistics.&#8217;&lt;br&gt;&#8211; Quotee disputed","&#8216;Hope I die before I get old.&#8217;&lt;br&gt;&#8211; Pete Townshend in &lt;i&gt;My generation&lt;/i&gt;");
+$rndm = rand(0,count($quotes)-1);
+echo $quotes[$rndm];
+?>&lt;/p&gt;</code></pre><h3>The output</h3><p class="quote">&#8216;Men. It is a shame to us women that we make them.&#8217;<br>&#8211; Elderly Spanish woman in Ernest Hemingway&#8217;s <i>For whom the bell tolls</i></p><h3>Pros and cons</h3><p>When PHP alone is used to lift the heavy load, all search and programming routines take place in a &#8216;closed&#8217; environment obviating the necessity to translate between different file formats like PHP vs XML, or PHP vs TXT. Communication between client (browser) and server is kept to a minimum, saving bandwith. Another advantage is that it is difficult to rip a complete collection of quotes, images or what have you, as complete array contents are not revealed to the user. The PHP-file and its contents are inaccessible and only used internally by the server to build an HTML file. The client (customer), however, is dependent on the developer to update the document.</p></article><footer class="cL cntr">Impossiblue &#169; Bjørn Sortland</footer><noscript class="cntr">This site is shite without JavaScript</noscript></div><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script>window.jQuery || document.write('<script src="../../js/jquery.min.js"><\/script>')</script>
+<script src="../../js/highlight.pack.js"></script><!-- 9.9.0 - Custom-built for HTML, XML, CSS, JavaScript, and PHP -->
+<script>$("nav button").click(function(){$("nav ul").toggle("fast");});$("pre code").each(function(i,block){hljs.highlightBlock(block);});</script></body></html>

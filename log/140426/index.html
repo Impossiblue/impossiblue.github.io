@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: PHP - How to get the width and height of an image</title><meta name="description" content="PHP can be used to extract the pixel dimensions of an image. This information can be used to build an HTML block and insert the image as a background image."><meta name="author" content="https://impossiblue.github.io"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Impossiblue"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" sizes="152x152" href="../../touch-icon-ipad.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="../../start-up-1536x2008.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="../../start-up-1496x2048.png"><link rel="stylesheet" href="../../css/i.css"><!--[if lt IE 10]><link rel="stylesheet" href="../../css/ie.css"><![endif]--><style>.quote{margin-top:1.5em;border:1px solid #eef5df;padding:.75em 1em;color:#eef5df;background-color:rgba(0,0,0,.24);}#phpGenerated{position:relative;width:262px;height:312px;margin-top: 1.5em;background-image:url("fib.jpg");}#phpGenerated p{position:absolute;right:12px;bottom:0;-moz-transform:rotate(90deg);-webkit-transform:rotate(90deg);transform:rotate(90deg);-moz-transform-origin:right;-webkit-transform-origin:right;transform-origin:right;}</style></head><body><div id="ie">With geriatric Internet Explorer versions this site looks shite. This because Impossiblue is built with modern tools and would require hacks and workarounds to function in legacy browsers. I no longer have the patience nor the inclination to satisfy everybody. Impossiblue is an experiment and a playground &#8211;&#160;and my sustenance does not depend on it. As a concequence &#8211;&#160;to embarrass nobody &#8211;&#160;I have decided to lock you out. So, there.</div><div id="wrapper"><aside>18</aside><header id="masthead"><h1><a href="../../index.html">Impossiblue</a></h1></header><nav><button class="goEast" title="Menu">Open menu</button><ul>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Lorem ipsums</strong></li>
+<li><a href="../150504/index.html">How to add and centre a custom iPad wallpaper</a></li>
+<li><a href="../150421-2/index.html">How to make a screen dump on an iPad</a></li>
+<li><a href="../150421/index.html">How to permanently delete pictures from an iPad</a></li>
+<li><a href="../140502/index.html">PHP &#8211; Random image</a></li>
+<li id="crrnt"><b>&#9656;&#8194;</b>PHP &#8211; How to get the width and height of an image</li>
+<li><a href="../140423/index.html">PHP &#8211; Random quote</a></li>
+<li><a href="../140420/index.html">PHP &#8211; How to find pathnames matching a pattern</a></li>
+<li><a href="../141026/index.html">How to design a close-button with CSS</a></li>
+<li><a href="../140625/index.html">Film grain &#8211; Sort of</a></li>
+<li><a href="../140528/index.html">Noisy canvas &#8211; Dynamic</a></li>
+<li><a href="../140328/index.html">How to create a composite layer in Photoshop</a></li>
+<li><a href="../140312/index.html">Noisy background &#8211; Static</a></li>
+<li><a href="../100828/index.html">How to crop a movie with QuickTime Pro</a></li>
+<li><a href="../060216/index.html">Gradient mosaic</a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Rants and raves</strong></li>
+<li><a href="../150907/index.html">Jan Kjærstad &#8211;&#160;Storyteller</a></li>
+<li><a href="../150504-2/index.html">Rain on a window pane &#8211;&#160;JavaScript simulation</a></li>
+<li><a href="../150503/index.html">CSS throbbers &#8211;&#160;Part 2</a></li>
+<li><a href="../150407/index.html">CSS throbbers &#8211;&#160;Part 1</a></li>
+<li><a href="../150406/index.html">ResEdit and the recreation of the Mac OS wristwatch cursor animation</a></li>
+<li><a href="../141108/index.html">Kaja Norum</a></li>
+<li><a href="../141010/index.html">Kurt &#38; Kara <span class="sbi">c</span> 1984</a></li>
+<li><a href="../140627/index.html">Canvas and the Close Pixelate script</a></li>
+<li><a href="../140405/index.html">Web Audio API &#8211; 1st Approach</a></li>
+<li><a href="../140329/index.html">Audio visualizer &#8211; Atomic</a></li>
+<li><a href="../140329/starfield.html">Audio visualizer &#8211; Star field</a></li>
+<li><a href="../140323/index.html">Flash <span class="sbi">in memoriam</span></a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Notes to self</strong></li>
+<li><a href="../150504-3/index.html">Ordnance Survey map of Great Britain</a></li>
+<li><a href="../150511/index.html">xStand for iPad &#8211;&#160;The missing user manual</a></li>
+<li><a href="../140628/index.html">CSS blur animation</a></li>
+<li><a href="../150501/index.html">The CSS rule</a></li>
+<li><a href="../140319/index.html">On animated cursors</a></li>
+<li><a href="../150618/index.html">The concerts</a></li>
+</ul></nav><article><h2>PHP &#8211; How to get the width and height of an image</h2><p>5 March, 2017<span> &#8211; Art.&#160;18</span> &#8211; First published on Ka of Isis 140426</p><p><strong>Note: </strong>As <code>github.io</code> (where this website lives) does not support PHP, the results shown in this article, are simulations.</p><p class="drpcp">The width and height of an image are not always known. Take for instance a web gallery with contributions from different users or a slide show of randomly selected images. The image tag in HTML has traditionally been spec&#8217;ed with <code>width</code> and <code>height</code> values. With narrow bandwidhts, this will prevent the content of a browser window from jumping down when an image is finally loaded, because the browser can reserve the required space up front. The <code>canvas</code> tag also requires a known dimension. On the other hand, in responsive web design (where different screen widths are accounted for) widths and heights in image tags are mostly left out. This article will explore a special case where an image is used as a <em>background</em> image for a <code>div</code> tag. This appoach was chosen to allow text to overlay the image.</p><p>The following PHP code snippet collects four pieces of information about an image:</p><pre><code class="php">list($width, $height, $type, $attr) = getimagesize("image.jpg");</code></pre><p><code>$width</code> returns the <em>width</em> of the image (in pixels). <code>$height</code> returns the <em>height</em> of the image (in pixels). <code>$type</code> returns the image <em>type</em>. <code>$attr</code> returns both the <em>width</em> and the <em>height</em> of the image (in pixels) exactly as the code would be used in an HTML image tag. An example is appropriate; here with line breaks between each echoed value:</p><p class="quote">262<br>312<br>2<br>width="262" height="312"</p><p><strong>Note: </strong>In this example, image type <code>2</code> indicates a JPEG (aka JPG) image. The PHP manual maintains a list of <a href="http://www.php.net/manual/en/function.exif-imagetype.php">Imagetype Constants</a>.</p><p>In the following we are only concerned with <code>$width</code> and <code>$height</code> to specify the width and height of an HTML/CSS container.</p><h3>Now, this is what we do</h3><p>1. Place the following piece of code in the <code>head</code> of the HTML document, before the <code>style</code> tag (to follow):</p><pre><code class="php">&lt;?php list($width, $height) = getimagesize("image.jpg");?&gt;</code></pre><p>As already shown, this will load the two interesting values into memory.</p><p>2. Add a CSS style description to the <code>head</code>, somewhere <em>after</em> the PHP code but ideally after any main CSS link and before any JavaScript.</p><pre><code class="css">&lt;style&gt;
+#phpGenerated {
+	width: &lt;?php echo $width;?&gt;px;
+	height: &lt;?php echo $height;?&gt;px;
+	background-image: url("image.jpg");
+	}
+#phpGenerated p {
+	position: absolute;
+	right: 12px;
+	bottom: 0;
+	-moz-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+	-moz-transform-origin: right;
+	-webkit-transform-origin: right;
+	transform-origin: right;
+	}
+&lt;/style&gt;</code></pre><p>3. In the HTML <code>body</code>, set aside the space necessary for the image and the text to go on top of the picture:</p><pre><code class="html">&lt;div id="phpGenerated"&gt;
+	&lt;p&gt;&#169; Bjørn Sortland&lt;/p&gt;
+&lt;/div&gt;</code></pre><h3>This is what we get</h3><div id="phpGenerated"><p>&#169; Bjørn Sortland</p></div><h3>And this is something we <em>might</em> have to do</h3><p><span class="nb">Important: </span>It may be necessary to <code>CMOD</code> the image directory on the server to <code>755</code> for proper <code>read</code> accessibility. Some servers may also have difficulty finding an image if it is not stored in the same directory as the PHP file. Instead of the following&#8230;</p><pre><code class="php">list($width, $height) = getimagesize("/different/directory/image.jpg");</code></pre><p>&#8230;it may be necessary to search from root like so:</p><pre><code class="php">list($width, $height) = getimagesize($_SERVER&#91;"DOCUMENT_ROOT"&#93;."/different/directory/image.jpg");</code></pre></article><footer class="cL cntr">Impossiblue &#169; Bjørn Sortland</footer><noscript class="cntr">This site is shite without JavaScript</noscript></div><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script>window.jQuery || document.write('<script src="../../js/jquery.min.js"><\/script>')</script>
+<script src="../../js/highlight.pack.js"></script><!-- 9.9.0 - Custom-built for HTML, XML, CSS, JavaScript, and PHP -->
+<script>$("nav button").click(function(){$("nav ul").toggle("fast");});$("pre code").each(function(i,block){hljs.highlightBlock(block);});</script></body></html>

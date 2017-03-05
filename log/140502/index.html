@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: PHP &#8211; Random image</title><meta name="description" content="How to pick a random image via 1) an external PHP file and 2) with a PHP script internal to the page source."><meta name="author" content="https://impossiblue.github.io"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Impossiblue"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" sizes="152x152" href="../../touch-icon-ipad.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="../../start-up-1536x2008.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="../../start-up-1496x2048.png"><link rel="stylesheet" href="../../css/i.css"><!--[if lt IE 10]><link rel="stylesheet" href="../../css/ie.css"><![endif]--><style>.quote{margin:1.5em 0 1em;border:1px solid #eef5df;padding:.75em 1em;color:#eef5df;background-color:rgba(0,0,0,.24);}</style></head><body><div id="ie">With geriatric Internet Explorer versions this site looks shite. This because Impossiblue is built with modern tools and would require hacks and workarounds to function in legacy browsers. I no longer have the patience nor the inclination to satisfy everybody. Impossiblue is an experiment and a playground &#8211;&#160;and my sustenance does not depend on it. As a concequence &#8211;&#160;to embarrass nobody &#8211;&#160;I have decided to lock you out. So, there.</div><div id="wrapper"><aside>19</aside><header id="masthead"><h1><a href="../../index.html">Impossiblue</a></h1></header><nav><button class="goEast" title="Menu">Open menu</button><ul>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Lorem ipsums</strong></li>
+<li><a href="../150504/index.html">How to add and centre a custom iPad wallpaper</a></li>
+<li><a href="../150421-2/index.html">How to make a screen dump on an iPad</a></li>
+<li><a href="../150421/index.html">How to permanently delete pictures from an iPad</a></li>
+<li id="crrnt"><b>&#9656;&#8194;</b>PHP &#8211; Random image</li>
+<li><a href="../140426/index.html">PHP &#8211; How to get the width and height of an image</a></li>
+<li><a href="../140423/index.html">PHP &#8211; Random quote</a></li>
+<li><a href="../140420/index.html">PHP &#8211; How to find pathnames matching a pattern</a></li>
+<li><a href="../141026/index.html">How to design a close-button with CSS</a></li>
+<li><a href="../140625/index.html">Film grain &#8211; Sort of</a></li>
+<li><a href="../140528/index.html">Noisy canvas &#8211; Dynamic</a></li>
+<li><a href="../140328/index.html">How to create a composite layer in Photoshop</a></li>
+<li><a href="../140312/index.html">Noisy background &#8211; Static</a></li>
+<li><a href="../100828/index.html">How to crop a movie with QuickTime Pro</a></li>
+<li><a href="../060216/index.html">Gradient mosaic</a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Rants and raves</strong></li>
+<li><a href="../150907/index.html">Jan Kjærstad &#8211;&#160;Storyteller</a></li>
+<li><a href="../150504-2/index.html">Rain on a window pane &#8211;&#160;JavaScript simulation</a></li>
+<li><a href="../150503/index.html">CSS throbbers &#8211;&#160;Part 2</a></li>
+<li><a href="../150407/index.html">CSS throbbers &#8211;&#160;Part 1</a></li>
+<li><a href="../150406/index.html">ResEdit and the recreation of the Mac OS wristwatch cursor animation</a></li>
+<li><a href="../141108/index.html">Kaja Norum</a></li>
+<li><a href="../141010/index.html">Kurt &#38; Kara <span class="sbi">c</span> 1984</a></li>
+<li><a href="../140627/index.html">Canvas and the Close Pixelate script</a></li>
+<li><a href="../140405/index.html">Web Audio API &#8211; 1st Approach</a></li>
+<li><a href="../140329/index.html">Audio visualizer &#8211; Atomic</a></li>
+<li><a href="../140329/starfield.html">Audio visualizer &#8211; Star field</a></li>
+<li><a href="../140323/index.html">Flash <span class="sbi">in memoriam</span></a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Notes to self</strong></li>
+<li><a href="../150504-3/index.html">Ordnance Survey map of Great Britain</a></li>
+<li><a href="../150511/index.html">xStand for iPad &#8211;&#160;The missing user manual</a></li>
+<li><a href="../140628/index.html">CSS blur animation</a></li>
+<li><a href="../150501/index.html">The CSS rule</a></li>
+<li><a href="../140319/index.html">On animated cursors</a></li>
+<li><a href="../150618/index.html">The concerts</a></li>
+</ul></nav><article><h2>PHP &#8211; Random image</h2><p>5 March, 2017<span> &#8211; Art.&#160;19</span> &#8211; First published on Ka of Isis 140502</p><p><strong>Note: </strong>As <code>github.io</code> (where this website lives) does not support PHP, the scripts can not be shown with live examples.</p><h3>Credit</h3><p>This work is based on Marco Kuiper&#8217;s article <i><a href="http://www.marcofolio.net/webdesign/php_random_image_rotation.html">PHP Random Image Rotation</a></i>. As such, there is little new to learn here. A few small modifications, or localizations, rather, have been made to his external <code>rotate.php</code> script, so please download the original for differing uses. On his web site, Kuiper also explains how to use the program for more than just images.</p><p><span class="nb">Update: </span>It turns out that Kuiper (without reference) only echoes information in an earlier article, <a href="http://alistapart.com/article/randomizer/"><i>Random Image Rotation</i></a>, by Dan Benjamin. Refer to that for an in-depth discussion. Benjamin has later built on his script in a follow-up article, <a href="http://alistapart.com/article/betterrotator/"><i>A Better Image Rotator</i></a>.</p><p>Two approaches are discussed in this here article. The first uses the PHP file as per Kuiper. The second method finds a modified PHP script internal to the HTML. The latter does away with an additional server request to read the script, thus saving bandwith.</p><h3>HTML with reference to external PHP</h3><pre><code class="html">&lt;img src="random.php" alt="Random image"&gt;</code></pre><p>If the script is not stored in the same directory as the calling file, use:</p><pre><code class="html">&lt;img src="/path/from/root/to/random.php" alt="Random image"&gt;</code></pre><p><span class="nb">Important: </span>The script itself craves a path to the images via the <code>$folder</code> variable. The default works out of the box when images and srcipt live in the same directory. The external script&#8217;s built-in error detection routine depends on the script being referenced as the source (aka <code>src</code>) in an image tag. As it stands, it it not possible to use the same script for different image tags on the same page as this would serve an identical image for all the tags. Note also that the modified file has been renamed <code>random.php</code> for Impossiblue.</p><h3>PHP &#8220;internally&#8221; to HTML</h3><pre><code class="php">$folder = ".";
+$extList = array();
+$extList["gif"] = "image/gif";
+$extList["jpg"] = "image/jpeg";
+$extList["png"] = "image/png";
+$img = null;
+if(substr($folder,-1) != "/") {
+	$folder = $folder."/";
+}
+if(isset($_GET["img"])) {
+	$imageInfo = pathinfo($_GET["img"]);
+	if(isset($extList[strtolower($imageInfo["extension"])]) &#38;&#38; file_exists($folder.$imageInfo["basename"])) {
+		$img = $folder.$imageInfo["basename"];
+	}
+} else {
+	$fileList = array();
+	$handle = opendir($folder);
+	while(false !== ($file = readdir($handle))) {
+		$file_info = pathinfo($file);
+		if(isset($extList[strtolower($file_info["extension"])])) {
+			$fileList[] = $file;
+		}
+	}
+	closedir($handle);
+	if(count($fileList) > 0) {
+		$imageNumber = time() % count($fileList);
+		$img = $folder.$fileList[$imageNumber];
+	}
+}
+if($img!=null) {
+	$imageInfo = pathinfo($img);
+	$contentType = "Content-type: ".$extList[$imageInfo["extension"]];
+	header($contentType);
+	echo '&#60;img src="'.$img.'" alt="Random image"&#62;';
+} else echo "Hmm&#8230; no image available.";</code></pre><p>The original, elaborate error routine (excerpt below)&#8230;</p><pre><code class="php">else {
+	if ( function_exists('imagecreate') ) {
+		header ("Content-type: image/png");
+		$im = @imagecreate (100, 100)
+		    or die ("Cannot initialize new GD image stream");
+		$background_color = imagecolorallocate ($im, 255, 255, 255);
+		$text_color = imagecolorallocate ($im, 0,0,0);
+		imagestring ($im, 2, 5, 5, "IMAGE ERROR", $text_color);
+		imagepng ($im);
+		imagedestroy($im);
+	}
+}</code></pre><p>&#8230;can be replaced with a simple text message:</p><pre><code class="php">else echo "Hmm&#8230; no image available.";</code></pre><p>The message can be localized to suit the overall page design:</p><pre><code class="php">else echo '&lt;p class="quote"&gt;&lt;span class="nb"&gt;Hmm&#8230; &lt;/span&gt;no image available.&lt;/p&gt;';</code></pre><p>Here on Impossiblue (had PHP been available) this would yield:</p><p class="quote"><span class="nb">Hmm&#8230; </span>no image available.</p><p><strong>Note: </strong>The UTF-8 ellipsis (&#8230;) can not be employed in the <em>external</em> PHP script because text rendering for PHP-generated PNG images is restricted to what is informally referred to as Latin-2 encoding.</p><p>Any image with a gif-, jpg- or png-suffix would be considered on this page at Impossiblue, but <code>jpeg</code> (shudder) or <code>bmp</code> (smells like Windows), for instance, are supported with proper references to image types in the PHP script:</p><pre><code class="php">$extList["jpeg"] = "image/jpeg";
+$extList["bmp"] = "image/bmp";</code></pre></article><footer class="cL cntr">Impossiblue &#169; Bjørn Sortland</footer><noscript class="cntr">This site is shite without JavaScript</noscript></div><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script>window.jQuery || document.write('<script src="../../js/jquery.min.js"><\/script>')</script>
+<script src="../../js/highlight.pack.js"></script><!-- 9.9.0 - Custom-built for HTML, XML, CSS, JavaScript, and PHP -->
+<script>$("nav button").click(function(){$("nav ul").toggle("fast");});$("pre code").each(function(i,block){hljs.highlightBlock(block);});</script></body></html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: CSS throbbers - Part 1</title><meta name="description" content="An historical overview of loading animations in Netscape Navigator and old versions of Internet Explorer, together with loaders, spinners, and throbbers that make no sense. The busy hourglass in Windows and the Apple Computer wristwatch in Mac OS are revisited, renewed life for GIF animations are seen in cinemagraphs, and pure CSS is now used in throbbers."><meta name="author" content="https://impossiblue.github.io"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Impossiblue"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" sizes="152x152" href="../../touch-icon-ipad.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="../../start-up-1536x2008.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="../../start-up-1496x2048.png"><link rel="stylesheet" href="../../css/i.css"><!--[if lt IE 10]><link rel="stylesheet" href="../../css/ie.css"><![endif]--><style>.box{max-width:960px;margin-top:1.5em;border:1px solid #eef5df;}.ie{height:74px;background:#000 url("ie.gif") center no-repeat;}.nn{height:96px;background:#000 url("cmpss.gif") center no-repeat;}.spdrmn{height:450px;border:0;background:url("spdrmn.gif") center no-repeat;}.mdls{height:431px;border:0;background:url("mdls.gif") center no-repeat;}.w1{height:68px;background:#fff url("wndz.gif") center 4px no-repeat;}.w2{height:88px;background:#fff url("hrglss.gif") center no-repeat;}.w3{height:52px;background:#fff url("../150406/wwanim.gif") center no-repeat;}.w4{height:51px;background:#fff url("bll.gif") center no-repeat;}.box2{width:100%;height:66px;margin-top:1.5em;padding-top:18px;text-align:center;background-color:#fff;}
+/*	START Animation I - Modified from css-spinners.com/#/spinners/  */
+@-moz-keyframes timer {
+	0% { -moz-transform: rotate(0deg); }
+	100% { -moz-transform: rotate(360deg); }
+	}
+
+@-o-keyframes timer {
+	0% { -o-transform: rotate(0deg); }
+	100% { -o-transform: rotate(360deg); }
+	}
+@-webkit-keyframes timer {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+	}
+@keyframes timer {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+	}
+
+/*	Styles for old versions of IE  */
+.timer {
+	font-family: sans-serif;
+	font-weight: 100;
+	}
+
+/*	:not(:required) hides this rule from IE9 and below  */
+.timer:not(:required) {
+	border: 6px solid #333;
+	-moz-border-radius: 24px;
+	-ms-border-radius: 24px;
+	-o-border-radius: 24px;
+	-webkit-border-radius: 24px;
+	border-radius: 24px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	text-indent: -9999px;
+	width: 48px;
+	height: 48px;
+	}
+
+.timer:not(:required)::before {
+	-moz-animation: timer 1250ms infinite linear;
+	-ms-animation: timer 1250ms infinite linear;
+	-o-animation: timer 1250ms infinite linear;
+	-webkit-animation: timer 1250ms infinite linear;
+	animation: timer 1250ms infinite linear;
+	-moz-transform-origin: 3px 3px;
+	-ms-transform-origin: 3px 3px;
+	-o-transform-origin: 3px 3px;
+	-webkit-transform-origin: 3px 3px;
+	transform-origin: 3px 3px;
+	background: #333;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	content: "";
+	display: block;
+	position: absolute;
+	width: 6px;
+	height: 19.2px;
+	left: 15px;
+	top: 15px;
+	}
+.timer:not(:required)::after {
+	-moz-animation: timer 15000ms infinite linear;
+	-ms-animation: timer 15000ms infinite linear;
+	-o-animation: timer 15000ms infinite linear;
+	-webkit-animation: timer 15000ms infinite linear;
+	animation: timer 15000ms infinite linear;
+	-moz-transform-origin: 3px 3px;
+	-ms-transform-origin: 3px 3px;
+	-o-transform-origin: 3px 3px;
+	-webkit-transform-origin: 3px 3px;
+	transform-origin: 3px 3px;
+	background: #333;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	content: "";
+	display: block;
+	position: absolute;
+	width: 6px;
+	height: 16px;
+	left: 15px;
+	top: 15px;
+	}
+/*	END Animation I  */
+/*	START Animation II - Modified from signalvnoise.com/posts/2577-loading-spinner-animation-using-css-and-webkit  */
+.spinner {
+	position: relative;
+	width: 48px;
+	height: 48px;
+	display: inline-block;
+	}
+.spinner div {
+	width: 12%;
+	height: 26%;
+	background: #000;
+	position: absolute;
+	left: 44.5%;
+	top: 37%;
+	opacity: 0;
+	-webkit-animation: fade 1s linear infinite;
+	-webkit-border-radius: 50px;
+	-webkit-box-shadow: 0 0 3px rgba(0,0,0,.2);
+	}
+.spinner .bar1 {
+	-webkit-transform: rotate(0deg) translate(0,-142%);
+	-webkit-animation-delay: 0s;
+	}
+.spinner .bar2 {
+	-webkit-transform: rotate(30deg) translate(0,-142%);
+	-webkit-animation-delay: -.9167s;
+	}
+.spinner .bar3 {
+	-webkit-transform: rotate(60deg) translate(0,-142%);
+	-webkit-animation-delay: -.833s;
+	}
+.spinner .bar4 {
+	-webkit-transform: rotate(90deg) translate(0,-142%);
+	-webkit-animation-delay: -.75s;
+	}
+.spinner .bar5 {
+	-webkit-transform: rotate(120deg) translate(0,-142%);
+	-webkit-animation-delay: -.667s;
+	}
+.spinner .bar6 {
+	-webkit-transform: rotate(150deg) translate(0,-142%);
+	-webkit-animation-delay: -.5833s;
+	}
+.spinner .bar7 {
+	-webkit-transform: rotate(180deg) translate(0,-142%);
+	-webkit-animation-delay: -.5s;
+	}
+.spinner .bar8 {
+	-webkit-transform: rotate(210deg) translate(0,-142%);
+	-webkit-animation-delay: -.41667s;
+	}
+.spinner .bar9 {
+	-webkit-transform: rotate(240deg) translate(0,-142%);
+	-webkit-animation-delay: -.333s;
+	}
+.spinner .bar10 {
+	-webkit-transform: rotate(270deg) translate(0,-142%);
+	-webkit-animation-delay: -.25s;
+	}
+.spinner .bar11 {
+	-webkit-transform: rotate(300deg) translate(0,-142%);
+	-webkit-animation-delay: -.1667s;
+	}
+.spinner .bar12 {
+	-webkit-transform: rotate(330deg) translate(0,-142%);
+	-webkit-animation-delay: -.0833s;
+	}
+@-webkit-keyframes fade { from { opacity: 1; } to { opacity: .25; } }
+/*	END Animation II  */</style></head><body><div id="ie">With geriatric Internet Explorer versions this site looks shite. This because Impossiblue is built with modern tools and would require hacks and workarounds to function in legacy browsers. I no longer have the patience nor the inclination to satisfy everybody. Impossiblue is an experiment and a playground &#8211;&#160;and my sustenance does not depend on it. As a concequence &#8211;&#160;to embarrass nobody &#8211;&#160;I have decided to lock you out. So, there.</div><div id="wrapper"><aside>22</aside><header id="masthead"><h1><a href="../../index.html">Impossiblue</a></h1></header><nav><button class="goEast" title="Menu">Open menu</button><ul>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Lorem ipsums</strong></li>
+<li><a href="../150504/index.html">How to add and centre a custom iPad wallpaper</a></li>
+<li><a href="../150421-2/index.html">How to make a screen dump on an iPad</a></li>
+<li><a href="../150421/index.html">How to permanently delete pictures from an iPad</a></li>
+<li><a href="../140502/index.html">PHP &#8211; Random image</a></li>
+<li><a href="../140426/index.html">PHP &#8211; How to get the width and height of an image</a></li>
+<li><a href="../140423/index.html">PHP &#8211; Random quote</a></li>
+<li><a href="../140420/index.html">PHP &#8211; How to find pathnames matching a pattern</a></li>
+<li><a href="../141026/index.html">How to design a close-button with CSS</a></li>
+<li><a href="../140625/index.html">Film grain &#8211; Sort of</a></li>
+<li><a href="../140528/index.html">Noisy canvas &#8211; Dynamic</a></li>
+<li><a href="../140328/index.html">How to create a composite layer in Photoshop</a></li>
+<li><a href="../140312/index.html">Noisy background &#8211; Static</a></li>
+<li><a href="../100828/index.html">How to crop a movie with QuickTime Pro</a></li>
+<li><a href="../060216/index.html">Gradient mosaic</a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Rants and raves</strong></li>
+<li><a href="../150907/index.html">Jan Kjærstad &#8211;&#160;Storyteller</a></li>
+<li><a href="../150504-2/index.html">Rain on a window pane &#8211;&#160;JavaScript simulation</a></li>
+<li><a href="../150503/index.html">CSS throbbers &#8211;&#160;Part 2</a></li>
+<li id="crrnt"><b>&#9656;&#8194;</b>CSS throbbers &#8211;&#160;Part 1</li>
+<li><a href="../150406/index.html">ResEdit and the recreation of the Mac OS wristwatch cursor animation</a></li>
+<li><a href="../141108/index.html">Kaja Norum</a></li>
+<li><a href="../141010/index.html">Kurt &#38; Kara <span class="sbi">c</span> 1984</a></li>
+<li><a href="../140627/index.html">Canvas and the Close Pixelate script</a></li>
+<li><a href="../140405/index.html">Web Audio API &#8211; 1st Approach</a></li>
+<li><a href="../140329/index.html">Audio visualizer &#8211; Atomic</a></li>
+<li><a href="../140329/starfield.html">Audio visualizer &#8211; Star field</a></li>
+<li><a href="../140323/index.html">Flash <span class="sbi">in memoriam</span></a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Notes to self</strong></li>
+<li><a href="../150504-3/index.html">Ordnance Survey map of Great Britain</a></li>
+<li><a href="../150511/index.html">xStand for iPad &#8211;&#160;The missing user manual</a></li>
+<li><a href="../140628/index.html">CSS blur animation</a></li>
+<li><a href="../150501/index.html">The CSS rule</a></li>
+<li><a href="../140319/index.html">On animated cursors</a></li>
+<li><a href="../150618/index.html">The concerts</a></li>
+</ul></nav><article><h2>CSS throbbers &#8211;&#160;Part 1</h2><p>5 March, 2017<span> &#8211; Art.&#160;22</span> &#8211; First published on Ka of Isis 150407</p><p>Loders. Loader animations. Spinners. They go by many names, but calling them <i>spinners</i> is misleading in at least two departments. First of all, <a href="http://en.wikipedia.org/wiki/Spinner_(computing)">in the context of computing</a>&#8230;</p><p><i>A spinner or numeric updown is a graphical control element with which a user may adjust a value in an adjoining text box by either clicking on an up or down arrow, or by holding an arrow down, causing the value in the text box to increase&#8230;</i></p><p>Secondly, they do not all spin. Some of them are more throbbing or pulsating &#8211;&#160;and <i>throbbers</i> are actually the official word for them. To save you the <a href="http://en.wikipedia.org/wiki/Throbber">jump to Wikipedia</a>, here is what is written:</p><p><i>A throbber is an animated graphical control element that visualizes that the program is performing an action in the background (such as downloading content, conducting intensive calculations or communicating with an external device). In contrast to a progress bar, a throbber does not convey how much of the action has been completed.</i></p><div class="box ie"></div><p>The infamous 1996 animation above (immaculately recreated by <a href="http://www.slimlab.net/downloads/viewdownload/6-misc/9-internet-explorer-3-animated-logo-kit.html">SLIM Laborat&#243;rios</a>), supposedly told the user that the browser was busy at work. Like with most things Microsoft, they applied their not-invented-here philosophy to the logo in Internet Explorer, something which had already been eye candy in Mosaic and the Netscape browsers. When the latter was up for revision in 1995, the developers announced a public contest for a new logo animation, received more than a hundred submissions of which one with meteors streaking across a night sky was tweaked and used. Jamie Zawinski <a href="http://www.jwz.org/doc/about-jwz.html">sheds some light</a> on that history and confides that he had a different favourite:</p><div class="box nn"></div><p>A spin-off from the throbber is the decorative animation often seen on web pages. I do not know what it is with Americans and their obsession with super heroes but I <em>do</em> get the connection between a static comics illustration and the animated motion picture:</p><div class="box spdrmn"></div><p>GIF animations have enjoyed a revival in later years, both in terms of quality and content. <i>Cinemagraphs</i> they are often called and photographer Jamie Beck and web designer Kevin Burg show us that the inherent maximum of only 256 colours is not necessarily a limitation:</p><div class="box mdls"></div><h3>Throbbers that make no sense</h3><div class="box w1"></div><p class="fig">Fig. If you copy only one file in Windows, the animation above is illogical. And why do the copies disappear from the receiving folder?</p><div class="box w2"></div><p class="fig">Fig. &#8216;Ha, ha, fooled you there, didn&#8217;t we? Thought everything was ready? No, we just turn it around and then you&#8217;ll have to wait some more.&#8217; Animation by yours truly; who cannot believe that he wasted the better part of a beautiful Sunday to recreate something as ugly as that Windows cursor!</p><h3>A throbber that makes sense &#8211;&#160;sort of</h3><div class="box w3"></div><p class="fig">Fig. Apple Computer didn&#8217;t quite cut it with the early Mac OS wristwatch cursor animation. While the minute hand spins freely, the hour hand is stuck at 9&#160;o&#8217;clock. Please make a detour to a different article to check out my <a href="../150406/index.html">recreation of the cursor</a>.</p><h3>Throbbers that make sense</h3><div class="box w4"></div><p class="fig">Fig. This spinning ball from Mac OS sends the correct message; &#8220;Please wait!&#8221;.</p><div class="box2"><!-- START css-spinners.com/#/spinners/ --><div class="timer">Loading&#8230;</div><!-- END css-spinners.com/#/spinners/ --></div><p class="fig">Fig. The old Mac OS idea done properly. This throbber from <a href="http://css-spinners.com/">css-spinners.com</a> is pure CSS; no image(s).</p><div class="box2"><!-- START signalvnoise.com/posts/2577-loading-spinner-animation-using-css-and-webkit --><div class="spinner"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div><div class="bar5"></div><div class="bar6"></div><div class="bar7"></div><div class="bar8"></div><div class="bar9"></div><div class="bar10"></div><div class="bar11"></div><div class="bar12"></div></div><!-- END signalvnoise.com/posts/2577-loading-spinner-animation-using-css-and-webkit --></div><p class="fig">Fig. As it stands, this pure CSS throbber from <a href="https://signalvnoise.com/posts/2577-loading-spinner-animation-using-css-and-webkit">signalvnoise.com</a> only works in WebKit-based browsers like Safari and Chrome. Though not tested, given the right <a href="http://www.sitepoint.com/web-foundations/vendor-specific-properties/">vendor-specific properties</a> it should/might also work in different browsers.</p><p class="pt15">Which brings us full circle back to the title of this article, <i>CSS throbbers &#8211;&#160;Part 1</i>, and the follow-up, <a href="../150503/index.html"><i>CSS throbbers &#8211;&#160;Part 2</i></a>.</p></article><footer class="cL cntr">Impossiblue &#169; Bjørn Sortland</footer><noscript class="cntr">This site is shite without JavaScript</noscript></div><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script>window.jQuery || document.write('<script src="../../js/jquery.min.js"><\/script>')</script><script>$("nav button").click(function(){$("nav ul").toggle("fast");});</script></body></html>
