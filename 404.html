@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: File not found</title><script>sessionStorage.redirect = location.href;</script><meta http-equiv="refresh" content="0;URL='/impossiblue.github.io'"></meta></head><body><!--
+
+Note to self: A workaround to solve the GitHub 404-problem
+
+https://www.smashingmagazine.com/2016/08/sghpa-single-page-app-hack-github-pages/
+
+https://github.com/csuwildcat/sghpa/blob/master/404.html
+
+Buchner's initial idea was to clone the 'index.html' file and rename it '404.html'. This way, the user would not see a custom 404-page but a page (visually) identical to the home page. It turns out, however, that this is not good for SEO as the page is still served with a status code of 404.
+
+So, Buchner came up with the idea of a meta-based redirect routine instead. A meta tag with a refresh value of 0 appears to be treated as a 301 redirect by search engines, which works out well for this use case.
+
+Necessity: This file must total more than 512 bytes. If it does not, Internet Explorer will disregard it and show a generic browser 404 page instead. 
+
+--></body></html>
