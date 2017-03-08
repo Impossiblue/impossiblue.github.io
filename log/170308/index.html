@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: Styling an HTML input element</title><meta name="description" content="How to style an HTML input button with CSS."><meta name="author" content="https://impossiblue.github.io"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Impossiblue"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" sizes="152x152" href="../../touch-icon-ipad.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="../../start-up-1536x2008.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="../../start-up-1496x2048.png"><link rel="stylesheet" href="../../css/i.css"><!--[if lt IE 10]><link rel="stylesheet" href="../../css/ie.css"><![endif]--><style>article>img{border:0;}input[type="button"]{-moz-appearance:none;-webkit-appearance:none;appearance:none;margin-top:.75em;}</style></head><body><div id="ie">With geriatric Internet Explorer versions this site looks shite. This because Impossiblue is built with modern tools and would require hacks and workarounds to function in legacy browsers. I no longer have the patience nor the inclination to satisfy everybody. Impossiblue is an experiment and a playground &#8211;&#160;and my sustenance does not depend on it. As a concequence &#8211;&#160;to embarrass nobody &#8211;&#160;I have decided to lock you out. So, there.</div><div id="wrapper"><aside>33</aside><header id="masthead"><h1><a href="../../index.html">Impossiblue</a></h1></header><nav><button class="goEast" title="Menu">Open menu</button><ul>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Lorem ipsums</strong></li>
+<li id="crrnt"><b>&#9656;&#8194;</b>Styling an HTML <code>input</code> element</a></li>
+<li><a href="../150504/index.html">How to add and centre a custom iPad wallpaper</a></li>
+<li><a href="../150421-2/index.html">How to make a screen dump on an iPad</a></li>
+<li><a href="../150421/index.html">How to permanently delete pictures from an iPad</a></li>
+<li><a href="../140502/index.html">PHP &#8211; Random image</a></li>
+<li><a href="../140426/index.html">PHP &#8211; How to get the width and height of an image</a></li>
+<li><a href="../140423/index.html">PHP &#8211; Random quote</a></li>
+<li><a href="../140420/index.html">PHP &#8211; How to find pathnames matching a pattern</a></li>
+<li><a href="../141026/index.html">How to design a close-button with CSS</a></li>
+<li><a href="../140625/index.html">Film grain &#8211; Sort of</a></li>
+<li><a href="../140528/index.html">Noisy canvas &#8211; Dynamic</a></li>
+<li><a href="../140328/index.html">How to create a composite layer in Photoshop</a></li>
+<li><a href="../140312/index.html">Noisy background &#8211; Static</a></li>
+<li><a href="../100828/index.html">How to crop a movie with QuickTime Pro</a></li>
+<li><a href="../060216/index.html">Gradient mosaic</a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Rants and raves</strong></li>
+<li><a href="../150907/index.html">Jan Kjærstad &#8211;&#160;Storyteller</a></li>
+<li><a href="../150504-2/index.html">Rain on a window pane &#8211;&#160;JavaScript simulation</a></li>
+<li><a href="../150503/index.html">CSS throbbers &#8211;&#160;Part 2</a></li>
+<li><a href="../150407/index.html">CSS throbbers &#8211;&#160;Part 1</a></li>
+<li><a href="../150406/index.html">ResEdit and the recreation of the Mac OS wristwatch cursor animation</a></li>
+<li><a href="../141108/index.html">Kaja Norum</a></li>
+<li><a href="../141010/index.html">Kurt &#38; Kara <span class="sbi">c</span> 1984</a></li>
+<li><a href="../140627/index.html">Canvas and the Close Pixelate script</a></li>
+<li><a href="../140405/index.html">Web Audio API &#8211; 1st Approach</a></li>
+<li><a href="../140329/index.html">Audio visualizer &#8211; Atomic</a></li>
+<li><a href="../140329/starfield.html">Audio visualizer &#8211; Star field</a></li>
+<li><a href="../140323/index.html">Flash <span class="sbi">in memoriam</span></a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Notes to self</strong></li>
+<li><a href="../150504-3/index.html">Ordnance Survey map of Great Britain</a></li>
+<li><a href="../170307/index.html">q</a></li>
+<li><a href="../150511/index.html">xStand for iPad &#8211;&#160;The missing user manual</a></li>
+<li><a href="../140628/index.html">CSS blur animation</a></li>
+<li><a href="../150501/index.html">The CSS rule</a></li>
+<li><a href="../140319/index.html">On animated cursors</a></li>
+<li><a href="../150618/index.html">The concerts</a></li>
+</ul></nav><article><h2>Styling an HTML <code>input</code> element</h2><p>8 March, 2017<span> &#8211; Art.&#160;33</span></p><p>The HTML &lt;input&gt; element is used to create interactive controls for web-based forms in order to accept data from the user. How an &lt;input&gt; works varies depending on the value of its attribute.</p><p>Attribute examples include <code>autocomplete</code>, <code>name</code>, <code>src</code>, and <code>type</code>.</p><p>The latter, for instance, can take one of several values depending on the type of control to display. The default is <code>text</code> and that is used if nothing else is specified. This article will concentrate on the <code>button</code> value. The <code>button</code> is a push (aka click or touch) button with no default behaviour. This is how it might look in HTML:</p><pre><code class="html">&lt;input id="myId" type="button" value="1" title="My title"&gt;</code></pre><p>The default <em>appearance</em> of the button in browsers has been a thorn in the side of designers and developers over the years as restyling (e.g. to fit the overall atmosphere of a web site) has been notoriously difficult to achieve.</p><p>You <em>may</em> get away with a simple <code>border-</code> and <code>border-radius</code>-styling and hooray the following on your desktop screen&#8230;</p><img src="btn-1.png" width="124" height="38" alt="Button on desktop"><p>&#8230;only to wake up to <em>this</em> depressing sight on your iPad:</p><img src="btn-2.png" width="126" height="31" alt="Button on iPad"><p>The <code>appearance</code> property of CSS to the rescue: It is used to display an element using a platform-native styling based on the operating system&#8217;s theme. A partial list (excluding vendor-specific identifiers) includes:</p><p><code>appearance: none;<br>appearance: button;<br>appearance: checkbox;<br>appearance: scrollbarbutton-up;</code></p><p>The <code>none</code> in there strips out vendor-specific styling, i.e. no special styling is applied, and (disregarding early bug reports) we will take advantage of it in what follows. Not, however, without a proper <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-appearance">warning from MDN</a>:</p><p class="bq">If you wish to use this property on websites, you should test it very carefully &#8211;&#160;it is non-standard, and its behavior changes from one browser to another. The differences are smaller in the newest browsers, but historically they have been bigger. In older browsers even the keyword <code>none</code> does not have the same behavior on each form element across different browsers, and some do not support it at all.</p><p>With the small print out of the way, here is a starter in CSS:</p><pre><code class="css">input&#91;type="button"&#93; &#123;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	&#125;</code></pre><p>That code is supposed to strip out browser specific appearance. We are back to scratch, so to speak, and left to apply our own styling. The example below will (should) produce the square button proper.</p><h3>CSS</h3><pre><code class="css">input&#91;type="button"&#93; &#123;
+	/* START Stripping */
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	/* END Stripping */
+	/* START Styling */
+	width: auto; /* Or left out or specific */
+	height: auto; /* Or left out or specific */
+	margin-top: .75em; /* Example */
+	border: 1px solid #eef5df;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	padding: .7em 1em .5em;
+	font: 1.6em "Chunk Five Regular", sans-serif;
+	font-weight: normal;
+	color: #eef5df;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	background-color: #475f14;
+	cursor: pointer;
+	display: block;
+	/* END Styling */
+	/* Note: Shadow added globally via :hover */
+	&#125;</code></pre><h3>HTML</h3><pre><code class="html">&lt;input type="button" value="Loop sound" onclick="alert('Add some JavaScript');"&gt;</code></pre><h3>The result</h3><input type="button" value="Loop sound" onclick="alert('Add some JavaScript');"><p class="pt15">On its own the button does nada. Pared with some JavaScript it has the potential to reinstate tzardom in Russia. <em>That</em>, however, is outside the scope of this rambling.</p><p><span class="nb">Note: </span>This article never set out to compare <code>input type="button"</code> to the HTML <code>&lt;button&gt;</code> element. MDN has a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button">springboard</a> for <em>that</em> jump.</p></article><footer class="cL cntr">Impossiblue &#169; Bjørn Sortland</footer><noscript class="cntr">This site is shite without JavaScript</noscript></div><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script>window.jQuery || document.write('<script src="../../js/jquery.min.js"><\/script>')</script><script src="../../js/highlight.pack.js"></script><!-- 9.9.0 - Custom-built for HTML, XML, CSS, JavaScript, and PHP --><script>$("nav button").click(function(){$("nav ul").toggle("fast");});$("pre code").each(function(i,block){hljs.highlightBlock(block);});</script></body></html>
