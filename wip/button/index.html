@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: xxxxxxxxxxxx</title>
+
+<meta name="robots" content="noindex,nofollow">
+
+<!-- link rel="stylesheet" href="../../css/i.css" -->
+
+<style>
+
+/*	START Navigation  */
+
+nav {
+	position: relative;
+	width: 100%; /* Makes list items (links) span the full width of the content area */
+	margin-bottom: 12px;
+	font-size: 1.8em;
+	}
+
+/*	START Endringer  */
+/*	Use 'nav button' and not 'button' to differentiate from buttons in articles  */
+nav button {
+	position: relative;
+	width: 37px; /* Apple says 44x44. Shh… */
+	height: 31px;
+	border: 1px solid #eef5df;
+	background-color: rgba(0,0,0,.24); /* #93bf35; */
+	cursor: pointer;
+	}
+/*	END Endringer  */
+
+/*	START Endringer - NB! Nytt navn  */
+nav button::before {
+	position: absolute;
+	top: 7px;
+	left: 7px;
+	width: 21px;
+	height: 3px;
+	background-color: #eef5df;
+	content: "";
+	-webkit-box-shadow: 0 6px 0 #eef5df, 0 12px 0 #eef5df;
+	box-shadow: 0 6px 0 #eef5df, 0 12px 0 #eef5df; /* Any number of shadows, separated by commas - https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow */
+	display: block;
+	}
+nav button.noPseudo::before { display: none; } /* See JS */
+
+/*	END Endringer  */
+
+/*	START Nytt  */
+
+nav button div {
+	position: absolute;
+	top: 0;
+	left: 0;
+/*	width: 21px;
+	height: 21px;
+	border: 2px solid #eef5df;
+	background-color: #ff5248;
+	border-radius: 50%; */
+	display: none; /* Manipulated w JS */
+	}
+nav button div::before, nav button div::after {
+	position: absolute;
+	top: 13px;
+	left: 6px;
+	width: 23px;
+	height: 3px;
+	content: "";
+	background-color: #eef5df;
+	}
+nav button div::before {
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	}
+nav button div::after {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	}
+
+/*	END Nytt  */
+
+nav ul {
+	margin: 11px 0 7px;
+	border: 1px solid #eef5df;
+	border-bottom-width: 0;
+	line-height: 1.2;
+	background-color: rgba(0,0,0,.24);
+	display: none; /* Toggled w JS */
+	}
+nav li {
+	border-bottom: 1px solid #eef5df;
+	padding: .55em .75em;
+	}
+.ctgr, .ctgr:hover { color: #475f14; }
+#crrnt:hover, .ctgr:hover { background-color: transparent; }
+nav b { font: normal Arial; } /* Down arrow; glyph checked in InDesign */
+nav a { display: block; } /* Clickable full length */
+nav li:hover, nav a:hover {
+	color: #eef5df;
+	background-color: #475f14;
+	}
+nav button:hover, nav ul:hover, #home article:hover {
+	-webkit-box-shadow: 0 0 12px 3px rgba(0,0,0,.3);
+	box-shadow: 0 0 12px 3px rgba(0,0,0,.3);
+	}
+
+/*	START Endringer  */
+.goEast {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	color: transparent; /* Bjorn. Necessary as start of text can be seen in padding area */
+	}
+/*	END Endringer  */
+
+/*	END Navigation  */
+
+</style>
+
+</head><body>
+
+<nav>
+
+<!-- START Endring -->
+
+<!-- button class="goEast" title="Menu">Open menu</button -->
+
+<button class="goEast" title="Menu">Open menu<div></div></button>
+
+<!-- END Endring -->
+
+
+<ul><li id="crrnt"><b>&#9656;&#8194;</b>Whatever</li></ul>
+
+</nav>
+
+<p>xxxxxxxxxxxx</p>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../js/jquery.min.js"><\/script>')</script>
+
+<script>
+
+//	START Endringer
+
+//	Except for 'content' it is not possible to directly access a pseudo-element's properties w JS as the element is not part of the DOM.
+//	Workaround based on http://stackoverflow.com/questions/28147972/hide-before-and-after-pseudo-elements-if-the-div-has-no-children
+//	Note 'noPseudo'-class defined in CSS w pseudo-element
+
+var pseudo = true;
+
+$("nav button").click(function(){
+
+	//	Toggle menu
+	$("nav ul").toggle("fast");
+
+	//	Remove/Show menu-"icon" (aka the 3 parallel lines)
+	if(pseudo === true){
+		$("nav button").addClass("noPseudo");
+		pseudo = false;
+	} else {
+		$("nav button").removeClass("noPseudo");
+		pseudo = true;
+	}
+
+	//	Toggle close-"icon" (aka the 'x')
+	$("nav button div").toggle("fast");
+
+});
+
+//	END Endringer
+
+
+</script>
+
+</body></html>
