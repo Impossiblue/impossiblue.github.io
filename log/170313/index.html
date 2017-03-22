@@ -1,24 +1,21 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: Pure CSS shapes</title><meta name="description" content="Using CSS-only to form geometrical shapes. Work in progress."><meta name="author" content="https://impossiblue.github.io"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Impossiblue"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" sizes="152x152" href="../../touch-icon-ipad.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="../../start-up-1536x2008.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="../../start-up-1496x2048.png"><link rel="stylesheet" href="../../css/i.css"><!--[if lt IE 10]><link rel="stylesheet" href="../../css/ie.css"><![endif]--><style>article{text-align:center;}article>div{margin:0 auto;}
 
-/*	START Target - A box-shadow experiment  */
-
+/*	1  */
 #target {
 	width: 28px;
 	height: 28px;
 	margin: 63px auto 56px; /* FPO */
 	border-radius: 50%;
-	background-color: #ffd700; /* gold (aka Bullseye */
+	background-color: #ffd700; /* gold (aka bullseye) */
 	/* Offset-x | Offset-y | Blur-radius | Spread-radius | Colour */
 	/* Add as many shadows as needed */
 	/* Note: The shadow(s) do not add to the (calculated) total width of the 'div' */
 	/* Example colours: tomato | Bluish | Greyish | Off-white */
+	-moz-box-shadow: 0 0 0 14px #ff6347, 0 0 0 28px #6eb2c1, 0 0 0 42px #5a5a5a, 0 0 0 56px #eef5df;
+	-webkit-box-shadow: 0 0 0 14px #ff6347, 0 0 0 28px #6eb2c1, 0 0 0 42px #5a5a5a, 0 0 0 56px #eef5df;
 	box-shadow: 0 0 0 14px #ff6347, 0 0 0 28px #6eb2c1, 0 0 0 42px #5a5a5a, 0 0 0 56px #eef5df;
 	}
-
-/*	END Target...  */
-
-/*	START RAF - A pseudo-element experiment  */
-
+/*	2  */
 #raf {
 	position: relative;
 	width: 144px;
@@ -37,8 +34,15 @@
 	background-color: #c60c30;
 	content: "";
 	}
-
-/*	END RAF...  */
+/*	3  */
+#outline {
+	width: 36px;
+	height: 36px;
+	margin: 18px auto;
+	border: 18px solid #c2dc88;
+	background-color: #475f14;
+	outline: 18px solid #eef5df;
+	}
 
 </style></head><body><div id="ie">With geriatric Internet Explorer versions this site looks shite. This because Impossiblue is built with modern tools and would require hacks and workarounds to function in legacy browsers. I no longer have the patience nor the inclination to satisfy everybody. Impossiblue is an experiment and a playground &#8211;&#160;and my sustenance does not depend on it. As a concequence &#8211;&#160;to embarrass nobody &#8211;&#160;I have decided to lock you out. So, there.</div><div id="wrapper"><aside>34</aside><header id="masthead"><h1><a href="../../index.html">Impossiblue</a></h1></header><nav><button class="goEast" title="Menu">Open menu<div></div></button><ul>
 <li class="ctgr"><b>&#9662;&#8194;</b><strong>Lorem ipsums</strong></li>
@@ -58,6 +62,8 @@
 <li><a href="../100828/index.html">How to crop a movie with QuickTime Pro</a></li>
 <li><a href="../060216/index.html">Gradient mosaic</a></li>
 <li class="ctgr"><b>&#9662;&#8194;</b><strong>Rants and raves</strong></li>
+<li><a href="../170322/index.html">Rapha&#235;l or Thinking outside the box</a></li>
+<li><a href="../170315/index.html">CSS throbbers &#8211;&#160;Part 3</a></li>
 <li><a href="../150907/index.html">Jan Kjærstad &#8211;&#160;Storyteller</a></li>
 <li><a href="../150504-2/index.html">Rain on a window pane &#8211;&#160;JavaScript simulation</a></li>
 <li><a href="../150503/index.html">CSS throbbers &#8211;&#160;Part 2</a></li>
@@ -81,7 +87,8 @@
 <li><a href="../150618/index.html">The concerts</a></li>
 </ul></nav><article><h2>Pure CSS shapes</h2><p>First published 13 March, 2017<span> &#8211; Art.&#160;34</span></p><p>This is a work in progress. New shapes<span class="lt"> will </span>may be added from time to time. Dissect the page source to see construction methods and comments.</p>
 
-<div id="target"></div><p class="fig">Fig. Archery target.</p>
-<div id="raf"></div><p class="fig">Fig. RAF roundel &#8211;&#160;Keith Moon in memoriam.</p>
+<!-- 1 --><div id="target"></div><p class="fig">Fig 1. Archery target.</p>
+<!-- 2 --><div id="raf"></div><p class="fig">Fig 2. RAF roundel &#8211;&#160;Keith Moon in memoriam.</p>
+<!-- 3 --><div id="outline"></div><p class="fig">Fig 3. This must be the easiest way to add 2 borders to a square or a rectangle. For the block must have 90 deg angles as the outline itself always strives to achieve that. And one more thing: An outline does not take up space in the flow of the document so some sort of buffer is needed around the element.</p>
 
 </article><footer class="cL cntr">Impossiblue &#169; Bjørn Sortland</footer><noscript class="cntr">This site is shite without JavaScript</noscript></div><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script>window.jQuery || document.write('<script src="../../js/jquery.min.js"><\/script>')</script><script>var pseudo=true;$("nav button").click(function(){$("nav ul").toggle("fast");if(pseudo===true){$("nav button").addClass("noPseudo");pseudo=false;}else{$("nav button").removeClass("noPseudo");pseudo=true;}$("nav button div").toggle("fast");});</script></body></html>
