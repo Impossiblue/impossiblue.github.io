@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: Pseudo-elements and the image tag</title><meta name="description" content="Workarounds to add pseudo-elements to images."><meta name="author" content="https://impossiblue.github.io"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Impossiblue"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" sizes="152x152" href="../../touch-icon-ipad.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="../../start-up-1536x2008.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="../../start-up-1496x2048.png"><link rel="stylesheet" href="../../css/i.css"><!--[if lt IE 10]><link rel="stylesheet" href="../../css/ie.css"><![endif]--><style>article img{width:80px;border:0 !important;}.outline img{margin:1.5em 6px 0 0;outline:1px dotted #eef5df;}#litmus::before{color:#fc0;content:"Before";}#litmus::after{color:#900;content:"After";}#imgTag,#divTag,#imgContainer,svg,#bgImage{position:relative;}#imgTag::before,#divTag::before,#imgContainer::before,svg::before,#bgImage::before{position:absolute;width:80px;content:url("before.svg");}#imgTag::after,#divTag::after,#imgContainer::after,svg::after,#bgImage::after{position:absolute;width:80px;content:url("after.svg");}#imgContainer::after{top:0;left:0;}#divTag,#bgImage{width:80px;height:152px;}#divTag{background-color:rgba(0,0,0,.24);}svg{width:80px;}#bgImage{background-image:url("rocket.svg");}#divTag,#imgContainer,svg #bgImage{margin-top:1.5em;}</style></head><body><div id="ie">With geriatric Internet Explorer versions this site looks shite. This because Impossiblue is built with modern tools and would require hacks and workarounds to function in legacy browsers. I no longer have the patience nor the inclination to satisfy everybody. Impossiblue is an experiment and a playground &#8211;&#160;and my sustenance does not depend on it. As a concequence &#8211;&#160;to embarrass nobody &#8211;&#160;I have decided to lock you out. So, there.</div><div id="wrapper"><aside>37</aside><header id="masthead"><h1><a href="../../index.html">Impossiblue</a></h1></header><nav><button class="goEast" title="Menu">Open menu<div></div></button><ul>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Lorem ipsums</strong></li>
+<li id="crrnt"><b>&#9656;&#8194;</b>Pseudo-elements and the image tag</li>
+<li><a href="../170308/index.html">Styling an HTML <code>input</code> element</a></li>
+<li><a href="../150504/index.html">How to add and centre a custom iPad wallpaper</a></li>
+<li><a href="../150421-2/index.html">How to make a screen dump on an iPad</a></li>
+<li><a href="../150421/index.html">How to permanently delete pictures from an iPad</a></li>
+<li><a href="../140502/index.html">PHP &#8211; Random image</a></li>
+<li><a href="../140426/index.html">PHP &#8211; How to get the width and height of an image</a></li>
+<li><a href="../140423/index.html">PHP &#8211; Random quote</a></li>
+<li><a href="../140420/index.html">PHP &#8211; How to find pathnames matching a pattern</a></li>
+<li><a href="../141026/index.html">How to design a close-button with CSS</a></li>
+<li><a href="../140625/index.html">Film grain &#8211; Sort of</a></li>
+<li><a href="../140528/index.html">Noisy canvas &#8211; Dynamic</a></li>
+<li><a href="../140328/index.html">How to create a composite layer in Photoshop</a></li>
+<li><a href="../140312/index.html">Noisy background &#8211; Static</a></li>
+<li><a href="../100828/index.html">How to crop a movie with QuickTime Pro</a></li>
+<li><a href="../060216/index.html">Gradient mosaic</a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Rants and raves</strong></li>
+<li><a href="../170322/index.html">Rapha&#235;l or Thinking outside the box</a></li>
+<li><a href="../170315/index.html">CSS throbbers &#8211;&#160;Part 3</a></li>
+<li><a href="../150907/index.html">Jan Kjærstad &#8211;&#160;Storyteller</a></li>
+<li><a href="../150504-2/index.html">Rain on a window pane &#8211;&#160;JavaScript simulation</a></li>
+<li><a href="../150503/index.html">CSS throbbers &#8211;&#160;Part 2</a></li>
+<li><a href="../150407/index.html">CSS throbbers &#8211;&#160;Part 1</a></li>
+<li><a href="../150406/index.html">ResEdit and the recreation of the Mac OS wristwatch cursor animation</a></li>
+<li><a href="../141108/index.html">Kaja Norum</a></li>
+<li><a href="../141010/index.html">Kurt &#38; Kara <span class="sbi">c</span> 1984</a></li>
+<li><a href="../140627/index.html">Canvas and the Close Pixelate script</a></li>
+<li><a href="../140405/index.html">Web Audio API &#8211; 1st Approach</a></li>
+<li><a href="../140329/index.html">Audio visualizer &#8211; Atomic</a></li>
+<li><a href="../140329/starfield.html">Audio visualizer &#8211; Star field</a></li>
+<li><a href="../140323/index.html">Flash <span class="sbi">in memoriam</span></a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Notes to self</strong></li>
+<li><a href="../150504-3/index.html">Ordnance Survey map of Great Britain</a></li>
+<li><a href="../170313/index.html">Pure CSS shapes</a></li>
+<li><a href="../170307/index.html">q</a></li>
+<li><a href="../150511/index.html">xStand for iPad &#8211;&#160;The missing user manual</a></li>
+<li><a href="../140628/index.html">CSS blur animation</a></li>
+<li><a href="../150501/index.html">The CSS rule</a></li>
+<li><a href="../140319/index.html">On animated cursors</a></li>
+<li><a href="../150618/index.html">The concerts</a></li>
+</ul></nav><article><h2>Pseudo-elements and the image tag</h2><p>26 March, 2017<span> &#8211; Art.&#160;37</span></p><p class="drpcp">Logic is a funny thing. I had this image of a bottle which would look more natural on a web page if a shadow was cast below the bottle. Not a box-shadow, mind you. The bottle was an irregular thing with transparency to boot so I fetched a pseudo-element from the CSS shelve and set to work on the image tag. No luck. Or more to the point: No logic. Granted, I do not overuse <code>::before</code> and <code>::after</code> on CSS selectors so I might be rusty in that department, but hours with nothing but nada to show? I know now that I should have visited <a href="http://stackoverflow.com/">Stack Overflow</a> at an earlier stage but stubbornness gained the upper hand. To cut a long story short, however, here is the <a href="https://www.w3.org/TR/CSS21/generate.html">note</a> from the mothership:</p><p class="bq">This specification does not fully define the interaction of <code>:before</code> and <code>:after</code> with replaced elements (such as IMG in HTML). This will be defined in more detail in a future specification.</p><p>Deciphered, this leaves it to each browser vendor to implement or not. Few have done so. The future is, as always, not here and now.</p><p>With the understanding that this is rocket science, I picked up the blanket from where I had thrown it (I had flung the bottle at the same time &#8211;&#160;it used to be a glass bottle) and decided to launch my own rocket, the wishful one below, to test different scenarios.</p><h3>Wishful thinking</h3><img src="liftoff.svg"><p class="fig">Fig 1. The image above is an SVG including both a rocket and its muzzle flame. As it stands it is only a visualization of what I want to achieve and should render equally in all browsers &#8211;&#160;in all browsers that support the SVG format, that is.</p><h3>First, however, the definition</h3><p><i>Pseudo-elements</i> like <code>::before</code> and <code>::after</code> should not be confused with <i>pseudo-classes</i> like <code>:link</code>. The latter are similar to classes in HTML, but they are not specified explicitly in the markup. Pseudo-elements match virtual elements that do not exist explicitly in the document tree. <code>::before</code> &#8211;&#160;or <code>::after</code> &#8211;&#160;represents generated content rendered before &#8211;&#160;or after &#8211;&#160;another element. A pseudo-element is used in conjunction with the <code>content</code> property, and additional properties can be specified to style the element. The generated content is only rendered &#8211;&#160;it does not become part of the document tree.</p><p>Every browser that supports the double colon (<code>::</code>) CSS syntax also supports the single colon (<code>:</code>) syntax. The double colon is a newer format introduced to distinguish pseudo <em>content</em> from pseudo <em>selectors</em>. Bear in mind, however, that Internet Explorer 8 (what?) only supports the single colon.</p><h3>The litmus test</h3><p>Before we delve into the problem at hand, let us check if our browser supports pseudo-elements <i>at all</i>.</p><pre><code class="html">&lt;p id="litmus"&gt;Main&lt;/p&gt;</code></pre><pre><code class="css">&#35;litmus::before {
+	color: #fc0;
+	content: "Before";
+	}
+&#35;litmus::after {
+	color: #900;
+	content: "After";
+	}</code></pre><p><strong>The result:</strong></p><p id="litmus">Main</p><p>If the result reads <strong>BeforeMainAfter</strong>, with <em>Before</em> in yellow and <em>After</em> in red, our browser is good to go, and if we try to select the text, we will find that only <strong>Main</strong> is selectable. <i>Quad erat demonstrandum.</i></p><h3>Rocket <span class="sbi">et al.</span></h3><p>The proper thing would be to test both a <code>::before</code> element and an <code>::after</code> element on our main image and that is exactly what we will do here. A big hand, then, for the three parts needed to build and launch the wishful rocket:</p><span class="outline"><img src="before.svg"><img src="rocket.svg"><img src="after.svg"></span><p class="fig">Fig 2. <span class="sbi">Left: </span>Yellow muzzle flame. This will be the &#8220;before&#8221; element. <span class="sbi">Middle: </span>Our own mothership. This is the main image. <span class="sbi">Right: </span>Red muzzle flame. This will be the &#8220;after&#8221; element; the afterburner, so to speak. (Sorry, I could not resist that one.) Dotted outlines indicate image sizes &#8211;&#160;which are equal for this exercise.</p><p>We are now ready to test different methods.</p><h3>The <code>img</code> tag</h3><pre><code class="html">&lt;img id="imgTag" src="rocket.svg"&gt;</code></pre><pre><code class="css">&#35;imgTag {
+	position: relative;
+	width: 80px;
+	}
+&#35;imgTag::before {
+	position: absolute;
+	width: 80px;
+	content: url("before.svg");
+	}
+&#35;imgTag::after {
+	position: absolute;
+	width: 80px;
+	content: url("after.svg");
+	}</code></pre><p><strong>The result:</strong></p><img id="imgTag" src="rocket.svg"><p class="pt0 fig">Fig. 3. If you see a rocket with muzzle flame like the one in figure 1, you have lift-off and are part of the future. If you see only the rocket, you are in good company regardless; I am grounded here in Safari 10.0.3.</p><h3>A generic box</h3><p>Let us forget about the rocket for a moment then and concentrate on that old workhorse, the <code>div</code> tag.</p><pre><code class="html">&lt;div id="divTag"&gt;&lt;/div&gt;</code></pre><pre><code class="css">&#35;divTag {
+	position: relative;
+	width: 80px; /* Matches width of images */
+	height: 152px; /* Matches height of images */
+	background-color: rgba(0,0,0,.24);
+	}
+&#35;divTag::before {
+	position: absolute;
+	width: 80px;
+	content: url("before.svg");
+	}
+&#35;divTag::after {
+	position: absolute;
+	width: 80px;
+	content: url("after.svg");
+	}</code></pre><p><strong>The result:</strong></p><div id="divTag"></div><p class="fig">Fig. 4. No parent image here. The rocket has been replaced by a partly transparent, rectangular box. The <span class="sbi">before</span> and <span class="sbi">after</span> elements should be in place. Note that, owing to the fact that the images in this exercise match the size of the parent box, absolute positioning can default to top/left.</p><h3>Wrapped in a container</h3><p>So, if a generic box accepts the pseudo-elements, why not wrap the rocket in a container?</p><pre><code class="html">&lt;div id="imgContainer"&gt;&lt;img src="rocket.svg"&gt;&lt;/div&gt;</code></pre><pre><code class="css">&#35;imgContainer { position: relative; }
+img { width: 80px; }
+&#35;imgContainer::before {
+	position: absolute;
+	width: 80px;
+	content: url("before.svg");
+	}
+&#35;imgContainer::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 80px;
+	content: url("after.svg");
+	}</code></pre><p><strong>The result:</strong></p><div id="imgContainer"><img src="rocket.svg"></div><p class="fig">Fig. 5. Yes, this small &#8220;hack&#8221; does a nice job. Note that it is necessary to absolutely position the <span class="sbi">after</span> element. Otherwise it would be positioned after the main image and not after the container.</p><h3>Background image</h3><p>Depending on the circumstances, it is possible to use the rocket as a background image for the container thus avoiding extra markup. Note that the dimensions of the image might need to be known.</p><pre><code class="html">&lt;div id="bgImage"&gt;&lt;/div&gt;</code></pre><pre><code class="css">&#35;bgImage {
+	position: relative;
+	width: 80px;
+	height: 152px;
+	background-image: url("rocket.svg");
+	}
+&#35;bgImage::before {
+	position: absolute;
+	width: 80px;
+	content: url("before.svg");
+	}
+&#35;bgImage::after {
+	position: absolute;
+	width: 80px;
+	content: url("after.svg");
+	}</code></pre><p><strong>The result:</strong></p><div id="bgImage"></div><p class="fig">Fig. 6. It just works.</p><h3>Directly on the <code>svg</code> tag?</h3><p>Just curious: What happens if the pseudo-elements are set up directly on the SVG code, <i>i.e.</i> replacing the main image tag with an <code>svg</code> tag?</p><pre><code class="html">&lt;svg &#8230; &gt;&#8230;gibberish&#8230;&lt;/svg&gt;</code></pre><pre><code class="css">svg {
+	position: relative;
+	width: 80px;
+	}
+svg::before {
+	position: absolute;
+	width: 80px;
+	content: url("before.svg");
+	}
+svg::after {
+	position: absolute;
+	width: 80px;
+	content: url("after.svg");
+	}</code></pre><p><strong>The result:</strong></p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 206 392"><style>.s0{fill:#475f14}</style><path class="s0" d="M178.4 195.22c6.32-70.078-18.16-141.521-69.52-192.879 -3.121-3.121-8.641-3.121-11.762 0C45.76 53.699 21.279 125.06 27.6 195.22c-17.758 19.121-27.52 43.761-27.52 70 0 26.479 10.078 51.679 28.398 70.883 4.481 4.718 15.922 2.558 14.082-7.84 -0.96-5.442-2.16-10.724-2.16-15.922 0-12.961 3.918-25.281 11.2-35.681 1.199 0.642 2.559 1.039 4 1.039H150.4c1.441 0 2.801-0.397 4-1.039 7.281 10.399 11.199 22.72 11.199 35.681 0 5.198-1.359 10.397-2.16 15.922 -1.68 11.519 10.32 11.918 14.082 7.84 18.238-19.282 28.398-44.403 28.398-70.883C205.842 238.98 196.158 214.263 178.4 195.22L178.4 195.22zM102.959 20.263c14.883 16 27.043 34 36.48 53.117H66.561C75.92 54.181 88.08 36.263 102.959 20.263L102.959 20.263zM24.56 301.06c-5.121-11.118-7.761-23.278-7.761-35.84 0-16.957 4.883-33.199 14-47.117 0.082 0.636 8.801 34 12.16 42.558C32.959 272.181 26.639 286.103 24.56 301.06L24.56 301.06zM144.881 260.98h-83.84c-23.52-55.199-23.281-116.878-1.922-171.039h87.68C168.158 144.103 168.4 205.781 144.881 260.98L144.881 260.98zM163.041 260.66c4.641-11.922 12.078-42.082 12.16-42.558 9.117 13.839 14 30.078 14 47.117 0 12.562-2.723 24.722-7.762 35.84C179.279 286.103 172.959 272.181 163.041 260.66L163.041 260.66zM163.041 260.66"/><path class="s0" d="M102.881 134c9.941 0 18 8.059 18 18s-8.059 18-18 18 -18-8.059-18-18S92.939 134 102.881 134M102.881 118c-18.748 0-34 15.252-34 34s15.252 34 34 34 34-15.252 34-34S121.629 118 102.881 118L102.881 118z"/></svg><p class="pt0 fig">Fig. 7. Oh, well. Hope springs eternal. It is my guess that inline SVG is treated as a <span class="sbi">replaced element</span>, i.e. an element whose content is outside the scope of the CSS formatting model, such as an image.</p><h3>A JavaScript solution?</h3><p>With the jQuery library already implemented, it would be sweet to be able to manipulate pseudo-elements with JavaScript. And believe me, I have searched high and low but I have not been able to find anything useful in that department. It boils down to the definition and its consequence:</p><p class="bq">Pseudo-elements match virtual elements that do not exist explicitly in the document tree. For tecnical reasons they can therefore not be altered with JavaScript, and hence jQuery, DOM methods.</p><p>Yes, jQuery sports the <code>before()</code> and <code>after()</code> methods, but those do not work like pseudo-elements. You could easily whip up a function like so:</p><pre><code class="javascript">&#36;(function(){
+	&#36;("&#35;someImage").before("&lt;img src='before.svg'&gt;");
+	&#36;("&#35;someImage").after("&lt;img src='after.svg'&gt;");
+});</code></pre><p>But the result would be more or less akin to figure 2; a sequence of separate images.</p><p>Soldiers never die, they only fade away. Count me in.</p><h3>Notes</h3><p><strong>On the use of SVG images: </strong>They may not render in all browsers but when they do (based on how they are constructed for this demonstration) they should not clutter the CSS code with stuff necessary to fake bitmap flames. And, of course, being vectors, they can be scaled at will and they keep their proportions.</p><p><strong>On stacking order: </strong>The example images used in this article are without solid backgrounds. With different images it may be necessary to adjust z-indices accordingly.</p><h3>References</h3><p><code>1. </code><a href="http://stackoverflow.com/questions/5843035/does-before-not-work-on-img-elements">Christopher Harris</a> on Stack Overflow<br><code>2. </code>Colin Seymour, <a href="https://lildude.co.uk/after-css-property-for-img-tag"><i>:after CSS Property For IMG Tag</i></a><br><code>3. </code>Tommy Olsson and Paul O&#8217;Brien, <i>The Ultimate CSS Reference</i>, SitePoint (2008)<br><code>4. </code>Treehouse <a href="http://css-tricks.com/almanac/selectors/a/after-and-before/">CSS-Tricks</a><br><code>5. </code>Christian Krammer&#8217;s CSS3 files. This web site is extinct.<br></article><footer class="cL cntr">Impossiblue &#169; Bjørn Sortland</footer><noscript class="cntr">This site is shite without JavaScript</noscript></div><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script>window.jQuery || document.write('<script src="../../js/jquery.min.js"><\/script>')</script><script src="../../js/highlight.pack.js"></script><!-- 9.9.0 - Custom-built for HTML, XML, CSS, JavaScript, and PHP --><script>var pseudo=true;$("nav button").click(function(){$("nav ul").toggle("fast");if(pseudo===true){$("nav button").addClass("noPseudo");pseudo=false;}else{$("nav button").removeClass("noPseudo");pseudo=true;}$("nav button div").toggle("fast");});$("pre code").each(function(i,block){hljs.highlightBlock(block);});</script></body></html>
