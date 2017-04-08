@@ -41,6 +41,7 @@
 <li><a href="../150511/index.html">xStand for iPad &#8211;&#160;The missing user manual</a></li>
 <li><a href="../140628/index.html">CSS blur animation</a></li>
 <li><a href="../150501/index.html">The CSS rule</a></li>
+<li><a href="../170408/index.html">On forms and tables</a></li>
 <li><a href="../140319/index.html">On animated cursors</a></li>
 <li><a href="../150618/index.html">The concerts</a></li>
 </ul></nav><article><h2>PHP &#8211; How to find pathnames matching a pattern</h2><p>5 March, 2017<span> &#8211; Art.&#160;16</span> &#8211; First published on Ka of Isis 140420</p><p><strong>Note: </strong>As <code>github.io</code> (where this website lives) does not support PHP, the results shown in this article, are simulations.</p><p class="drpcp">According to the <a href="http://php.net/manual/en/function.glob.php">PHP manual</a>, the <code>glob()</code> function searches for all the pathnames matching a pattern and returns an array containing the matched files/directories, an empty array if no file matched, or <code>false</code> on error. As an example, the following code will search for &#8211;&#160;and build an array of &#8211;&#160;text files in a given directory and display file names and their corresponding file sizes concatenated on separate lines:</p><pre><code class="php">foreach (glob("*.txt") as $filename) {
