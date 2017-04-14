@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: Test page</title><meta name="robots" content="noindex,nofollow"><style>
+
+/*	START Stripping out browser default syles  */
+
+* {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	}
+input {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	}
+
+/*	END Stripping out browser default syles  */
+
+body { background-color: #93bf35; } /* I like green, you see */
+
+/*	Important: If 'font-size' is spec'ed (different from default '1em'), this will influence 'line-height' in 'label'  */
+
+/*	START Accordion - Note that this accordion allows for more than (the usual) one accordion element to be opened/closed at any given time  */
+
+#accrdn {
+	width: 262px; /* This can be anything, say 100% */
+	margin: 36px auto 0; /* This only shifts the accordion down and centres it horizontally in the viewport; does not influence the look or behaviour of the accordion  */
+	}
+article {
+	position: relative;
+	width: 100%;
+	margin-bottom: 1px; /* A small gap between each accordion element. Nice touch; borders not needed */
+	overflow: hidden;
+	}
+input {
+	position: absolute;
+	opacity: 0;
+	z-index: -1; /* As if 'opacity: 0' were not enough */
+	}
+label {
+	position: relative; /* Base for pseudo-element. 'label' acts as a substitute, really, as 'input' elements care little for pseudo-elements */
+	text-align: center;
+	line-height: 3; /* IMPORTANT: Inherited 'font-size' influences 'line-height'. In this example 'font-size' is not spec'ed thus assumed to be '1em' (16px) */
+	color: #eef5df;
+	background-color: #475f14;
+	cursor: pointer;
+	display: block;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	user-select: none; /* Text not selectable. Spec not stabilized */      
+	}
+label::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2em;
+	height: 3em; /* Equals line-height for label */
+	text-align: center;
+	font-family: Arial; /* Support for U-25be */
+	line-height: 3; /* Equals height; middle-aligns text */
+	color: rgba(0,0,0,.24);
+	display: block;
+	content: "\25be"; /* Down-pointing small triangle (aka &#9662;) */
+	-moz-transition: all .3s;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+	}
+section {
+	max-height: 0;
+	color: #475f14;
+	background-color: #eef5df;
+	overflow: hidden;
+	-moz-transition: max-height .3s;
+	-webkit-transition: max-height .3s;
+	transition: max-height .3s;
+	}
+section p { margin: 1em; }
+
+/*	It is not possible to spec 'height: auto' in the rule below so as to automatically tailor the section's height to the available content  */
+/*	The crude workaround to ensure that all content is shown/available, is to set 'max-height' to an empirically tall value  */
+/*	The proper thing would be to spec an acceptable 'max-height' value and then let the remainder be scrollable via 'overflow-y: auto'  */
+/*	Different browser may, however, display scrollbars (or scrollbar indicators) in ugly ways  */
+/*	The '~' in there means 'general sibling selector'  */
+input[type=checkbox]:checked~section { max-height: 9999px; }
+
+/*	START Pseudo-elements (::before/::after) do not work w the 'input' selector but can be used w 'label' in the trick shown below  */
+/*	The checkbox tells the 'input' whether the former is checked or not, and the 'input' uses its after-element to choose the appropriate triangle  */
+/*	The down-triangle indicates that there is hidden information; the up-triangle indicates that the user can hide the information again to e.g. free screen real estate  */
+/*	Indication is reinforced w colour on :hover  */
+/*	The '+' in there means 'adjacent sibling selector' (and 'adjacent' means 'immediately following')  */
+
+input[type=checkbox]+label:hover::after { color: #93bf35; }
+input[type=checkbox]:checked+label::after {
+	color: rgba(0,0,0,.24); /* Subtle colour */
+	transform: rotateX(-180deg);
+	}
+input[type=checkbox]:checked+label:hover::after {
+	color: #93bf35; /* Pronounced colour */
+	transform: rotateX(-180deg);
+	}
+
+/*	END Pseudo-elements...  */
+
+/*	END Accordion...  */
+
+</style></head><body><!-- The accordion builds on an idea at https://codepen.io/raubaca/pen/PZzpVe -->
+
+<div id="accrdn">
+
+	<article>
+		<input id="a1" type="checkbox">
+		<label for="a1">First</label>
+		<section>
+			<!-- Populate with whatever; text, images, videos... -->
+			<p>Lorem ipsum dolor sit amet, consectetur adipscing elit, sed diam nonnumy tempor incidunt ut labore et dolore magna aliquam erat volupat. Ut enim ad minimim veniami quis nostrud exercitation ullamcorpor suscipit laboris nisi ut aliquip ex ea commodo consequat.</p>
+		</section>
+	</article>
+
+	<article>
+		<input id="a2" type="checkbox">
+		<label for="a2">Second</label>
+		<section>
+			<p>Duis autem vel eum irure dolor in reprehenderit in voluptate velit esse molestaie son consequat, vel illum dolore eu fugiat nulla pariatur. At vero eos et accusam et justo odio dignissim qui blandit praesent lupatum delenit aigue duos dolor et molestais exceptur sint occaecat cupidat non provident, simil tempor sunt in culpa qui officia deserunt mollit anim id est laborum et dolor fugai.</p>
+		</section>
+	</article>
+
+	<article>
+		<input id="a3" type="checkbox">
+		<label for="a3">Third</label>
+		<section>
+			<p>Lorem ipsum dolor sit amet, consectetur adipscing elit, sed diam nonnumy tempor incidunt ut labore et dolore magna aliquam erat volupat. Ut enim ad minimim veniami quis nostrud exercitation ullamcorpor suscipit laboris nisi ut aliquip ex ea commodo consequat. Duis autem vel eum irure dolor in reprehenderit in voluptate velit esse molestaie son consequat, vel illum dolore eu fugiat nulla pariatur. At vero eos et accusam et justo odio dignissim qui blandit praesent lupatum delenit aigue duos dolor et molestais exceptur sint occaecat cupidat non provident, simil tempor sunt in culpa qui officia deserunt mollit anim id est laborum et dolor fugai. Et harumd dereud facilis est er expedit distinct. Nam liber a tempor cum soluta nobis eligend optio comque nihil quod a impedit anim id quod maxim placeat facer possim omnis es voluptas assumenda est, omnis dolor repellend. Temporem autem quinsud et aur office debit aut tum rerum necessit atib saepe eveniet ut er repudiand sint et molestia non este recusand. Itaque earud rerum hic tenetury sapiente delectus au aut prefer endis dolorib asperiore repellat. Hanc ego cum tene sententiam, quid est cur verear ne ad eam non possing accommodare nost ros quos tu paulo ante cum memorite it tum etia ergat. Nos amice et nebevol, olestias access potest fier ad augendas cum conscient to factor tum toen legum odioque civiuda. Et tamen in busdad ne que pecun modut est neque nonor imper ned libiding gen epular religuard on cupiditat, quas nulla praid im umdnat. Improb pary minuiti potius inflammad ut coercend magist and et dodecendense videantur, invitat igitur vera ratio bene santos ad iustitiami aequitated fidem. Neque hominy infant aut inuiste fact est cond que neg facile efficerd possit duo conteud notiner si effecerit, et opes vel forunag veling en liberalitat magis em conveniunt. Dabut tutungbene volent sib conciliant et, al is aptissim est ad quiet. Endium caritat praesert cum omning null siy caus peccand quaerer en imigent cupidat a natura proficis facile explent sine julla inura autend unanc sunt isti.</p>
+		</section>
+	</article>
+
+</div>
+
+</body></html>
