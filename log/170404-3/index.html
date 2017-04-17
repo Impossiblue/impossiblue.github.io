@@ -49,8 +49,8 @@
 	div {
 		width: 960px; /* Width in CSS pixels */
 		height: 74px; /* Height in CSS pixels */
-		background-image: url("lips-960x74.jpg"); /* Fallback for ignorant browsers */
-		background-image: -webkit-image-set(url("lips-960x74.jpg") 1x, url("lips-1920x148.jpg") 2x);
-		background-image: image-set(url("lips-960x74.jpg") 1x, url("lips-1920x148.jpg") 2x);
+		background-image: url("path/to/image.jpg"); /* Fallback for ignorant browsers */
+		background-image: -webkit-image-set(url("path/to/image.jpg") 1x, url("path/to/imagex2.jpg") 2x);
+		background-image: image-set(url("path/to/image.jpg") 1x, url("path/to/imagex2.jpg") 2x);
 		}
 	}</code></pre><p><span class="nb">Important: </span>Low-res images are swapped for hi-res images on hi-res screens only in browsers that implement the CSS Level&#160;4 <code>image-set()</code> function. Ignorant user agents need a fallback declaration in the style sheet.</p><h3>Art direction</h3><div id="ad"></div><p class="fig">Fig. 3. With positioning of background images it is possible to keep the most relevant or interesting part of an image visible in a background container should the width of the viewport change. Note that height is kept constant throughout this exercise, hence no vertical adjustment is necessary.</p><p><strong>The CSS</strong></p><pre><code class="css">background-position-x: center; /* An easy example */</code></pre></article><footer class="cL cntr">Impossiblue &#169; Bjørn Sortland</footer><noscript class="cntr">This site is shite without JavaScript</noscript></div><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script>window.jQuery || document.write('<script src="../../js/jquery.min.js"><\/script>')</script><script src="../../js/highlight.pack.js"></script><!-- 9.9.0 - Custom-built for HTML, XML, CSS, JavaScript, and PHP --><script>var pseudo=true;$("nav button").click(function(){$("nav ul").toggle("fast");if(pseudo===true){$("nav button").addClass("noPseudo");pseudo=false;}else{$("nav button").removeClass("noPseudo");pseudo=true;}$("nav button div").toggle("fast");});$("pre code").each(function(i,block){hljs.highlightBlock(block);});</script></body></html>
