@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: clip-path - Part 2</title><meta name="description" content="How to replace a JavaScript animation with a pure CSS animation using clip-path and transition."><meta name="author" content="https://impossiblue.github.io"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Impossiblue"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" sizes="152x152" href="../../touch-icon-ipad.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="../../start-up-1536x2008.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="../../start-up-1496x2048.png"><link rel="stylesheet" href="../../css/i.css"><!--[if lt IE 10]><link rel="stylesheet" href="../../css/ie.css"><![endif]--><style>
+article>div{margin-top:1.5em;}/*START http://codepen.io/GreenSock/pen/KmLjr - Rearranged code*/.clipBox{position:absolute;width:100px;height:100px;background-image:url("love.jpg");clip:rect(0 100px 100px 0);}.clipbg{position:relative;width:100px;height:100px;margin-right:10px;background-color:#333;cursor:pointer;display:inline-block;}.clip3{background-image:url("center.gif");}/*END http://codepen.io/GreenSock/pen/KmLjr*//*START Pure CSS alternative*/#background{position:relative;width:121px;height:121px;background-color:#475f14;}#hidden{position:absolute;top:0;left:0;width:121px;height:121px;background-image:url("cavalieri.jpg");background-image:-webkit-image-set(url("cavalieri.jpg")1x,url("cavalierix2.jpg")2x);background-image:image-set(url("cavalieri.jpg")1x,url("cavalierix2.jpg")2x);cursor:pointer;transition:all 1s ease-in-out;-webkit-clip-path:polygon(0 0,61px 61px,61px 61px,121px 0,61px 61px,61px 61px,121px 121px,61px 61px,61px 61px,0 121px,61px 61px,61px 61px);clip-path:polygon(0 0,61px 61px,61px 61px,121px 0,61px 61px,61px 61px,121px 121px,61px 61px,61px 61px,0 121px,61px 61px,61px 61px);}#background:hover #hidden{-webkit-clip-path:polygon(0 0, 0 0,121px 0,121px 0,121px 0,121px 121px,121px 121px,121px 121px,0 121px,0 121px,0 121px,0 0);clip-path:polygon(0 0,61px 61px,61px 61px,121px 0,61px 61px,61px 61px,121px 121px,61px 61px,61px 61px,0 121px,61px 61px,61px 61px);}/*END Pure CSS alternative*/</style></head><body><div id="ie">With geriatric Internet Explorer versions this site looks shite. This because Impossiblue is built with modern tools and would require hacks and workarounds to function in legacy browsers. I no longer have the patience nor the inclination to satisfy everybody. Impossiblue is an experiment and a playground &#8211;&#160;and my sustenance does not depend on it. As a concequence &#8211;&#160;to embarrass nobody &#8211;&#160;I have decided to lock you out. So, there.</div><div id="wrapper"><aside>44</aside><header id="masthead"><h1><a href="../../index.html">Impossiblue</a></h1></header><nav><button class="goEast" title="Menu">Open menu<div></div></button><a id="at" class="goEast" href="../../form.html" title="Contact us">Open form</a><ul>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Lorem ipsums</strong></li>
+<li><a href="../170414/index.html">Putting the &#8220;Checkbox hack&#8221; to good use</a></li>
+<li><a href="../170404-2/index.html">Sepia</a></li>
+<li><a href="../170404/index.html">Background gradients</a></li>
+<li><a href="../170326/index.html">Pseudo-elements and the image tag</a></li>
+<li><a href="../170308/index.html">Styling an HTML <code>input</code> element</a></li>
+<li><a href="../150504/index.html">How to add and centre a custom iPad wallpaper</a></li>
+<li><a href="../150421-2/index.html">How to make a screen dump on an iPad</a></li>
+<li><a href="../150421/index.html">How to permanently delete pictures from an iPad</a></li>
+<li><a href="../140502/index.html">PHP &#8211; Random image</a></li>
+<li><a href="../140426/index.html">PHP &#8211; How to get the width and height of an image</a></li>
+<li><a href="../140423/index.html">PHP &#8211; Random quote</a></li>
+<li><a href="../140420/index.html">PHP &#8211; How to find pathnames matching a pattern</a></li>
+<li><a href="../141026/index.html">How to design a close-button with CSS</a></li>
+<li><a href="../140625/index.html">Film grain &#8211; Sort of</a></li>
+<li><a href="../140528/index.html">Noisy canvas &#8211; Dynamic</a></li>
+<li><a href="../140328/index.html">How to create a composite layer in Photoshop</a></li>
+<li><a href="../140312/index.html">Noisy background &#8211; Static</a></li>
+<li><a href="../100828/index.html">How to crop a movie with QuickTime Pro</a></li>
+<li><a href="../060216/index.html">Gradient mosaic</a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Rants and raves</strong></li>
+<li id="crrnt"><b>&#9656;&#8194;</b><code>clip-path</code> &#8211; Part 2</li>
+<li><a href="../170417/index.html"><code>clip-path</code> &#8211; Part 1</a></li>
+<li><a href="../170322/index.html">Rapha&#235;l or Thinking outside the box</a></li>
+<li><a href="../150907/index.html">Jan Kjærstad &#8211;&#160;Storyteller</a></li>
+<li><a href="../150504-2/index.html">Rain on a window pane &#8211;&#160;JavaScript simulation</a></li>
+<li><a href="../170315/index.html">CSS throbbers &#8211;&#160;Part 3</a></li>
+<li><a href="../150503/index.html">CSS throbbers &#8211;&#160;Part 2</a></li>
+<li><a href="../150407/index.html">CSS throbbers &#8211;&#160;Part 1</a></li>
+<li><a href="../150406/index.html">ResEdit and the recreation of the Mac OS wristwatch cursor animation</a></li>
+<li><a href="../141108/index.html">Kaja Norum</a></li>
+<li><a href="../141010/index.html">Kurt &#38; Kara <i>c</i> 1984</a></li>
+<li><a href="../140627/index.html">Canvas and the Close Pixelate script</a></li>
+<li><a href="../140405/index.html">Web Audio API &#8211; 1st Approach</a></li>
+<li><a href="../140329/index.html">Audio visualizer &#8211; Atomic</a></li>
+<li><a href="../140329/starfield.html">Audio visualizer &#8211; Star field</a></li>
+<li><a href="../140323/index.html">Flash <i>in memoriam</i></a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Notes to self</strong></li>
+<li><a href="../150504-3/index.html">Ordnance Survey map of Great Britain</a></li>
+<li><a href="../170404-3/index.html">Responsive images</a></li>
+<li><a href="../170313/index.html">Pure CSS shapes</a></li>
+<li><a href="../170307/index.html">q</a></li>
+<li><a href="../150511/index.html">xStand for iPad &#8211;&#160;The missing user manual</a></li>
+<li><a href="../140628/index.html">CSS blur animation</a></li>
+<li><a href="../150501/index.html">The CSS rule</a></li>
+<li><a href="../170408/index.html">On forms and tables</a></li>
+<li><a href="../140319/index.html">On animated cursors</a></li>
+<li><a href="../150618/index.html">The concerts</a></li>
+</ul></nav><article><h2><code>clip-path</code> &#8211; Part 2</h2><p>17 April, 2017<span> &#8211; Art.&#160;44</span></p><p>This is not an article about the <a href="https://greensock.com/gsap">GreenSock Animation Platform</a> (GSAP). <em>That</em> would require its own <em>series</em> of articles. Just <a href="https://github.com/greensock/GreenSock-JS/">the shortest of intros</a> will have to do for now:</p><p class="bq">GSAP is a JavaScript library for high-performance HTML5 animations that work in <span class="sbi">all</span> major browsers. No other library delivers such advanced sequencing, reliability, API efficiency, and tight control while solving real-world problems &#8230; GSAP can animate any numeric property of any JS object, not just CSS properties.</p><p>A very basic <a href="http://codepen.io/GreenSock/pen/KmLjr">CodePen example</a> from the socks themselves:</p><div class="clipbg clip3"><div id="clip3" class="clipBox"></div></div><p class="fig">Fig. 1. Hover over the image to reveal the animation. Note that the original code uses the deprecated <span class="sbi">clip</span> property. There may also be a flash of the hidden image shown on page load.</p><p>Now, on to my own <a href="http://bennettfeely.com/clippy/">inspiration</a>:</p><p class="bq">CSS animations and transitions are possible with two or more <code>clip-path</code> shapes with the same number of points.</p><p>As GSAP is based on JavaScript &#8211;&#160;and because I like the animation above &#8211;&#160;I thought it might be interesting to find a simpler alternative based on pure CSS. This is by no means meant to downplay GSAP which really shines in more complex animations. Anyway, what follows is an experiment with the CSS <code>clip-path</code> property. Take it or leave it.</p><div id="background"><div id="hidden"></div></div><p class="fig">Fig. 2. Hover over the green square to reveal pure CSS morphing of a twelve-point polygon &#8211;&#160;and a thumbnail of Natalina Cavali&#233;ri, Italian soprano and actress.</p><h3>The HTML</h3><pre><code class="html">&lt;div id="background"&gt;
+	&lt;div id="hidden"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre><h3>The CSS</h3><pre><code class="css">#background {
+	position: relative;
+	width: 121px; /* Odd number for absolute centering */
+	height: 121px; /* Odd number for absolute centering */
+	background-color: #475f14;
+	}
+#hidden {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 121px;
+	height: 121px;
+	background-image: url("cavalieri.jpg"); /* Fallback for ignorant browsers */
+	background-image: -webkit-image-set(url("cavalieri.jpg") 1x, url("cavalierix2.jpg") 2x);
+	background-image: image-set(url("cavalieri.jpg") 1x, url("cavalierix2.jpg") 2x); /* Incl. retina */
+	cursor: pointer;
+	transition: all 1s ease-in-out;
+	-webkit-clip-path: polygon(0 0, 61px 61px, 61px 61px, 121px 0, 61px 61px, 61px 61px, 121px 121px, 61px 61px, 61px 61px, 0 121px, 61px 61px, 61px 61px);
+	clip-path: polygon(0 0, 61px 61px, 61px 61px, 121px 0, 61px 61px, 61px 61px, 121px 121px, 61px 61px, 61px 61px, 0 121px, 61px 61px, 61px 61px);
+	}
+#background:hover #hidden {
+	-webkit-clip-path: polygon(0 0, 0 0, 121px 0, 121px 0, 121px 0, 121px 121px, 121px 121px, 121px 121px, 0 121px, 0 121px, 0 121px, 0 0);
+	clip-path: polygon(0 0, 61px 61px, 61px 61px, 121px 0, 61px 61px, 61px 61px, 121px 121px, 61px 61px, 61px 61px, 0 121px, 61px 61px, 61px 61px);
+	}</code></pre><p><strong>Notes: </strong>The <code>clip-path</code> in figure 2 is set up with (absolute) pixel values but could have used percentages for general application (i.e. widths and heights of the containers could be changed at will with no consideration for the clip points). Both demonstrations, by the way, only work with input devices such as mice and pens. Touch-devices miss the fun.</p><h3>Reference</h3><p>Sara Soueidan, <a href="https://sarasoueidan.com/blog/animating-css-shapes/">Animating CSS shapes with CSS animations and transitions</a></p><p class="arial cntr pt15">&#9664;&#8195;<a href="../170417/index.html">Part 1</a></p></article><footer class="cL cntr">Impossiblue &#169; Bjørn Sortland</footer><noscript class="cntr">This site is shite without JavaScript</noscript></div><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script>window.jQuery || document.write('<script src="../../js/jquery.min.js"><\/script>')</script><script src="../../js/TweenMax.min.js"></script><!-- 1.19.1 --><script src="../../js/highlight.pack.js"></script><!-- 9.9.0 - Custom-built for HTML, XML, CSS, JavaScript, and PHP --><script>var pseudo=true;$("nav button").click(function(){$("nav ul").toggle("fast");if(pseudo===true){$("nav button").addClass("noPseudo");pseudo=false;}else{$("nav button").removeClass("noPseudo");pseudo=true;}$("nav button div").toggle("fast");});/* START http://codepen.io/GreenSock/pen/KmLjr - The original pen was written for GSAP 1.8.0 */var box3=$("#clip3");clipTween3=TweenLite.from(box3,1,{clip:"rect(50px 50px 50px 50px)",paused:true});box3.parent().mouseenter(function(){clipTween3.play();});box3.parent().mouseleave(function(){clipTween3.reverse();});/* END http://codepen.io/GreenSock/pen/KmLjr */$("pre code").each(function(i,block){hljs.highlightBlock(block);});</script></body></html>
