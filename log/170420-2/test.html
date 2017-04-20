@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: Test page</title><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="../../css/i.css"><style>article{width:546px;margin:2em auto;}h2,h2+p,.fig{text-align:center;}img{margin-left:211px;}
+
+/*	START Building the box shadows  */
+
+/*	1  */
+div {
+	position: relative; /* Base for pseudo-elements */
+	width: 544px;
+	height: 198px;
+	margin: 2em auto .75em; /* FPO */
+	border: 1px solid #eef5df;
+	}
+
+/*	2  */
+.pe2::before, .pe2::after {
+	position: absolute;
+	top: 0;
+	bottom: 12px;
+	width: 42%;
+	background-color: #475f14;
+	z-index: -1;
+	content: "";
+	}
+.pe2::before { left: 9px; }
+.pe2::after { right: 9px; }
+
+/*	3  */
+.pe3::before {
+	-moz-transform: rotate(-3deg);
+	-webkit-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+	}
+.pe3::after {
+	-moz-transform: rotate(3deg);
+	-webkit-transform: rotate(3deg);
+	transform: rotate(3deg);
+	}
+
+/*	4  */
+.pe4::before, .pe4::after { top: 80%; }
+
+/*	5  */
+.pe5::before, .pe5::after {
+	-moz-box-shadow: 0 12px 9px #475f14;
+	-webkit-box-shadow: 0 12px 9px #475f14;
+	box-shadow: 0 12px 9px #475f14;
+	}
+
+/*	6  */
+.pe6::before, .pe6::after { background-color: transparent; }
+
+/*	7  */
+#no7 {
+	background: #eef5df url("ben-hur-544.jpg"); /* Fallback for ignorant browsers */
+	background-image: -webkit-image-set(url("ben-hur-544.jpg") 1x, url("ben-hur-1088.jpg") 2x);
+	background-image: image-set(url("ben-hur-544.jpg") 1x, url("ben-hur-1088.jpg") 2x); /* Retina where applicable */
+	}
+
+/*	END Building the box shadows  */
+
+</style></head><body><article><h2>Impossiblue test page</h2><p><a href="index.html">Return to article</a></p><div></div><p><strong>Step 1. </strong>A white border runs around the main <code>div</code> container. It has been left inten&shy;tionally transparent for now, but will eventually be poplulated with an image.</p><div class="pe2"></div><p><strong>Step 2. </strong>Two pseudo-elements have been added, <code>::before</code> (indented 9px from the left) and <code>::after</code> (indented 9px from the right). They have been dropped down below their parent container using <code>z-index</code>, flush with the top of their parent, but pushed 12px up from the bottom. Each element has a width slightly less than half the width of the container.</p><div class="pe2 pe3"></div><p><strong>Step 3. </strong>To achieve the intended shadow effect, both pseudo-elements need to be rotated at an angle; <code>::before</code> is rotated 3deg CCW and <code>::after</code> is rotated 3deg CW. The centre of rotation is at the (default) centre of each element. It is unfortu&shy;nate that corners of the pseudo-elements peep out from under the container, but this will be remedied in the next step.</p><div class="pe2 pe3 pe4"></div><p><strong>Step 4. </strong>Both pseudo-elements have been pushed down (empirically) some 80% from the top. Note that they still honour the <code>bottom</code> value. Note also that the <code>top</code> and <code>bottom</code> values must &#8220;co-operate&#8221;. They may eventually cancel each other out if one value &#8220;eats into&#8221; the other&#8217;s territory.</p><div class="pe2 pe3 pe4 pe5"></div><p><strong>Step 5. </strong>Box shadows have been added. With the care already taken, only shadows will now be visible below the container, and nothing of the hard edges of the pseudo-elements themselves destroy the effect. One would &#8220;normally&#8221; choose a black colour for a shadow, but in this case a dark green is employed because it blends better with the background colour of the web site.</p><div class="pe2 pe3 pe4 pe5 pe6"></div><p><strong>Step 6. </strong>The (background) colour of the pseudo-elements has here been set to <code>transparent</code>. This is a superfluous step which only serves to better show the shadows. It is of course non-intuitive that a transparent object should ever cast a shadow, but that is CSS for you. In Safari 10.0.3 this creates some kind of ghost effect to the right of the <code>::after</code> element (visible outside of the container; see figure below). Not to be trusted, then, so it is back to fully coloured pseudo-elements for the final step.</p><img src="bug.png" width="124" height="80" alt="Ghost"><p class="fig">Fig. Screenshot of CSS artefacts in Safari.</p><div id="no7" class="pe2 pe3 pe4 pe5"></div><p><strong>Step 7. </strong>Everything falls into place. And, yes, even with consideration for retina images and the fact that I shy away from odd numbers, the aspect ratio is as close as possible to the magical <strong>2.76:1</strong> used for the <i>Ben-Hur</i> movie (1959).</p><p>William Wyler, director of the movie, disliked the widescreen format and is <a href="https://en.wikipedia.org/wiki/Ben-Hur_(1959_film)">quoted</a> as saying:</p><p class="bq">Nothing is out of the picture, and you can&#8217;t fill it. You either have a lot of empty space, or you have two people talking and a flock of others surrounding them who have nothing to do with the scene. Your eye just wanders out of curiosity.</p></article></body></html>
