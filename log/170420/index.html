@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: Greyscale</title><meta name="description" content="How to use CSS to change a colour image to greyscale. grayscale() can be used on both embedded content and on background images."><meta name="author" content="https://impossiblue.github.io"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Impossiblue"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" sizes="152x152" href="../../touch-icon-ipad.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="../../start-up-1536x2008.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="../../start-up-1496x2048.png"><link rel="stylesheet" href="../../css/i.css"><!--[if lt IE 10]><link rel="stylesheet" href="../../css/ie.css"><![endif]--><style>
+
+/*	Note the use of 'gray', US spelling of 'grey'  */
+
+article img, article div {
+	margin-top: 1.5em; /* FPO */
+	-moz-filter: grayscale(100%);
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	}
+article img:hover, article div:hover {
+	-moz-filter: grayscale(0);
+	-webkit-filter: grayscale(0);
+	filter: grayscale(0);
+	cursor: pointer;
+	}
+article div {
+	width: 260px;
+	height: 176px;
+	border: 1px solid #eef5df;
+	background-image: url("bukhara-260.jpg"); /* Fallback for ignorant browsers */
+	background-image: -webkit-image-set(url("bukhara-260.jpg") 1x, url("bukhara-520.jpg") 2x);
+	background-image: image-set(url("bukhara-260.jpg") 1x, url("bukhara-520.jpg") 2x);
+	}
+@media only screen and (min-width:450px) and (max-width:589px) {
+	article div {
+		width: 400px;
+		height: 272px;
+		background-image: url("bukhara-400.jpg");
+		background-image: -webkit-image-set(url("bukhara-400.jpg") 1x, url("bukhara-800.jpg") 2x);
+		background-image: image-set(url("bukhara-400.jpg") 1x, url("bukhara-800.jpg") 2x);
+		}
+	}
+@media only screen and (min-width:590px) and (max-width:729px) {
+	article div {
+		width: 540px;
+		height: 366px;
+		background-image: url("bukhara-540.jpg");
+		background-image: -webkit-image-set(url("bukhara-540.jpg") 1x, url("bukhara-1080.jpg") 2x);
+		background-image: image-set(url("bukhara-540.jpg") 1x, url("bukhara-1080.jpg") 2x);
+		}
+	}
+@media only screen and (min-width:730px) and (max-width:869px) {
+	article div {
+		width: 680px;
+		height: 460px;
+		background-image: url("bukhara-680.jpg");
+		background-image: -webkit-image-set(url("bukhara-680.jpg") 1x, url("bukhara-1360.jpg") 2x);
+		background-image: image-set(url("bukhara-680.jpg") 1x, url("bukhara-1360.jpg") 2x);
+		}
+	}
+@media only screen and (min-width:870px) and (max-width:997px) {
+	article div {
+		width: 820px;
+		height: 556px;
+		background-image: url("bukhara-820.jpg");
+		background-image: -webkit-image-set(url("bukhara-820.jpg") 1x, url("bukhara-1640.jpg") 2x);
+		background-image: image-set(url("bukhara-820.jpg") 1x, url("bukhara-1640.jpg") 2x);
+		}
+	}
+@media only screen and (min-width:998px) {
+	article div {
+		width: 960px;
+		height: 650px;
+		background-image: url("bukhara-960.jpg");
+		background-image: -webkit-image-set(url("bukhara-960.jpg") 1x, url("bukhara-1920.jpg") 2x);
+		background-image: image-set(url("bukhara-960.jpg") 1x, url("bukhara-1920.jpg") 2x);
+		}
+	}
+</style></head><body><div id="ie">With geriatric Internet Explorer versions this site looks shite. This because Impossiblue is built with modern tools and would require hacks and workarounds to function in legacy browsers. I no longer have the patience nor the inclination to satisfy everybody. Impossiblue is an experiment and a playground &#8211;&#160;and my sustenance does not depend on it. As a concequence &#8211;&#160;to embarrass nobody &#8211;&#160;I have decided to lock you out. So, there.</div><div id="wrapper"><aside>45</aside><header id="masthead"><h1><a href="../../index.html">Impossiblue</a></h1></header><nav><button class="goEast" title="Menu">Open menu<div></div></button><a id="at" class="goEast" href="../../form.html" title="Contact us">Open form</a><ul>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Lorem ipsums</strong></li>
+<li><a href="../170414/index.html">Putting the &#8220;Checkbox hack&#8221; to good use</a></li>
+<li id="crrnt"><b>&#9656;&#8194;</b>Greyscale</li>
+<li><a href="../170404-2/index.html">Sepia</a></li>
+<li><a href="../170404/index.html">Background gradients</a></li>
+<li><a href="../170326/index.html">Pseudo-elements and the image tag</a></li>
+<li><a href="../170308/index.html">Styling an HTML <code>input</code> element</a></li>
+<li><a href="../150504/index.html">How to add and centre a custom iPad wallpaper</a></li>
+<li><a href="../150421-2/index.html">How to make a screen dump on an iPad</a></li>
+<li><a href="../150421/index.html">How to permanently delete pictures from an iPad</a></li>
+<li><a href="../140502/index.html">PHP &#8211; Random image</a></li>
+<li><a href="../140426/index.html">PHP &#8211; How to get the width and height of an image</a></li>
+<li><a href="../140423/index.html">PHP &#8211; Random quote</a></li>
+<li><a href="../140420/index.html">PHP &#8211; How to find pathnames matching a pattern</a></li>
+<li><a href="../141026/index.html">How to design a close-button with CSS</a></li>
+<li><a href="../140625/index.html">Film grain &#8211; Sort of</a></li>
+<li><a href="../140528/index.html">Noisy canvas &#8211; Dynamic</a></li>
+<li><a href="../140328/index.html">How to create a composite layer in Photoshop</a></li>
+<li><a href="../140312/index.html">Noisy background &#8211; Static</a></li>
+<li><a href="../100828/index.html">How to crop a movie with QuickTime Pro</a></li>
+<li><a href="../060216/index.html">Gradient mosaic</a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Rants and raves</strong></li>
+<li><a href="../170417-2/index.html"><code>clip-path</code> &#8211; Part 2</a></li>
+<li><a href="../170417/index.html"><code>clip-path</code> &#8211; Part 1</a></li>
+<li><a href="../170322/index.html">Rapha&#235;l or Thinking outside the box</a></li>
+<li><a href="../150907/index.html">Jan Kjærstad &#8211;&#160;Storyteller</a></li>
+<li><a href="../150504-2/index.html">Rain on a window pane &#8211;&#160;JavaScript simulation</a></li>
+<li><a href="../170315/index.html">CSS throbbers &#8211;&#160;Part 3</a></li>
+<li><a href="../150503/index.html">CSS throbbers &#8211;&#160;Part 2</a></li>
+<li><a href="../150407/index.html">CSS throbbers &#8211;&#160;Part 1</a></li>
+<li><a href="../150406/index.html">ResEdit and the recreation of the Mac OS wristwatch cursor animation</a></li>
+<li><a href="../141108/index.html">Kaja Norum</a></li>
+<li><a href="../141010/index.html">Kurt &#38; Kara <i>c</i> 1984</a></li>
+<li><a href="../140627/index.html">Canvas and the Close Pixelate script</a></li>
+<li><a href="../140405/index.html">Web Audio API &#8211; 1st Approach</a></li>
+<li><a href="../140329/index.html">Audio visualizer &#8211; Atomic</a></li>
+<li><a href="../140329/starfield.html">Audio visualizer &#8211; Star field</a></li>
+<li><a href="../140323/index.html">Flash <i>in memoriam</i></a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Notes to self</strong></li>
+<li><a href="../150504-3/index.html">Ordnance Survey map of Great Britain</a></li>
+<li><a href="../170404-3/index.html">Responsive images</a></li>
+<li><a href="../170313/index.html">Pure CSS shapes</a></li>
+<li><a href="../170307/index.html">q</a></li>
+<li><a href="../150511/index.html">xStand for iPad &#8211;&#160;The missing user manual</a></li>
+<li><a href="../140628/index.html">CSS blur animation</a></li>
+<li><a href="../150501/index.html">The CSS rule</a></li>
+<li><a href="../170408/index.html">On forms and tables</a></li>
+<li><a href="../140319/index.html">On animated cursors</a></li>
+<li><a href="../150618/index.html">The concerts</a></li>
+</ul></nav><article><h2>Greyscale</h2><p>20 April, 2017<span> &#8211; Art.&#160;45</span></p><p class="drpcp">This article focuses on the possibility with CSS to programmatically change a colourful RGB image to greyscale. Note that <code>:hover</code> is used for visualization, something touch-devices do not handle. Either way, <em>do</em> check out the source code for an explanation of the technique. It should also be noted that embedded content served with image tags in HTML leaves it to the browser to scale the images down from a large &#8220;master&#8221; image whenever the viewport is reduced in width. Modern browsers handle this rather well. Background images, on the other hand, can be optimized both for break points in a responsive design <em>and</em> for download time and/or file size. The latter is important for less capable mobile devices and for slow connections to the Internet. Please refer to the article <i><a href="../170404-3/index.html">Responsive images</a></i> for details.</p><h3>Embedded content</h3><img src="lips.jpg" srcset="lipsx2.jpg 2x" alt="Colourful collage"><p class="fig">Fig 1. Hover over the image to change it from greyscale to RGB. This, of course, does not work for touch-screens.</p><h3>Background images</h3><div></div><p class="fig">Fig 2. Ėmir Bukharskīĭ. Bukhara, between 1905 and 1915. Photo by Sergei Mikhailovich Prokudin-Gorskii. Colour composite from three filtered glass negatives. There are no known restrictions on publication for this picture, but please do not reuse the image above as it has been cropped and reduced in size. Instead, download <a href="http://www.loc.gov/pictures/collection/prok/item/prk2001000001/">the original high resolution photograph</a> from the Library of Congress&#8217; &#8216;Prokudin-Gorskii Collection&#8217;.</p><p>When Russia conquered the Emirate of Bukhara in 1868, the Emirate became a somewhat independent Russian protectorate. Ėmir Bukharskīĭ, who was born Saiyid Mir Alim, was the last emir of Bukhara and finally had to step down and flee to Afghanistan when the Soviet army occupied the emirate in 1920.</p></article><footer class="cL cntr">Impossiblue &#169; Bjørn Sortland</footer><noscript class="cntr">This site is shite without JavaScript</noscript></div><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script>window.jQuery || document.write('<script src="../../js/jquery.min.js"><\/script>')</script><script>var pseudo=true;$("nav button").click(function(){$("nav ul").toggle("fast");if(pseudo===true){$("nav button").addClass("noPseudo");pseudo=false;}else{$("nav button").removeClass("noPseudo");pseudo=true;}$("nav button div").toggle("fast");});</script></body></html>
