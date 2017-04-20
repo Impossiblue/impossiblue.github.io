@@ -15,9 +15,25 @@ input {
 
 /*	END Stripping out browser default syles  */
 
-body { background-color: #93bf35; } /* I like green, you see */
+/*	START Rules that do not affect the accordion  */
 
-/*	Important: If 'font-size' is spec'ed (different from default '1em'), this will influence 'line-height' in 'label'  */
+body { background-color: #93bf35; } /* I like green, you see */
+h2, h2+p {
+	padding-top: .5em;
+	text-align: center;
+	}
+hr {
+	width: 80%;
+	min-width: 262px;
+	height: 1px;
+	margin: 1em auto;
+	border-top: 1px solid #475f14; /* Works in conjunction w 'border: 0' spec'ed above */
+	display: block;
+	}
+
+/*	END Rules that do not affect the accordion  */
+
+/*	IMPORTANT If 'font-size' is spec'ed (different from default '1em'), this will influence 'line-height' in 'label'  */
 
 /*	START Accordion - Note that this accordion allows for more than (the usual) one accordion element to be opened/closed at any given time  */
 
@@ -34,7 +50,7 @@ article {
 input {
 	position: absolute;
 	opacity: 0;
-	z-index: -1; /* As if 'opacity: 0' were not enough */
+	z-index: -1; /* As if 'opacity: 0' were not enough! */
 	}
 label {
 	position: relative; /* Base for pseudo-element. 'label' acts as a substitute, really, as 'input' elements care little for pseudo-elements */
@@ -81,7 +97,7 @@ section p { margin: 1em; }
 /*	The proper thing would be to spec an acceptable 'max-height' value and then let the remainder be scrollable via 'overflow-y: auto'  */
 /*	Different browser may, however, display scrollbars (or scrollbar indicators) in ugly ways  */
 /*	The '~' in there means 'general sibling selector'  */
-input[type=checkbox]:checked~section { max-height: 9999px; }
+input[type=checkbox]:checked~section { max-height: 9999px; } /* Ouch! */
 
 /*	START Pseudo-elements (::before/::after) do not work w the 'input' selector but can be used w 'label' in the trick shown below  */
 /*	The checkbox tells the 'input' whether the former is checked or not, and the 'input' uses its after-element to choose the appropriate triangle  */
@@ -103,14 +119,9 @@ input[type=checkbox]:checked+label:hover::after {
 
 /*	END Accordion...  */
 
-</style></head><body><!-- The accordion builds on an idea at https://codepen.io/raubaca/pen/PZzpVe -->
-
-<!-- h2 class="cntr">Impossiblue test page</h2><p class="cntr"><a href="index.html">Return to article</a>
-
-<h3>STANDARDISER HEADING FOR TEST PAGES SLIK DEN ER PÅ 'hiding things'</h3 -->
+</style></head><body><!-- The accordion builds on an idea at https://codepen.io/raubaca/pen/PZzpVe --><h2>Impossiblue test page</h2><p><a href="index.html">Return to article</a></p><hr>
 
 <div id="accrdn">
-
 	<article>
 		<input id="a1" type="checkbox">
 		<label for="a1">First</label>
@@ -119,7 +130,6 @@ input[type=checkbox]:checked+label:hover::after {
 			<p>Lorem ipsum dolor sit amet, consectetur adipscing elit, sed diam nonnumy tempor incidunt ut labore et dolore magna aliquam erat volupat. Ut enim ad minimim veniami quis nostrud exercitation ullamcorpor suscipit laboris nisi ut aliquip ex ea commodo consequat.</p>
 		</section>
 	</article>
-
 	<article>
 		<input id="a2" type="checkbox">
 		<label for="a2">Second</label>
@@ -127,7 +137,6 @@ input[type=checkbox]:checked+label:hover::after {
 			<p>Duis autem vel eum irure dolor in reprehenderit in voluptate velit esse molestaie son consequat, vel illum dolore eu fugiat nulla pariatur. At vero eos et accusam et justo odio dignissim qui blandit praesent lupatum delenit aigue duos dolor et molestais exceptur sint occaecat cupidat non provident, simil tempor sunt in culpa qui officia deserunt mollit anim id est laborum et dolor fugai.</p>
 		</section>
 	</article>
-
 	<article>
 		<input id="a3" type="checkbox">
 		<label for="a3">Third</label>
@@ -135,7 +144,6 @@ input[type=checkbox]:checked+label:hover::after {
 			<p>Lorem ipsum dolor sit amet, consectetur adipscing elit, sed diam nonnumy tempor incidunt ut labore et dolore magna aliquam erat volupat. Ut enim ad minimim veniami quis nostrud exercitation ullamcorpor suscipit laboris nisi ut aliquip ex ea commodo consequat. Duis autem vel eum irure dolor in reprehenderit in voluptate velit esse molestaie son consequat, vel illum dolore eu fugiat nulla pariatur. At vero eos et accusam et justo odio dignissim qui blandit praesent lupatum delenit aigue duos dolor et molestais exceptur sint occaecat cupidat non provident, simil tempor sunt in culpa qui officia deserunt mollit anim id est laborum et dolor fugai. Et harumd dereud facilis est er expedit distinct. Nam liber a tempor cum soluta nobis eligend optio comque nihil quod a impedit anim id quod maxim placeat facer possim omnis es voluptas assumenda est, omnis dolor repellend. Temporem autem quinsud et aur office debit aut tum rerum necessit atib saepe eveniet ut er repudiand sint et molestia non este recusand. Itaque earud rerum hic tenetury sapiente delectus au aut prefer endis dolorib asperiore repellat. Hanc ego cum tene sententiam, quid est cur verear ne ad eam non possing accommodare nost ros quos tu paulo ante cum memorite it tum etia ergat. Nos amice et nebevol, olestias access potest fier ad augendas cum conscient to factor tum toen legum odioque civiuda. Et tamen in busdad ne que pecun modut est neque nonor imper ned libiding gen epular religuard on cupiditat, quas nulla praid im umdnat. Improb pary minuiti potius inflammad ut coercend magist and et dodecendense videantur, invitat igitur vera ratio bene santos ad iustitiami aequitated fidem. Neque hominy infant aut inuiste fact est cond que neg facile efficerd possit duo conteud notiner si effecerit, et opes vel forunag veling en liberalitat magis em conveniunt. Dabut tutungbene volent sib conciliant et, al is aptissim est ad quiet. Endium caritat praesert cum omning null siy caus peccand quaerer en imigent cupidat a natura proficis facile explent sine julla inura autend unanc sunt isti.</p>
 		</section>
 	</article>
-
 </div>
 
 </body></html>
