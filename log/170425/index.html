@@ -93,7 +93,7 @@
 	containment: "parent"
 });</code></pre><p>The following basic code snippets also work&#8230;</p><p><code>$("#theDraggable").draggable();</code></p><p>&#8230;and&#8230;</p><p><code>$(function(){<br>&#160;&#160;&#160;&#160;$("#theDraggable").draggable();<br>});</code></p><p>Keep in mind, however, that as there is no container putting restraints on the element here, it is anarchistically freewheeling in its behaviour.</p><p><strong>Note: </strong>Internet Explorer 10 and earlier versions do not honour the draggable function. Note also that the experimental <code>backdrop-filter: blur()</code> is used for details behind the draggable element. At the time of writing this can only be enjoyed in iOS Safari 9.3 and Mac OS X Safari 10, but should not interfere with the functionality.</p><p class="cntr">Image courtesy of <a href="https://pixabay.com/">Pixabay</a>.<br>Move icon based on work by <a href="https://twitter.com/davegandy/">Dave Gandy</a>.</p>
 
-<p class="cntr nb">FMEO 5</p>
+<p class="cntr nb">FMEO 7</p>
 
 </article><footer class="cntr">Impossiblue &#169; Bjørn Sortland</footer><noscript class="cntr">This site is shite without JavaScript</noscript></div><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script>window.jQuery || document.write('<script src="../../js/jquery.min.js"><\/script>')</script>
 
@@ -107,14 +107,5 @@ $("#theDraggable").draggable({
 	containment: "parent" // For alternatives, see: http://api.jqueryui.com/draggable/#option-cursor
 });
 //	END Draggable functionality
-
-/*
-//	START jQuery UI Touch Punch 0.2.3 - http://touchpunch.furf.com
-//	Depends: 'jquery.ui.widget.js' and 'jquery.ui.mouse.js'
-!function(a){function f(a,b){if(!(a.originalEvent.touches.length>1)){a.preventDefault();var c=a.originalEvent.changedTouches[0],d=document.createEvent("MouseEvents");d.initMouseEvent(b,!0,!0,window,1,c.screenX,c.screenY,c.clientX,c.clientY,!1,!1,!1,!1,0,null),a.target.dispatchEvent(d)}}if(a.support.touch="ontouchend"in document,a.support.touch){var e,b=a.ui.mouse.prototype,c=b._mouseInit,d=b._mouseDestroy;b._touchStart=function(a){var b=this;!e&&b._mouseCapture(a.originalEvent.changedTouches[0])&&(e=!0,b._touchMoved=!1,f(a,"mouseover"),f(a,"mousemove"),f(a,"mousedown"))},b._touchMove=function(a){e&&(this._touchMoved=!0,f(a,"mousemove"))},b._touchEnd=function(a){e&&(f(a,"mouseup"),f(a,"mouseout"),this._touchMoved||f(a,"click"),e=!1)},b._mouseInit=function(){var b=this;b.element.bind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),c.call(b)},b._mouseDestroy=function(){var b=this;b.element.unbind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),d.call(b)}}}(jQuery);
-//	END jQuery UI Touch Punch...
-*/
-
-function f(a,b){if(!(a.originalEvent.touches.length>1)){a.preventDefault();var c=a.originalEvent.changedTouches[0],d=document.createEvent("MouseEvents");d.initMouseEvent(b,!0,!0,window,1,c.screenX,c.screenY,c.clientX,c.clientY,!1,!1,!1,!1,0,null),a.target.dispatchEvent(d)}}if(a.support.touch="ontouchend"in document,a.support.touch){var e,b=a.ui.mouse.prototype,c=b._mouseInit,d=b._mouseDestroy;b._touchStart=function(a){var b=this;!e&&b._mouseCapture(a.originalEvent.changedTouches[0])&&(e=!0,b._touchMoved=!1,f(a,"mouseover"),f(a,"mousemove"),f(a,"mousedown"))},b._touchMove=function(a){e&&(this._touchMoved=!0,f(a,"mousemove"))},b._touchEnd=function(a){e&&(f(a,"mouseup"),f(a,"mouseout"),this._touchMoved||f(a,"click"),e=!1)},b._mouseInit=function(){var b=this;b.element.bind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),c.call(b)},b._mouseDestroy=function(){var b=this;b.element.unbind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),d.call(b)}
 
 </script></body></html>
