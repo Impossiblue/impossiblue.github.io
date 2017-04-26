@@ -93,17 +93,19 @@
 	containment: "parent"
 });</code></pre><p>The following basic code snippets also work&#8230;</p><p><code>$("#theDraggable").draggable();</code></p><p>&#8230;and&#8230;</p><p><code>$(function(){<br>&#160;&#160;&#160;&#160;$("#theDraggable").draggable();<br>});</code></p><p>Keep in mind, however, that as there is no container putting restraints on the element here, it is anarchistically freewheeling in its behaviour.</p><p><strong>Note: </strong>Internet Explorer 10 and earlier versions do not honour the draggable function. Note also that the experimental <code>backdrop-filter: blur()</code> is used for details behind the draggable element. At the time of writing this can only be enjoyed in iOS Safari 9.3 and Mac OS X Safari 10, but should not interfere with the functionality.</p><p class="cntr">Image courtesy of <a href="https://pixabay.com/">Pixabay</a>.<br>Move icon based on work by <a href="https://twitter.com/davegandy/">Dave Gandy</a>.</p>
 
-<p class="cntr nb">FMEO 9</p>
+<p class="cntr nb">FMEO 10</p>
 
 </article><footer class="cntr">Impossiblue &#169; Bjørn Sortland</footer><noscript class="cntr">This site is shite without JavaScript</noscript></div><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script>window.jQuery || document.write('<script src="../../js/jquery.min.js"><\/script>')</script>
 
-<script src="../../js/jquery-ui.min.js"></script><!-- 1.12.1 -->
+<!-- script src="../../js/jquery-ui.min.js"></script --><!-- 1.12.1 -->
 
-<script src="../../js/jquery.ui.touch-punch.min.js"></script><!-- 0.2.3 - Depends: jQuery UI 'Widget' and 'Mouse -->
+<script src="jquery-ui-custom.js"></script><!-- 1.12.1 - Custom -->
+
+<script src="jquery.ui.touch-punch.min.js"></script><!-- 0.2.3 - Depends: jQuery UI 'Widget' and 'Mouse -->
 
 <script src="../../js/highlight.pack.js"></script><!-- 9.9.0 - Custom-built for HTML, XML, CSS, JavaScript, and PHP --><script>var pseudo=true;$("nav button").click(function(){$("nav ul").toggle("fast");if(pseudo===true){$("nav button").addClass("noPseudo");pseudo=false;}else{$("nav button").removeClass("noPseudo");pseudo=true;}$("nav button div").toggle("fast");});$("pre code").each(function(i,block){hljs.highlightBlock(block);});
 
-//	START Draggable functionality - Depends: jQuery UI 'Draggable'
+//	START Draggable functionality - Depends: jQuery UI 'Draggable', ':data Selector' and 'scrollParent'
 $("#theDraggable").draggable({
 	containment: "parent" // For alternatives, see: http://api.jqueryui.com/draggable/#option-cursor
 });
