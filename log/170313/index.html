@@ -1,5 +1,4 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: Pure CSS shapes</title><meta name="description" content="Using CSS-only to form geometrical shapes. Work in progress."><meta name="author" content="https://impossiblue.github.io"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Impossiblue"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" sizes="152x152" href="../../touch-icon-ipad.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="../../start-up-1536x2008.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="../../start-up-1496x2048.png"><link rel="stylesheet" href="../../css/i.css"><!--[if lt IE 10]><link rel="stylesheet" href="../../css/ie.css"><![endif]--><style>aside::after{content:"13 March, 2017";}article{text-align:center;}article>div{margin:0 auto;}.fig{padding-bottom:1.5em;}
-
 /*	1  */
 #target {
 	width: 28px;
@@ -43,7 +42,41 @@
 	background-color: #475f14;
 	outline: 18px solid #eef5df;
 	}
-
+/*	4  */
+#ribbon {
+	position: relative;
+	width: 30px;
+	height: 27px;
+	background-color: #900;
+	}
+#ribbon::after {
+	position: absolute;
+	bottom: -30px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border: 15px solid #900; /* 30/2 */
+	border-bottom-color: transparent;
+	content: "";
+	}
+/*	5  */
+#envelope {
+	position: relative;
+	width: 110px;
+	height: 56px;
+	background-color: #fff;
+	}
+#envelope::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-right: 55px solid transparent;
+	border-top: 32px solid rgba(0,0,0,.1);
+	border-left: 55px solid transparent;
+	content: "";
+	}
 </style></head><body><div id="ie">With geriatric Internet Explorer versions this site looks shite. This because Impossiblue is built with modern tools and would require hacks and workarounds to function in legacy browsers. I no longer have the patience nor the inclination to satisfy everybody. Impossiblue is an experiment and a playground &#8211;&#160;and my sustenance does not depend on it. As a concequence &#8211;&#160;to embarrass nobody &#8211;&#160;I have decided to lock you out. So, there.</div><div id="wrapper"><aside>34</aside><header id="masthead"><h1><a href="../../index.html">Impossiblue</a></h1></header><nav><button class="goEast" title="Menu">Open menu<div></div></button><a id="at" class="goEast" href="../../form.html" title="Contact us">Open form</a><ul>
 <li class="ctgr"><b>&#9662;&#8194;</b><strong>Lorem ipsums</strong></li>
 <li><a href="../170420-2/index.html"><code>box-shadow</code></a></li>
@@ -103,5 +136,7 @@
 <!-- 1 --><div id="target"></div><p class="fig">Fig 1. Archery target.</p>
 <!-- 2 --><div id="raf"></div><p class="fig">Fig 2. RAF roundel &#8211;&#160;Keith Moon in memoriam.</p>
 <!-- 3 --><div id="outline"></div><p class="fig">Fig 3. This must be the easiest way to add 2 borders to a square or a rectangle. For the block must have 90 deg angles as the outline itself always strives to achieve that. And one more thing: An outline does not take up space in the flow of the document so some sort of buffer may prove necessary around the element.</p>
+<!-- 4 --><div id="ribbon"></div><p class="mt15 pt15 fig">Fig 4. Ribbon. A clever use of borders and a pseudo-element. Whoever came up with that?</p>
+<!-- 5 --><div id="envelope"></div><p class="fig">Fig 5. Envelope. This one is really nothing but an elaboration on an alternative to the ribbon above. And I <span class="sbi">know</span> who came up with the alternative; <a href="https://css-tricks.com/examples/ShapesOfCSS/">Zoe Rooney</a>. The methods used are more or less the same. The tweak done by yours truly is to change properties and values around to make it look like an envelope. Although Rooney might still call it a flag. And there&#8217;s an idea: CSS shapes lend themselves beautifully to flags. I leave it to your imagination.</p>
 
 </article><footer class="cL cntr">Impossiblue &#169; Bjørn Sortland</footer><noscript class="cntr">This site is shite without JavaScript</noscript></div><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script>window.jQuery || document.write('<script src="../../js/jquery.min.js"><\/script>')</script><script>var pseudo=true;$("nav button").click(function(){$("nav ul").toggle("fast");if(pseudo===true){$("nav button").addClass("noPseudo");pseudo=false;}else{$("nav button").removeClass("noPseudo");pseudo=true;}$("nav button div").toggle("fast");});</script></body></html>
