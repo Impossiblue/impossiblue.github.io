@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: jQuery UI Draggable</title><meta name="description" content="Basic use of the jQuery draggable() functionality to move an object around in the viewport or in its parent container."><meta name="author" content="https://impossiblue.github.io"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Impossiblue"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" sizes="152x152" href="../../touch-icon-ipad.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="../../start-up-1536x2008.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="../../start-up-1496x2048.png"><link rel="stylesheet" href="../../css/i.css"><!--[if lt IE 10]><link rel="stylesheet" href="../../css/ie.css"><![endif]--><style>aside::after{content:"25 April, 2017";}
+#theParent {
+	position: relative;
+	width: calc(100% - 2px); /* Correcting for border; not necessary to spec individual widths w media queries ('100%' is width of <article>) */
+	height: 640px;
+	margin-top: 1.5em;
+	border: 1px solid #eef5df;
+	background: url("child.jpg") center;
+	overflow: hidden; /* Kills the shadow of the draggable when it is close to, or at, the edge */
+	}
+#theDraggable {
+	position: absolute;
+	top: 271px; /* (640-(1+96+1))/2 */
+	left: calc((100% - (1px + 96px + 1px))/2); /* Media queries are then superfluous */
+	width: 96px;
+	height: 96px;
+	border: 1px solid rgba(238,245,223,.6);
+	background: url("../../img/move.svg") center no-repeat;
+	-moz-background-size: 54%;
+	-webkit-background-size: 54%;
+	background-size: 54%;
+	-moz-box-shadow: 0 0 12px 9px rgba(0,0,0,.3);
+	-webkit-box-shadow: 0 0 12px 9px rgba(0,0,0,.3);
+	box-shadow: 0 0 12px 9px rgba(0,0,0,.3);
+	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(6px);
+	cursor: move;
+	}
+#theDraggable:hover {
+	border-color: transparent;
+	background-color: rgba(238,245,223,.3);
+	background-image: none;
+	-webkit-backdrop-filter: blur(0);
+	backdrop-filter: blur(0);
+	}
+</style></head><body><div id="ie">With geriatric Internet Explorer versions this site looks shite. This because Impossiblue is built with modern tools and would require hacks and workarounds to function in legacy browsers. I no longer have the patience nor the inclination to satisfy everybody. Impossiblue is an experiment and a playground &#8211;&#160;and my sustenance does not depend on it. As a concequence &#8211;&#160;to embarrass nobody &#8211;&#160;I have decided to lock you out. So, there.</div><div id="wrapper"><aside>49</aside><header id="masthead"><h1><a href="../../index.html">Impossiblue</a></h1></header><nav><button class="goEast" title="Menu">Open menu<div></div></button><a id="at" class="goEast" href="../../form.html" title="Contact us">Open form</a><ul>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Lorem ipsums</strong></li>
+<li><a href="../170420-2/index.html"><code>box-shadow</code></a></li>
+<li><a href="../170414/index.html">Putting the &#8220;Checkbox hack&#8221; to good use</a></li>
+<li><a href="../170420/index.html">Greyscale</a></li>
+<li><a href="../170404-2/index.html">Sepia</a></li>
+<li><a href="../170404/index.html">Background gradients</a></li>
+<li><a href="../170326/index.html">Pseudo-elements and the image tag</a></li>
+<li><a href="../170308/index.html">Styling an HTML <code>input</code> element</a></li>
+<li><a href="../150504/index.html">How to add and centre a custom iPad wallpaper</a></li>
+<li><a href="../150421-2/index.html">How to make a screen dump on an iPad</a></li>
+<li><a href="../150421/index.html">How to permanently delete pictures from an iPad</a></li>
+<li><a href="../140502/index.html">PHP &#8211; Random image</a></li>
+<li><a href="../140426/index.html">PHP &#8211; How to get the width and height of an image</a></li>
+<li><a href="../140423/index.html">PHP &#8211; Random quote</a></li>
+<li><a href="../140420/index.html">PHP &#8211; How to find pathnames matching a pattern</a></li>
+<li><a href="../141026/index.html">How to design a close-button with CSS</a></li>
+<li><a href="../140625/index.html">Film grain &#8211; Sort of</a></li>
+<li><a href="../140528/index.html">Noisy canvas &#8211; Dynamic</a></li>
+<li><a href="../140328/index.html">How to create a composite layer in Photoshop</a></li>
+<li><a href="../140312/index.html">Noisy background &#8211; Static</a></li>
+<li><a href="../100828/index.html">How to crop a movie with QuickTime Pro</a></li>
+<li><a href="../060216/index.html">Gradient mosaic</a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Rants and raves</strong></li>
+<li><a href="../170417-2/index.html"><code>clip-path</code> &#8211; Part 2</a></li>
+<li><a href="../170417/index.html"><code>clip-path</code> &#8211; Part 1</a></li>
+<li><a href="../170322/index.html">Rapha&#235;l or Thinking outside the box</a></li>
+<li><a href="../150907/index.html">Jan Kjærstad &#8211;&#160;Storyteller</a></li>
+<li><a href="../150504-2/index.html">Rain on a window pane &#8211;&#160;JavaScript simulation</a></li>
+<li><a href="../170315/index.html">CSS throbbers &#8211;&#160;Part 3</a></li>
+<li><a href="../150503/index.html">CSS throbbers &#8211;&#160;Part 2</a></li>
+<li><a href="../150407/index.html">CSS throbbers &#8211;&#160;Part 1</a></li>
+<li><a href="../150406/index.html">ResEdit and the recreation of the Mac OS wristwatch cursor animation</a></li>
+<li><a href="../141108/index.html">Kaja Norum</a></li>
+<li><a href="../141010/index.html">Kurt &#38; Kara <i>c</i> 1984</a></li>
+<li><a href="../140627/index.html">Canvas and the Close Pixelate script</a></li>
+<li><a href="../140405/index.html">Web Audio API &#8211; 1st Approach</a></li>
+<li><a href="../140329/index.html">Audio visualizer &#8211; Atomic</a></li>
+<li><a href="../140329/starfield.html">Audio visualizer &#8211; Star field</a></li>
+<li><a href="../140323/index.html">Flash <i>in memoriam</i></a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Notes to self</strong></li>
+<li><a href="../150504-3/index.html">Ordnance Survey map of Great Britain</a></li>
+<li id="crrnt"><b>&#9656;&#8194;</b>Testing jQuery UI <code>draggable()</code></li>
+<li><a href="../170424/index.html"><code>backdrop-filter: blur()</code></a></li>
+<li><a href="../170422/index.html">Testing <code>sketch.js</code> &#8211;&#160;Particles</a></li>
+<li><a href="../170404-3/index.html">Responsive images</a></li>
+<li><a href="../170313/index.html">Pure CSS shapes</a></li>
+<li><a href="../170307/index.html">q</a></li>
+<li><a href="../150511/index.html">xStand for iPad &#8211;&#160;The missing user manual</a></li>
+<li><a href="../140628/index.html">CSS blur animation</a></li>
+<li><a href="../150501/index.html">The CSS rule</a></li>
+<li><a href="../170408/index.html">On forms and tables</a></li>
+<li><a href="../140319/index.html">On animated cursors</a></li>
+<li><a href="../150618/index.html">The concerts</a></li>
+</ul></nav><article><h2>Testing jQuery UI <code>draggable()</code></h2><div id="theParent"><div id="theDraggable"></div></div><p class="fig">Fig. On a regular screen, click and drag the moveable object around within the contraints of the image. The functionality should also be duplicated on touch screens via tap-drag, although more as an afterthought (see notes below).</p><h3>The HTML</h3><pre><code class="html">&lt;div&gt;
+	&lt;div id="theDraggable"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre><h3>The JavaScript</h3><pre><code class="js">$("#theDraggable").draggable({
+	containment: "parent"
+});</code></pre><p>The following basic code snippets also work&#8230;</p><p><code>$("#theDraggable").draggable();</code></p><p>&#8230;and&#8230;</p><p><code>$(function(){<br>&#160;&#160;&#160;&#160;$("#theDraggable").draggable();<br>});</code></p><p>Keep in mind, however, that as there is no container putting restraints on the element here, it is anarchistically freewheeling in its behaviour.</p><h3>Notes</h3><p>Internet Explorer 10 and earlier versions do not honour the draggable function. Note also that the experimental <code>backdrop-filter: blur()</code> is used for details behind the draggable element. At the time of writing this can only be enjoyed in iOS Safari 9.3 and Mac OS X Safari 10, but should not interfere with dragging.</p><p>The draggable functionality is part of the <i><a href="http://jqueryui.com/">jQuery UI</a></i> set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript library. It only listens for mouse events, not touch events, so what works beautifully on regular screens, can not be experienced or made useful for touch screen devices. Scott Gonz&#225;lez, one of the developers of jQuery UI, is <a href="http://stackoverflow.com/questions/13940421/how-to-get-jqueryui-drag-drop-working-with-touch-devices">quoted</a> as saying that the functionalty is slated for version 2.<p><p>In the meantime we have to resort to &#8220;hacks&#8221;, and the one plugin used for the test in this here article, is David Furfero&#8217;s <i><a href="http://touchpunch.furf.com">jQuery UI Touch Punch</a></i>, recommended by Scott Gonz&#225;lez himself. It is not perfect. One observation is that the (green) move icon in the object used in this article, is not always returned to a visible state after touch screen dragging. The plug-in does, however, hint at what will be available in future versions of jQuery UI.</p><p>jQuery UI 1.12.1, with all its components, clocks in at 254&#160;kB. As jQuery UI Touch Punch only depends on the core component <i>Widget</i> and the interactions component <i>Mouse</i>, a <a href="http://jqueryui.com/download/">custom built version</a> of jQuery UI is employed here. It also incorporates the core components <i>:data Selector</i> and <i>scrollParent</i> which the <i>Draggable</i> component itself depends on. The custom build shaved some 88% off the full version.</p><p class="cntr">Image courtesy of <a href="https://pixabay.com/">Pixabay</a>.<br>Move icon based on work by <a href="https://twitter.com/davegandy/">Dave Gandy</a>.</p></article><footer class="cntr">Impossiblue &#169; Bjørn Sortland</footer><noscript class="cntr">This site is shite without JavaScript</noscript></div><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script>window.jQuery || document.write('<script src="../../js/jquery.min.js"><\/script>')</script><script src="jquery-ui-custom.js"></script><!-- 1.12.1 - Custom --><script src="jquery.ui.touch-punch.min.js"></script><!-- 0.2.3 - Depends: jQuery UI 'Widget' and 'Mouse --><script src="../../js/highlight.pack.js"></script><!-- 9.9.0 - Custom-built for HTML, XML, CSS, JavaScript, and PHP --><script>var pseudo=true;$("nav button").click(function(){$("nav ul").toggle("fast");if(pseudo===true){$("nav button").addClass("noPseudo");pseudo=false;}else{$("nav button").removeClass("noPseudo");pseudo=true;}$("nav button div").toggle("fast");});$("pre code").each(function(i,block){hljs.highlightBlock(block);});
+//	START Draggable functionality - Depends: jQuery UI 'Draggable', ':data Selector' and 'scrollParent'
+$("#theDraggable").draggable({
+	containment: "parent" // For alternatives, see: http://api.jqueryui.com/draggable/#option-cursor
+});
+//	END Draggable functionality...
+</script></body></html>
