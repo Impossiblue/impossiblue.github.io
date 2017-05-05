@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: A pure CSS modal window</title><meta name="description" content="An experiment with the CSS pseudo-class ':target' for a non-JavaScript dependent modal window."><meta name="author" content="https://impossiblue.github.io"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Impossiblue"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" sizes="152x152" href="../../touch-icon-ipad.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="../../start-up-1536x2008.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="../../start-up-1496x2048.png"><link rel="stylesheet" href="../../css/i.css"><!--[if lt IE 10]><link rel="stylesheet" href="../../css/ie.css"><![endif]--><style>aside::after{content:"5 May, 2017";}
+
+/*	START Bottle animations  */
+
+#box { text-align: center; } /* Page-centred container for the bottles */
+
+/*	Shadow as a pseudo-element on the bottle does not work. The shadow steps in front on hover  */
+/*	The solution is to let shadow and bottle be pseudo-elements on an empty container  */
+
+#box div {
+	position: relative;
+	width: 80px;
+	height: 304px; /* Empirical, extra bottom height to avoid clipping of bottle shadow on hover */
+	margin: 0 12px;
+	overflow: visible; /* See note on 'height'. Probably superfluous */
+	}
+#box div::before {
+	position: absolute;
+	bottom: 30px;
+	left: 4px;
+	width: 72px;
+	height: 36px;
+	border-radius: 50%;
+	background-color: rgba(71,95,20,.6);
+	content: "";
+	-webkit-filter: blur(6px);
+	filter: blur(6px);
+	}
+#box div::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 80px;
+	height: 268px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	content: "";
+	}
+#box div::before, #box div::after {
+	-moz-transition: all .2s ease-in;
+	-webkit-transition: all .2s ease-in;
+	transition: all .2s ease-in;
+	}
+#box div:nth-child(1)::after { background-image: url("b1.png"); }
+#box div:nth-child(2)::after { background-image: url("b2.png"); }
+#box div:nth-child(3)::after { background-image: url("b3.png"); }
+#box div:nth-child(4)::after { background-image: url("b4.png"); }
+#box div:nth-child(5)::after { background-image: url("b5.png"); }
+#box div:nth-child(1), #box div:nth-child(2) { display: inline-block; }
+#box div:nth-child(3), #box div:nth-child(4), #box div:nth-child(5) { display: none; }
+
+/*	Note that w 'all' spec'ed for 'transition', 'bottom' and 'opacity' will also be transformed  */
+#box div:hover::before {
+	bottom: 24px;
+	opacity: .8;
+	-moz-transform: scaleX(1.25) scaleY(2.5);
+	-webkit-transform: scaleX(1.25) scaleY(2.5);
+	transform: scaleX(1.25) scaleY(2.5);
+	}
+
+#box div:hover::after {
+	-moz-transform: scale(1.25);
+	-webkit-transform: scale(1.25);
+	transform: scale(1.25); /* Bottle up to full width/height. By default, scaling is out from centre */
+	}
+@media only screen and (min-width:450px) and (max-width:589px) { #box div:nth-child(3) { display: inline-block; } }
+@media only screen and (min-width:590px) and (max-width:729px) { #box div:nth-child(3), #box div:nth-child(4) { display: inline-block; } }
+@media only screen and (min-width:730px) { #box div:nth-child(3), #box div:nth-child(4), #box div:nth-child(5) { display: inline-block; } }
+
+/*	END Bottle animations  */
+
+/*	START Link to activate modal window  */
+
+#box div a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	}
+
+/*	END Link to activate modal window  */
+
+/*	START Modal windows  */
+
+.ntrtn {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2; /* Shifts the modal window up and above the animating bottles */
+	display: none;
+	}
+.ntrtn img {
+	position: absolute;
+	top: calc((100vh - 340px)/2);
+	left: calc((100vw - 242px)/2);
+	}
+#ntrtn1:target, #ntrtn2:target, #ntrtn3:target, #ntrtn4:target, #ntrtn5:target { display: block; }
+
+/*	END Modal windows  */
+
+/*	START Link to close modal window  */
+
+.ntrtn a { border-bottom: 0; } /* Kill link inheritance from global CSS */
+.ntrtn a::before {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.8);
+	display: block;
+	content: "";
+	}
+.ntrtn svg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 32px;
+	height: 32px;
+	margin: 24px 0 0 24px;
+	padding: 6px;
+	background-color: rgba(0,0,0,.3); /* 'X' may lie on top of modal window content; more easy to see this way. Overruled w media query */
+	z-index: 3; /* Above modal window content */
+	}
+@media only screen and (min-width:450px) { .ntrtn svg { background-color: transparent; } } /* 'X' will never lie on top of modal window content */
+.ntrtn svg:hover #hoverColour { fill: #93bf35; } /* id is internal to the SVG */
+
+/*	END Link to close modal window  */
+
+.fig { margin-top: -2em; }/* FPO - To kill some of the empty space necessary below each bottle */#toggle+p{display:none;}</style></head><body><div id="ie">With geriatric Internet Explorer versions this site looks shite. This because Impossiblue is built with modern tools and would require hacks and workarounds to function in legacy browsers. I no longer have the patience nor the inclination to satisfy everybody. Impossiblue is an experiment and a playground &#8211;&#160;and my sustenance does not depend on it. As a concequence &#8211;&#160;to embarrass nobody &#8211;&#160;I have decided to lock you out. So, there.</div><div id="wrapper"><aside>51</aside><header id="masthead"><h1><a href="../../index.html">Impossiblue</a></h1></header><nav><button class="goEast" title="Menu">Open menu<div></div></button><a id="at" class="goEast" href="../../form.html" title="Contact us">Open form</a><ul>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Lorem ipsums</strong></li>
+<li id="crrnt"><b>&#9656;&#8194;</b>A pure CSS modal window</li>
+<li><a href="../170420-2/index.html"><code>box-shadow</code></a></li>
+<li><a href="../170414/index.html">Putting the &#8220;Checkbox hack&#8221; to good use</a></li>
+<li><a href="../170420/index.html">Greyscale</a></li>
+<li><a href="../170404-2/index.html">Sepia</a></li>
+<li><a href="../170404/index.html">Background gradients</a></li>
+<li><a href="../170326/index.html">Pseudo-elements and the image tag</a></li>
+<li><a href="../170308/index.html">Styling an HTML <code>input</code> element</a></li>
+<li><a href="../150504/index.html">How to add and centre a custom iPad wallpaper</a></li>
+<li><a href="../150421-2/index.html">How to make a screen dump on an iPad</a></li>
+<li><a href="../150421/index.html">How to permanently delete pictures from an iPad</a></li>
+<li><a href="../140502/index.html">PHP &#8211; Random image</a></li>
+<li><a href="../140426/index.html">PHP &#8211; How to get the width and height of an image</a></li>
+<li><a href="../140423/index.html">PHP &#8211; Random quote</a></li>
+<li><a href="../140420/index.html">PHP &#8211; How to find pathnames matching a pattern</a></li>
+<li><a href="../141026/index.html">How to design a close-button with CSS</a></li>
+<li><a href="../140625/index.html">Film grain &#8211; Sort of</a></li>
+<li><a href="../140528/index.html">Noisy canvas &#8211; Dynamic</a></li>
+<li><a href="../140328/index.html">How to create a composite layer in Photoshop</a></li>
+<li><a href="../140312/index.html">Noisy background &#8211; Static</a></li>
+<li><a href="../100828/index.html">How to crop a movie with QuickTime Pro</a></li>
+<li><a href="../060216/index.html">Gradient mosaic</a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Rants and raves</strong></li>
+<li><a href="../170417-2/index.html"><code>clip-path</code> &#8211; Part 2</a></li>
+<li><a href="../170417/index.html"><code>clip-path</code> &#8211; Part 1</a></li>
+<li><a href="../170322/index.html">Rapha&#235;l or Thinking outside the box</a></li>
+<li><a href="../150907/index.html">Jan Kjærstad &#8211;&#160;Storyteller</a></li>
+<li><a href="../150504-2/index.html">Rain on a window pane &#8211;&#160;JavaScript simulation</a></li>
+<li><a href="../170315/index.html">CSS throbbers &#8211;&#160;Part 3</a></li>
+<li><a href="../150503/index.html">CSS throbbers &#8211;&#160;Part 2</a></li>
+<li><a href="../150407/index.html">CSS throbbers &#8211;&#160;Part 1</a></li>
+<li><a href="../150406/index.html">ResEdit and the recreation of the Mac OS wristwatch cursor animation</a></li>
+<li><a href="../141108/index.html">Kaja Norum</a></li>
+<li><a href="../141010/index.html">Kurt &#38; Kara <i>c</i> 1984</a></li>
+<li><a href="../140627/index.html">Canvas and the Close Pixelate script</a></li>
+<li><a href="../140405/index.html">Web Audio API &#8211; 1st Approach</a></li>
+<li><a href="../140329/index.html">Audio visualizer &#8211; Atomic</a></li>
+<li><a href="../140329/starfield.html">Audio visualizer &#8211; Star field</a></li>
+<li><a href="../140323/index.html">Flash <i>in memoriam</i></a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Notes to self</strong></li>
+<li><a href="../150504-3/index.html">Ordnance Survey map of Great Britain</a></li>
+<li><a href="../170429/index.html">Resize video <i>in situ</i></a></li>
+<li><a href="../170425/index.html">Testing jQuery UI <code>draggable()</code></a></li>
+<li><a href="../170424/index.html"><code>backdrop-filter: blur()</code></a></li>
+<li><a href="../170422/index.html">Testing <code>sketch.js</code> &#8211;&#160;Particles</a></li>
+<li><a href="../170404-3/index.html">Responsive images</a></li>
+<li><a href="../170313/index.html">Pure CSS shapes</a></li>
+<li><a href="../170307/index.html">q</a></li>
+<li><a href="../150511/index.html">xStand for iPad &#8211;&#160;The missing user manual</a></li>
+<li><a href="../140628/index.html">CSS blur animation</a></li>
+<li><a href="../150501/index.html">The CSS rule</a></li>
+<li><a href="../170408/index.html">On forms and tables</a></li>
+<li><a href="../140319/index.html">On animated cursors</a></li>
+<li><a href="../150618/index.html">The concerts</a></li>
+</ul></nav><article><h2>A pure CSS modal window</h2>
+
+<div id="box" class="mt15">
+	<div title="Blueberry"><a href="#ntrtn1"></a></div>
+	<div title="Cucumber"><a href="#ntrtn2"></a></div>
+	<div title="Love Potion"><a href="#ntrtn3"></a></div>
+	<div title="Mango Tango"><a href="#ntrtn4"></a></div>
+	<div title="Pomelicious"><a href="#ntrtn5"></a></div>
+	<p class="fig">Mouse over a bottle to see a scaling effect. Click or tap a bottle to open a modal window with nutrition facts.</p>
+</div>
+
+<p class="bq">In user interface design for computer applications, a modal window is a graphical control element subordinate to an application&#8217;s main window. It creates a mode that disables the main window, but keeps it visible with the modal window as a child window in front of it. Users must interact with the modal window before they can return to the parent application. This avoids interrupting the workflow on the main window. (Ref. 1)</p><p class="pt0 drpcp">Not to be confused with pop-up windows often misused for advertising and <em>irrelevant</em> and <em>unwanted</em> information, a modal window is perfect for keeping <em>relevant</em> information on the same page. Like a slideshow, for instance, first proposed by <a href="http://lokeshdhakar.com/projects/lightbox2/">Lokesh Dhakar</a> with his JavaScript based &#8220;lightbox&#8221; technique, later followed by a score of imitators and me-toos, of which maybe <a href="http://fancyapps.com/fancybox/3/">fancyBox</a> maybe reigns maybe supreme &#8230;&#160;maybe.</p><p>Now, there is nothing wrong with JavaScript for solutions like this. JavaScript is even <em>necessary</em> for advanced implementations. The only catch is that it introduces what may be overkill for more simple and dreary needs. The challenge then is to rely on HTML and CSS alone. The <code>:target</code> pseudo-class to the rescue:</p><p class="bq">This pseudo-class matches an element that&#8217;s the target of a fragment identifier in the document&#8217;s URI. The fragmet identifier in a URI comprises a <code>&#35;</code> character followed by an identifier name that matches the value of an <code>id</code> attribute of an element within the document. (Ref. 2)</p><p class="pt0">Early on, only Firefox implemented <code>:target</code>. In other browsers it was either buggy or not supported at all. These days, <a href="http://caniuse.com/#search=%3Atarget">it should work</a> in most everything. What follows, is the (unstyled) HTML and CSS necessary to open (and close) a modal window:</p><h3>The HTML</h3><pre><code class="html">&lt;!-- Link to activate modal window --&gt;
+&lt;a href="#modal"&gt;Open modal window&lt;/a&gt;
+
+&lt;!-- START Modal window --&gt;
+&lt;div id="modal"&gt;
+	&lt;p&gt;Some text in modal window&lt;/p&gt;
+	&lt;!-- New link: When another target is activated, 'modal' is no longer the target --&gt;
+	&lt;a href="#"&gt;Close modal window&lt;/a&gt;
+	&lt;!-- Note: If the modal window is not closed, it will stay open even on page reload --&gt;
+&lt;/div&gt;
+&lt;!-- END Modal window --&gt;</code></pre><h3>The CSS</h3><pre><code class="css">/* Hide modal window (aka 'target') when page first loads */
+#modal { display: none; }
+
+/* Show target when link is activated */
+#modal:target { display: block; }</code></pre><p><strong>Note: </strong>The default behaviour of an anchor link is to (try to) jump to the specified anchor in the page; and it will succeed if the page height (or rather, amount of content) allows this. The resulting jump can be confusing on plain web pages, and with modal windows or lightboxes it is downright undesired. A fix for the latter implementations is to use <code>position:fixed</code> instead of <code>position:absolute</code>, as can be seen in the page source of this article. Blazemonger has a more <a href="http://stackoverflow.com/questions/15827992/prevent-page-jump-from-target-selector">detailed explanation</a> over at Stack Overflow. He also chimes in with the following:</p><p class="bq">&#8230;adding another fixed target to a &#8216;close&#8217; button on a modal keeps the page from scrolling when the modal is closed.</p><p class="pt0"><em>This</em>, however, has not proved successful in the demonstration for this here article. When closing the modal window, the page jumps, so the jury is still out on that one. Yackety-yak.</p><h3>References</h3><p>1. <a href="https://en.wikipedia.org/wiki/Modal_window">Wikipedia</a><br>2. Olsson, Tommy, and Paul O&#8217;Brien, <i>The Ultimate CSS Reference</i>, SitePoint (2000)</p><h3>Johnny-on-the-spot</h3><p>Peter Collingridge&#8217;s <a href="http://petercollingridge.appspot.com/svg-optimiser/">SVG optimiser</a>.</p><h3 id="toggle"><a href="#">Disclaimer</a></h3><p>Impossiblue is not associated with Rob&#8217;s Really Good in any way. We haven&#8217;t even tasted their products. This web page is nothing but a proof of concept. So, there.</p></article><footer class="cntr">Impossiblue &#169; Bjørn Sortland</footer><noscript class="cntr">This site is shite without JavaScript</noscript></div><!-- END 'wrapper' -->
+
+<!-- START Modal windows. Note that the windows are spec'ed outside the page wrapper. This way they are positioned relative to 'body' -->
+
+<!-- Blueberry -->
+<div id="ntrtn1" class="ntrtn">
+	<a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="240 254 32 32"><polygon id="hoverColour" points="270 254 256 268 242 254 240 256 254 270 240 284 242 286 256 272 270 286 272 284 258 270 272 256" fill="#eef5df"/></svg></a><!-- An id has been added to the SVG to allow new 'fill' colour on hover (see CSS) -->
+	<img src="n1.png" alt="Nutrition facts">
+</div>
+<!-- Cucumber --><div id="ntrtn2" class="ntrtn"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="240 254 32 32"><polygon id="hoverColour" points="270 254 256 268 242 254 240 256 254 270 240 284 242 286 256 272 270 286 272 284 258 270 272 256" fill="#eef5df"/></svg></a><img src="n2.png" alt="Nutrition facts"></div><!-- Love Potion --><div id="ntrtn3" class="ntrtn"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="240 254 32 32"><polygon id="hoverColour" points="270 254 256 268 242 254 240 256 254 270 240 284 242 286 256 272 270 286 272 284 258 270 272 256" fill="#eef5df"/></svg></a><img src="n3.png" alt="Nutrition facts"></div><!-- Mango Tango --><div id="ntrtn4" class="ntrtn"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="240 254 32 32"><polygon id="hoverColour" points="270 254 256 268 242 254 240 256 254 270 240 284 242 286 256 272 270 286 272 284 258 270 272 256" fill="#eef5df"/></svg></a><img src="n4.png" alt="Nutrition facts"></div><!-- Pomelicious --><div id="ntrtn5" class="ntrtn"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="240 254 32 32"><polygon id="hoverColour" points="270 254 256 268 242 254 240 256 254 270 240 284 242 286 256 272 270 286 272 284 258 270 272 256" fill="#eef5df"/></svg></a><img src="n5.png" alt="Nutrition facts"></div>
+
+<!-- END Modal windows... -->
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script>window.jQuery || document.write('<script src="../../js/jquery.min.js"><\/script>')</script><script src="../../js/highlight.pack.js"></script><!-- 9.9.0 - Custom-built for HTML, XML, CSS, JavaScript, and PHP --><script>var pseudo=true;$("nav button").click(function(){$("nav ul").toggle("fast");if(pseudo===true){$("nav button").addClass("noPseudo");pseudo=false;}else{$("nav button").removeClass("noPseudo");pseudo=true;}$("nav button div").toggle("fast");});$("#toggle").click(function(){$("#toggle+p").toggle("fast")});$("pre code").each(function(i,block){hljs.highlightBlock(block);});</script></body></html>
