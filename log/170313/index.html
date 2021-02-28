@@ -1,5 +1,5 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: Pure CSS shapes</title><meta name="description" content="Using CSS-only to form geometrical shapes. Work in progress."><meta name="author" content="https://impossiblue.github.io"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Impossiblue"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" sizes="152x152" href="../../touch-icon-ipad.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="../../start-up-1536x2008.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="../../start-up-1496x2048.png"><link rel="stylesheet" href="../../css/i.css"><!--[if lt IE 10]><link rel="stylesheet" href="../../css/ie.css"><![endif]--><style>aside::after{content:"13 March, 2017";}article{text-align:center;}article>div{margin:0 auto;}.fig{padding-bottom:1.5em;}
-/*	1  */
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: Pure CSS shapes</title><meta name="description" content="Using CSS-only to form geometrical shapes and animations. Work in progress."><meta name="author" content="https://impossiblue.github.io"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Impossiblue"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" sizes="152x152" href="../../touch-icon-ipad.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="../../start-up-1536x2008.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="../../start-up-1496x2048.png"><link rel="stylesheet" href="../../css/i.css"><!--[if lt IE 10]><link rel="stylesheet" href="../../css/ie.css"><![endif]--><style>aside::after{content:"13 March, 2017";}article{text-align:center;}article>div{margin:0 auto;}.fig{padding-bottom:1.5em;}
+/*	1a  */
 #target {
 	width: 28px;
 	height: 28px;
@@ -14,7 +14,7 @@
 	-webkit-box-shadow: 0 0 0 14px #ff6347, 0 0 0 28px #6eb2c1, 0 0 0 42px #5a5a5a, 0 0 0 56px #eef5df;
 	box-shadow: 0 0 0 14px #ff6347, 0 0 0 28px #6eb2c1, 0 0 0 42px #5a5a5a, 0 0 0 56px #eef5df;
 	}
-/*	2  */
+/*	1b  */
 #raf {
 	position: relative;
 	width: 144px;
@@ -33,7 +33,7 @@
 	background-color: #c60c30;
 	content: "";
 	}
-/*	3  */
+/*	1c  */
 #outline {
 	width: 36px;
 	height: 36px;
@@ -42,7 +42,7 @@
 	background-color: #475f14;
 	outline: 18px solid #eef5df;
 	}
-/*	4  */
+/*	1d  */
 #ribbon {
 	position: relative;
 	width: 30px;
@@ -59,7 +59,7 @@
 	border-bottom-color: transparent;
 	content: "";
 	}
-/*	5  */
+/*	1e  */
 #envelope {
 	position: relative;
 	width: 110px;
@@ -76,6 +76,23 @@
 	border-top: 32px solid rgba(0,0,0,.1);
 	border-left: 55px solid transparent;
 	content: "";
+	}
+/*	1f  */
+#aura, #pulse {
+	width: 76px;
+	height: 76px;
+	margin: 24px auto;
+	border-radius: 50%;
+	background-color: #475f14;
+	}
+#aura { box-shadow: 0 0 21px 21px #475f14; }
+/*	2a  */
+#pulse {
+	animation: aura 2s linear infinite alternate;
+/*	animation: aura 2s linear 3s infinite alternate; */ /* Alt.: Wait 3s before animation begins */
+	}
+@keyframes aura {
+	to { box-shadow: 0 0 24px 24px #475f14; }
 	}
 </style></head><body><div id="ie">With geriatric Internet Explorer versions this site looks shite. This because Impossiblue is built with modern tools and would require hacks and workarounds to function in legacy browsers. I no longer have the patience nor the inclination to satisfy everybody. Impossiblue is an experiment and a playground &#8211;&#160;and my sustenance does not depend on it. As a concequence &#8211;&#160;to embarrass nobody &#8211;&#160;I have decided to lock you out. So, there.</div><div id="wrapper"><aside>34</aside><header id="masthead"><h1><a href="../../index.html">Impossiblue</a></h1></header><nav><button class="goEast" title="Menu">Open menu<div></div></button><a id="at" class="goEast" href="../../form.html" title="Contact us">Open form</a><ul>
 <li class="ctgr"><b>&#9662;&#8194;</b><strong>Lorem ipsums</strong></li>
@@ -135,12 +152,15 @@
 <li><a href="../170408/index.html">On forms and tables</a></li>
 <li><a href="../140319/index.html">On animated cursors</a></li>
 <li><a href="../150618/index.html">The concerts</a></li>
-</ul></nav><article><h2>Pure CSS shapes</h2><p>This is a work in progress. New shapes<span class="lt"> will </span>may be added from time to time. Dissect the page source to see construction methods and comments.</p>
+</ul></nav><article><h2>Pure CSS shapes</h2><p>This is a work in progress. New shapes (and animations)<span class="lt"> will </span>may be added from time to time as needs arise. Dissect the page source to see construction methods and comments.</p>
 
-<!-- 1 --><div id="target"></div><p class="fig">Fig 1. Archery target.</p>
-<!-- 2 --><div id="raf"></div><p class="fig">Fig 2. RAF roundel &#8211;&#160;Keith Moon in memoriam.</p>
-<!-- 3 --><div id="outline"></div><p class="fig">Fig 3. This must be the easiest way to add 2 borders to a square or a rectangle. For the block must have 90 deg angles as the outline itself always strives to achieve that. And one more thing: An outline does not take up space in the flow of the document so some sort of buffer may prove necessary around the element.</p>
-<!-- 4 --><div id="ribbon"></div><p class="mt15 pt15 fig">Fig 4. Ribbon. A clever use of borders and a pseudo-element. Whoever came up with that?</p>
-<!-- 5 --><div id="envelope"></div><p class="fig">Fig 5. Envelope. This one is really nothing but an elaboration on an alternative to the ribbon above. And I <span class="sbi">know</span> who came up with the alternative; <a href="https://css-tricks.com/examples/ShapesOfCSS/">Zoe Rooney</a>. The methods used are more or less the same. The tweak done by yours truly is to change properties and values around to make it look like an envelope. Although Rooney might still call it a flag. And there&#8217;s an idea: CSS shapes lend themselves beautifully to flags. I leave it to your imagination.</p>
+<!-- 1a --><div id="target"></div><p class="fig">Fig 1a. Archery target.</p>
+<!-- 1b --><div id="raf"></div><p class="fig">Fig 1b. RAF roundel &#8211;&#160;<a href="who.html" target="_blank">Keith Moon</a> in memoriam.</p>
+<!-- 1c --><div id="outline"></div><p class="fig">Fig 1c. This must be the easiest way to add 2 borders to a square or a rectangle. For the block must have 90 deg angles as the outline itself always strives to achieve that. And one more thing: An outline does not take up space in the flow of the document so some sort of buffer may prove necessary around the element.</p>
+<!-- 1d --><div id="ribbon"></div><p class="mt15 pt15 fig">Fig 1d. Ribbon. A clever use of borders and a pseudo-element. Whoever came up with this?</p>
+<!-- 1e --><div id="envelope"></div><p class="fig">Fig 1e. Envelope. This one is really nothing but an elaboration on an alternative to the ribbon above. And I <span class="sbi">know</span> who came up with the alternative; <a href="https://css-tricks.com/examples/ShapesOfCSS/">Zoe Rooney</a>. The methods used are more or less the same. The tweak done by yours truly is to change properties and values around to make it look like an envelope. Although Rooney might still call it a flag. And there&#8217;s an idea: CSS shapes lend themselves beautifully to flags. I leave it to your imagination.</p>
+<!-- 1f --><div id="aura"></div><p class="fig">Fig 1f. Emotional, mental, and spiritual levels form an energy field around the body known as the aura. Muddy colours in the aura indicate negative emotions. Or so they say.</p>
+<h2>Pure CSS animations</h2>
+<!-- 2a --><div id="pulse"></div><p class="fig">Fig 2a. Based on the aura in fig. 1f, a pulsing sensation has been added.</p>
 
 </article><footer class="cL cntr">Impossiblue &#169; Bjørn Sortland</footer><noscript class="cntr">This site is shite without JavaScript</noscript></div><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script>window.jQuery || document.write('<script src="../../js/jquery.min.js"><\/script>')</script><script>var pseudo=true;$("nav button").click(function(){$("nav ul").toggle("fast");if(pseudo===true){$("nav button").addClass("noPseudo");pseudo=false;}else{$("nav button").removeClass("noPseudo");pseudo=true;}$("nav button div").toggle("fast");});</script></body></html>
