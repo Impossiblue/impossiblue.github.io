@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: A CSS TV-screen</title><meta name="description" content="Making the appearance of a TV screen with CSS."><meta name="author" content="https://impossiblue.github.io"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Impossiblue"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" sizes="152x152" href="../../touch-icon-ipad.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="../../start-up-1536x2008.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="../../start-up-1496x2048.png"><link rel="stylesheet" href="../../css/i.css"><!--[if lt IE 10]><link rel="stylesheet" href="../../css/ie.css"><![endif]--><style>aside::after{content:"8 March, 2021";}
+/*	With a tip of the hat to: https://css-tricks.com/the-shapes-of-css  */
+#tv {
+	position: relative;
+	width: 260px;
+	height: 194px;
+	border: 1px solid #eef5df;
+	border-radius: 50% / 10%; /* Box with rounded corners */
+	background: #fff url("nrk.png") center no-repeat; /* Colour is fallback should image fail to load */
+	}
+#tv:before {
+	position: absolute;
+	top: 10%;
+	right: -5%;
+	bottom: 10%;
+	left: -5%;
+	background-color: #fff;
+	border-radius: 5% / 50%;
+	content: "";
+	z-index: -1;
+	}
+article div { margin: 1.5em auto 0; }</style></head><body><div id="ie">With geriatric Internet Explorer versions this site looks shite. This because Impossiblue is built with modern tools and would require hacks and workarounds to function in legacy browsers. I no longer have the patience nor the inclination to satisfy everybody. Impossiblue is an experiment and a playground &#8211;&#160;and my sustenance does not depend on it. As a concequence &#8211;&#160;to embarrass nobody &#8211;&#160;I have decided to lock you out. So, there.</div><div id="wrapper"><aside>55</aside><header id="masthead"><h1><a href="../../index.html">Impossiblue</a></h1></header><nav><button class="goEast" title="Menu">Open menu<div></div></button><a id="at" class="goEast" href="../../form.html" title="Contact us">Open form</a><ul>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Lorem ipsums</strong></li>
+<li><a href="../170505/index.html">A pure CSS modal window</a></li>
+<li><a href="../170420-2/index.html"><code>box-shadow</code></a></li>
+<li><a href="../170414/index.html">Putting the &#8220;Checkbox hack&#8221; to good use</a></li>
+<li><a href="../170420/index.html">Greyscale</a></li>
+<li><a href="../170404-2/index.html">Sepia</a></li>
+<li><a href="../170404/index.html">Background gradients</a></li>
+<li><a href="../170326/index.html">Pseudo-elements and the image tag</a></li>
+<li><a href="../170308/index.html">Styling an HTML <code>input</code> element</a></li>
+<li><a href="../150504/index.html">How to add and centre a custom iPad wallpaper</a></li>
+<li><a href="../150421-2/index.html">How to make a screen dump on an iPad</a></li>
+<li><a href="../150421/index.html">How to permanently delete pictures from an iPad</a></li>
+<li><a href="../140502/index.html">PHP &#8211; Random image</a></li>
+<li><a href="../140426/index.html">PHP &#8211; How to get the width and height of an image</a></li>
+<li><a href="../140423/index.html">PHP &#8211; Random quote</a></li>
+<li><a href="../140420/index.html">PHP &#8211; How to find pathnames matching a pattern</a></li>
+<li><a href="../141026/index.html">How to design a close-button with CSS</a></li>
+<li><a href="../140625/index.html">Film grain &#8211; Sort of</a></li>
+<li><a href="../140528/index.html">Noisy canvas &#8211; Dynamic</a></li>
+<li><a href="../140328/index.html">How to create a composite layer in Photoshop</a></li>
+<li><a href="../140312/index.html">Noisy background &#8211; Static</a></li>
+<li><a href="../100828/index.html">How to crop a movie with QuickTime Pro</a></li>
+<li id="crrnt"><b>&#9656;&#8194;</b>Gradient mosaic</li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Rants and raves</strong></li>
+<li><a href="../170417-2/index.html"><code>clip-path</code> &#8211; Part 2</a></li>
+<li><a href="../170417/index.html"><code>clip-path</code> &#8211; Part 1</a></li>
+<li><a href="../170322/index.html">Rapha&#235;l or Thinking outside the box</a></li>
+<li><a href="../150907/index.html">Jan Kjærstad &#8211;&#160;Storyteller</a></li>
+<li><a href="../150504-2/index.html">Rain on a window pane &#8211;&#160;JavaScript simulation</a></li>
+<li><a href="../170315/index.html">CSS throbbers &#8211;&#160;Part 3</a></li>
+<li><a href="../150503/index.html">CSS throbbers &#8211;&#160;Part 2</a></li>
+<li><a href="../150407/index.html">CSS throbbers &#8211;&#160;Part 1</a></li>
+<li><a href="../150406/index.html">ResEdit and the recreation of the Mac OS wristwatch cursor animation</a></li>
+<li><a href="../141108/index.html">Kaja Norum</a></li>
+<li><a href="../141010/index.html">Kurt &#38; Kara <i>c</i> 1984</a></li>
+<li><a href="../140627/index.html">Canvas and the Close Pixelate script</a></li>
+<li><a href="../140405/index.html">Web Audio API &#8211; 1st Approach</a></li>
+<li><a href="../140329/index.html">Audio visualizer &#8211; Atomic</a></li>
+<li><a href="../140329/starfield.html">Audio visualizer &#8211; Star field</a></li>
+<li><a href="../140323/index.html">Flash <i>in memoriam</i></a></li>
+<li class="ctgr"><b>&#9662;&#8194;</b><strong>Notes to self</strong></li>
+<li><a href="../150504-3/index.html">Ordnance Survey map of Great Britain</a></li>
+<li><a href="../170530/index.html">Linking from SVG</a></li>
+<li><a href="../170506/index.html">SVG in HTML and CSS</a></li>
+<li><a href="../170429/index.html">Resize video <i>in situ</i></a></li>
+<li><a href="../170425/index.html">Testing jQuery UI <code>draggable()</code></a></li>
+<li><a href="../170424/index.html"><code>backdrop-filter: blur()</code></a></li>
+<li><a href="../170422/index.html">Testing <code>sketch.js</code> &#8211;&#160;Particles</a></li>
+<li><a href="../170404-3/index.html">Responsive images</a></li>
+<li id="crrnt"><b>&#9656;&#8194;</b>A CSS TV-screen</li>
+<li><a href="../170313/index.html">Pure CSS shapes</a></li>
+<li><a href="../170307/index.html">q</a></li>
+<li><a href="../150511/index.html">xStand for iPad &#8211;&#160;The missing user manual</a></li>
+<li><a href="../140628/index.html">CSS blur animation</a></li>
+<li><a href="../150501/index.html">The CSS rule</a></li>
+<li><a href="../170408/index.html">On forms and tables</a></li>
+<li><a href="../140319/index.html">On animated cursors</a></li>
+<li><a href="../150618/index.html">The concerts</a></li>
+</ul></nav><article><h2>A CSS TV-screen</h2><div id="tv"></div><p class="fig cntr">Fig. There was a time when television was not 24/7. Then came the time when 24/7 was a curse.</p><pre><code>&#35;tv {
+	position: relative;
+	width: 260px; /* e.g. */
+	height: 194px; /* e.g. */
+	border: 1px solid #eef5df;
+	border-radius: 50% / 10%;
+	background: #fff url("nrk.png") center no-repeat;
+	}
+&#35;tv:before {
+	position: absolute;
+	top: 10%;
+	right: -5%;
+	bottom: 10%;
+	left: -5%;
+	background-color: #fff;
+	border-radius: 5% / 50%;
+	content: "";
+	z-index: -1;
+	}
+/* For details, see:
+https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
+https://css-tricks.com/the-shapes-of-css
+*/</code></pre><h3>Homage to the cathode ray tube</h3><p>Reading up on television, what better source to consult than Encyclopædia Britannica?</p><p>&#8220;The opening scene of Shakespeare&#8217;s <i>Henry IV</i> introduces the character Rumour, upon whom the other characters rely for news of what is happening in the far corners of England. &#8230; For ages it remained a dream, and then television came along, beginning with an accidental discovery. In 1872, while investigating materials for use in the transatlantic cable, English telegraph worker Joseph May realized that a selenium wire was varying in its electrical conductivity. Further investigation showed that the change occurred when a beam of sunlight fell on the wire, which by chance had been placed on a table near the window. Although its importance was not realized at the time, this happenstance provided the basis for changing light into an electric signal.&#8221;</p><h3>Television?</h3><p>&#8220;The word is half Greek and half Latin. No good will come of it.&#8221;</p><h3>But&#8230;</h3><p>&#8230;by 1928 the General Electric Company had begun regular television broadcasts and in 1929 John Logie Baird convinced the British Broadcasting Corporation to allow him to produce half-hour shows at midnight three times a week.</p><p>Well, this is as far as I will refer to my research on Britannica. Popping up on my screen was the following message:</p><img class="mt15" src="facts.png" alt="Subscription offer"><p>And I totally understand. We all have to scrape out a living. So, should you have been teased by the above, shell out for Britannica's 30%-off subscription. You can trust them. Believe me. I am not going to copy/paste their information for your purse or convenience. Oh, no. <a href="https://www.britannica.com">Subscribe</a>!</p></article><footer class="cL cntr">Impossiblue &#169; Bjørn Sortland</footer><noscript class="cntr">This site is shite without JavaScript</noscript></div><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script>window.jQuery || document.write('<script src="../../js/jquery.min.js"><\/script>')</script><script src="../../js/highlight.pack.js"></script><script>var pseudo=true;$("nav button").click(function(){$("nav ul").toggle("fast");if(pseudo===true){$("nav button").addClass("noPseudo");pseudo=false;}else{$("nav button").removeClass("noPseudo");pseudo=true;}$("nav button div").toggle("fast");});$("pre code").each(function(i,block){hljs.highlightBlock(block);});</script></body></html>
