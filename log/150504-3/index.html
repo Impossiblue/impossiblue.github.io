@@ -1,20 +1,33 @@
-<!DOCTYPE html><html><head><title>Impossiblue: Ordnance Survey map of Great Britain</title><meta name="description" content="Ordnance Survey map centred on the Lake District, England."><meta name="author" content="https://impossiblue.github.io"><meta name="viewport" content="width=device-width,initial-scale=1"><style>*{margin:0;border:0;padding:0;text-decoration:none;}html,body,#map{width:100%;height:100%;}body{position:relative;}#i{position:absolute;bottom:0;left:0;width:66px;height:60px;background:url("i.png") no-repeat;z-index:9999;}</style><!-- Key requires URL --><!-- Note: The official link states 'http' and not 'https' (see script) but 'http' resulted in 'mixed content' error in Safari (on desktop but not in iOS on an iPad) because github.io serves 'https'. Changed to 'https' and the map now works on both platfprms --><script src="https://openspace.ordnancesurvey.co.uk/osmapapi/openspace.js?key=14CBA79EF2E676DDE0530B6CA40ACDD6"></script></head><body onload="init()"><div id="map"></div><a href="https://impossiblue.github.io/"><div id="i" title="Return to Impossiblue"></div></a><script>
-
-// Important: It can take up to 24 h for new keys and/or URLs to start working
-
-// Define the osMap variable
-var osMap;
-
-// This function creates the map and is called by the div in the HTML
-// Note dependence on 'onload()' in body tag
-function init(){
-    
-	// Create new map
-	osMap = new OpenSpace.Map("map");
-
-	// Set map centre on the Lake District and select zoom level 6
-	osMap.setCenter(new OpenSpace.MapPoint(322519,505854),6);
-            
-}
-
+<!DOCTYPE html><html><head><title>Impossiblue: Ordnance Survey map of Great Britain</title><meta name="description" content="Ordnance Survey map centred on the Lake District, England."><meta name="author" content="https://impossiblue.github.io"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="https://labs.os.uk/public/os-api-branding/v0.2.0/os-api-branding.css"><link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.css"><style>*{margin:0;border:0;padding:0;text-decoration:none;}html,body,#map{width:100%;height:100%;}body{position:relative;}#i{position:absolute;bottom:0;left:0;width:66px;height:60px;background:url("i.png") no-repeat;z-index:9999;}</style></head><body><div id="map"></div><a href="https://impossiblue.github.io/"><div id="i" title="Return to Impossiblue"></div></a><script src="https://labs.os.uk/public/os-api-branding/v0.2.0/os-api-branding.js"></script><script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script><script>
+var apiKey = "14CBA79EF2E676DDE0530B6CA40ACDD6";
+var serviceUrl = "https://api.os.uk/maps/raster/v1/zxy";
+var style = {
+	"version": 8,
+	"sources": {
+		"raster-tiles": {
+			"type": "raster",
+			"tiles": [ serviceUrl + "/Light_3857/{z}/{x}/{y}.png?key=" + apiKey ],
+			"tileSize": 256,
+			"maxzoom": 20
+		}
+	},
+	"layers": [{
+		"id": "os-maps-zxy",
+		"type": "raster",
+		"source": "raster-tiles"
+	}]
+};
+var map = new mapboxgl.Map({
+	container: "map",
+	minZoom: 6,
+	maxZoom: 19,
+	style: style,
+	center: [ -2.968, 54.425 ],
+	zoom: 13
+});
+map.dragRotate.disable();
+map.touchZoomRotate.disableRotation();
+map.addControl(new mapboxgl.NavigationControl({
+	showCompass: false
+}));
 </script></body></html>
