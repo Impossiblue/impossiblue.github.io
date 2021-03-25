@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: Demo 2</title><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><style>*{margin:0;border:0;padding:0;}
+
+html, body {
+	height: 100%;
+	overflow: hidden; /* Kills scrollbars */
+	}
+body::after {
+	position: absolute;
+	top: -4px; /* Shifts the image upwards (off screen) to counter border "debris" created by the blur filter */
+	left: -4px; /* Shifts the image left (off screen) for the same reason */
+	width: calc(100vw + 8px); /* Scales the image to push debris on the right hand side, off screen */
+	height: calc(100vh + 8px); /* Scales the image to push debris on the bottom, off screen */
+	content:"";
+	background-image: url("bg-2.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	background-size: cover;
+	filter: blur(2px); /* Negatively affects the borders of the page window. Fix: See above */
+	opacity: .3;
+	z-index: -1; /* Send to bottom of stack */
+	}
+
+h2,p{margin-top:1em;font-family:Arial;text-align:center;}</style></head><body><h2>Impossiblue test page</h2><p><a href="demo-1.html">&#9664;&#8195;Demo 1</a>&#8195;&#124;&#8195;<a href="index.html">Return to article&#8195;&#9654;</a></p></body></html>
