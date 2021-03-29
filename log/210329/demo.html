@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Impossiblue: Masking video artefacts - Demo</title><meta name="description" content="Demo. Hiding border rubbish from video. Play and pause video with custom controls."><meta name="author" content="https://impossiblue.github.io"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Impossiblue"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" sizes="152x152" href="../../touch-icon-ipad.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:portrait)" href="../../start-up-1536x2008.png"><link rel="apple-touch-startup-image" media="(device-width:768px) and (device-height:1024px) and (-webkit-device-pixel-ratio:2) and (orientation:landscape)" href="../../start-up-1496x2048.png"><style>*{margin:0;border:0;padding:0;text-decoration:none;}html,body{min-height:100%;}
+
+html { font: 62.5% "Open Sans Regular","Lucida Sans","Lucida Grande",sans-serif; }
+body {
+	background-color: #000;
+	-webkit-font-smoothing: antialiased; /* Support for all WebKit browsers */
+	text-rendering: optimizeLegibility; /* Support for Safari (some?) and Chrome */
+	}
+
+/*	START Video related */
+
+figure {
+	position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; /* The secret six */
+	width: calc(640px - 30px); /* Artefacts: right 30px */
+	height: calc(480px - 8px - 12px + 36px); /* Artefacts: top 8px, bottom 12px. Height of 'figcaption': 36px */
+	overflow: hidden;
+	}
+video {
+	position: relative;
+	top: -8px; /* Height of top side artefacts */
+	left: 0; /* The example video has no left side artefacts */
+	}
+figcaption {
+	position: absolute;
+	top: calc(480px - 8px - 12px); /* Empirical; depends on video-bottom artefacts */
+	width: calc(640px - 30px); /* See 'figure' */
+	height: 36px;
+	font-size: 1.8rem;
+	line-height: 36px; /* Centering text vertically in element */
+	color: #eef5df;
+	background-color: #000; /* Same as for 'body' */
+	}
+figcaption a:hover { opacity: .5; } /* Subtle feedback for pointing device users */
+svg {
+	position: relative;
+	top: .3em; /* Empirical. Pushing the icon down because its "baseline" is too high up */
+	width: 24px;
+	height: 24px;
+	margin: 0 .5em; /* Indented left; buffered from text on right */
+	fill: #475f14; /* Initial value; manipulated w JS */
+	}
+
+/*	END Video related */
+
+p{position:absolute;right:24px;bottom:12px;font-size:2em;}</style></head><body>
+
+<!-- START Video related -->
+
+<figure id="customControls">
+	<video src="vb.m4v" width="640" height="480" poster="mozart.jpg" preload="none"></video><!-- Video tag without 'controls' (see JavaScript) -->
+	<figcaption>
+		<a href="#"><svg id="startStop"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></a>
+		Victor Borge on Mozart
+	</figcaption>
+</figure>
+
+<!-- END Video related -->
+
+<p><a href="index.html">Return to article</a></p><script>
+
+//	Vanilla JS for video custom video controls | References:
+//	https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/cross_browser_video_player
+//	https://codepen.io/dudleystorey/pen/xGJayQ
+//	https://stackoverflow.com/questions/17925577/change-text-color-with-javascript
+//	https://stackoverflow.com/questions/2741493/detect-when-an-html5-video-finishes
+
+var videoContainer = document.getElementById("customControls");
+var video = videoContainer.querySelector("video");
+var controls = videoContainer.querySelector("figcaption");
+var playPause = controls.querySelector("a");
+
+//	video.removeAttribute("controls"); // For reference only. Necessary if 'controls' is speced in the HTML video-tag
+
+playPause.addEventListener("click", function(e) { 
+	e.preventDefault()
+	if (video.paused) {
+		video.play();
+		playPause.innerHTML = '<svg id="startStop"><g><rect fill="none"/><rect fill="none"/><rect fill="none"/></g><g><g/><path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M11,16H9V8h2V16z M15,16h-2V8h2V16z"/></g></svg>';
+		document.getElementById("startStop").style.fill = "#900";
+	} else {
+		video.pause();
+		playPause.innerHTML = '<svg id="startStop"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>';
+		document.getElementById("startStop").style.fill = "#475f14";
+}})
+
+//	START Detect end of video; reset symbol and colour
+
+video.addEventListener("ended", theEnd, false);
+//	document.getElementById("firstVideo").addEventListener("ended", theEnd, false); // For reference only. Alternative(s) if a page contains more that one video
+
+function theEnd(e) {
+	playPause.innerHTML = '<svg id="startStop"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>';
+	document.getElementById("startStop").style.fill = "#475f14";
+}
+
+//	END Detect...
+
+</script></body></html>
