@@ -104,6 +104,34 @@
 @keyframes aura {
 	to { box-shadow: 0 0 24px 24px #475f14; }
 	}
+/*	2b  */
+#pulse2 {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	font: 1.6em/32px monotype;
+	color: #eef5df;
+	text-align: center;
+    background-color: #900; /* rgb(153,0,0) */
+	animation: pulseTwo 2s infinite;
+	}
+@-webkit-keyframes pulseTwo {
+	0% {
+		-moz-box-shadow: 0 0 0 0 rgba(153,0,0,.4);
+		-webkit-box-shadow: 0 0 0 0 rgba(153,0,0,.4);
+		box-shadow: 0 0 0 0 rgba(153,0,0,.4);
+		}
+	70% {
+		-moz-box-shadow: 0 0 0 12px rgba(153,0,0,0);
+		-webkit-box-shadow: 0 0 0 12px rgba(153,0,0,0);
+		box-shadow: 0 0 0 12px rgba(153,0,0,0);
+		}
+	100% {
+		-moz-box-shadow: 0 0 0 0 rgba(153,0,0,0);
+		-webkit-box-shadow: 0 0 0 0 rgba(153,0,0,0);
+		box-shadow: 0 0 0 0 rgba(153,0,0,0);
+		}
+	}
 </style></head><body><div id="ie">With geriatric Internet Explorer versions this site looks shite. This because Impossiblue is built with modern tools and would require hacks and workarounds to function in legacy browsers. I no longer have the patience nor the inclination to satisfy everybody. Impossiblue is an experiment and a playground &#8211;&#160;and my sustenance does not depend on it. As a concequence &#8211;&#160;to embarrass nobody &#8211;&#160;I have decided to lock you out. So, there.</div><div id="wrapper"><aside>34</aside><header id="masthead"><h1><a href="../../index.html">Impossiblue</a></h1></header><nav><button class="goEast" title="Menu">Open menu<div></div></button><a id="at" class="goEast" href="../../form.html" title="Contact us">Open form</a><ul>
 <li class="ctgr"><b>&#9662;&#8194;</b><strong>Lorem ipsums</strong></li>
 <li><a href="../210329/index.html">Masking video artefacts</a></li>
@@ -168,7 +196,6 @@
 <li><a href="../140319/index.html">On animated cursors</a></li>
 <li><a href="../150618/index.html">The concerts</a></li>
 </ul></nav><article><h2>Pure CSS shapes</h2><p>This is a work in progress. New shapes (and animations)<span class="lt"> will </span>may be added from time to time as needs arise. Dissect the page source to see construction methods and comments.</p>
-
 <!-- 1a --><div id="target"></div><p class="fig">Fig 1a. Archery target.</p>
 <!-- 1b --><div id="raf"></div><p class="fig">Fig 1b. RAF roundel &#8211;&#160;<a href="who.html" target="_blank">Keith Moon</a> in memoriam.</p>
 <!-- 1c --><div id="outline"></div><p class="fig">Fig 1c. This must be the easiest way to add 2 borders to a square or a rectangle. For the block must have 90 deg angles as the outline itself always strives to achieve that. And one more thing: An outline does not take up space in the flow of the document so some sort of buffer may prove necessary around the element.</p>
@@ -178,5 +205,5 @@
 <!-- 1g --><div id="check"></div><p class="fig">Fig 1g. <a href="https://mango.blender.org/about">The Mango Open Movie Project</a> was hacked and the web site subsequently taken down. This small check mark was all that was left behind.</p>
 <h2>Pure CSS animations</h2>
 <!-- 2a --><div id="pulse"></div><p class="fig">Fig 2a. Based on the aura in fig. 1f, a pulsing sensation has been added.</p>
-
+<!-- 2b --><div id="pulse2">A</div><p class="fig">Fig. 2b. A 32px line height centers the text vertically in an element 32px high. A monotype font (where all characters are equally wide) is suggested to avoid horizontal movement of text should it be dynamically replaced with JavaScript.</p>
 </article><footer class="cL cntr">Impossiblue &#169; Bjørn Sortland</footer><noscript class="cntr">This site is shite without JavaScript</noscript></div><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script>window.jQuery || document.write('<script src="../../js/jquery.min.js"><\/script>')</script><script>var pseudo=true;$("nav button").click(function(){$("nav ul").toggle("fast");if(pseudo===true){$("nav button").addClass("noPseudo");pseudo=false;}else{$("nav button").removeClass("noPseudo");pseudo=true;}$("nav button div").toggle("fast");});</script></body></html>
