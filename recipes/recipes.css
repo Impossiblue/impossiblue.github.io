@@ -183,7 +183,10 @@ img::selection { background-color: transparent; }
 	background-repeat: no-repeat;
 	}
 @media (orientation: portrait) {
-	body { background-image: none; }
+	body {
+		background-color: #fff;
+		background-image: none;
+		}
 	html body * { display: none; }
 	#ui { display: table-cell; }
 	}
