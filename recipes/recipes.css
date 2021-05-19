@@ -93,7 +93,7 @@ ul {
 #recipe *:first-child { padding-top: 0; }
 #recipe img {
 	margin: 1.5em auto 0;
-	border:  3px solid rgba(255,255,255,.4); /*#eef5df*/
+	border:  3px solid rgba(255,255,255,.4);
 	display: block;
 	}
 a:link, a:visited, a:hover { color: rgba(255,255,255,.4); }
@@ -170,7 +170,7 @@ img::selection { background-color: transparent; }
 /*	END Link to close modal window  */
 
 /*	START Media queries related (requesting user to switch to landscape mode) */
-/*
+
 #ui {
 	width: 100vw;
 	height: 80vh;
@@ -188,5 +188,5 @@ img::selection { background-color: transparent; }
 	#ui { display: table-cell; }
 	}
 @media (orientation: landscape) { #ui { display: none; } }
-*/
+
 /*	END Media queries related... */
