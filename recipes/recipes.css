@@ -178,7 +178,7 @@ img::selection { background-color: transparent; }
 	text-align: center;
 	color: #000;
 	vertical-align: bottom;
-	background-image: -webkit-image-set(url("foo.gif") 1x,url("p-to-l.png") 2x);
+	background-image: -webkit-image-set(url("foo.gif") 1x,url("p-to-l-recipes.png") 2x);
 	background-position: center;
 	background-repeat: no-repeat;
 	}
