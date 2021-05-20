@@ -181,6 +181,7 @@ img::selection { background-color: transparent; }
 	background-image: -webkit-image-set(url("foo.gif") 1x,url("p-to-l-recipes.png") 2x);
 	background-position: center;
 	background-repeat: no-repeat;
+	display: none; /* Invisible on desktop */
 	}
 @media (orientation: portrait) {
 	body {
@@ -190,6 +191,5 @@ img::selection { background-color: transparent; }
 	html body * { display: none; }
 	#ui { display: table-cell; }
 	}
-@media (orientation: landscape) { #ui { display: none; } }
 
 /*	END Media queries related... */
