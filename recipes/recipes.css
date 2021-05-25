@@ -99,7 +99,7 @@ ul {
 a:link, a:visited, a:hover { color: rgba(255,255,255,.4); }
 a:link, a:visited { border-bottom: 1px dotted rgba(255,255,255,.4); }
 a:hover { border-bottom-style: solid; }
-em, i {
+em, i, .fig {
 	font-family: "Open Sans Italic";
 	font-style: normal; /* Kills slanting of the already (truly) cursive font */
 	}
@@ -107,6 +107,7 @@ strong {
 	font-family: "Open Sans Semibold";
 	font-style: normal; /* Kills fattening of the already (truly) semibold font */
 	}
+.fig strong { font-family: "Open Sans Semibold Italic"; }
 .hp { hanging-punctuation: first; } /* https://css-tricks.com/almanac/properties/h/hanging-punctuation */
 .nb {
 	font-family: "Conqueror Slab Light",monospace;
@@ -169,7 +170,7 @@ img::selection { background-color: transparent; }
 
 /*	END Link to close modal window  */
 
-/*	START Media queries related (requesting user to switch to landscape mode) */
+/*	START Media queries related (requesting user to switch to landscape mode) | Comment out for testing on desktop (or drag the web page out to a width beyond 1024px) */
 
 #ui {
 	width: 100vw;
